@@ -3,13 +3,13 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 |Modules|Key Concepts| Useful Resources | 
 |-------|------------|------------------|
-| `c++ 00` |Classes | ... | 
-| `c++ 01` |Classes | .. | 
-| `c++ 02` |Classes | ,, | 
-| `c++ 03` |Classes | .. | 
-| `c++ 04` |Classes | .. | 
-| `c++ 05` |Classes | .,. |
-| `c++ 06` |Classes | ...| 
-| `c++ 07` |Classes | .,..| 
-| `c++ 08` |Classes | ... | 
-| `c++ 09` |Classes | ...             |
+| `c++ 00` |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ... | 
+| `c++ 01` |Memory allocation, pointers to members, references, switch statement.| .. | 
+| `c++ 02` | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ,, | 
+| `c++ 03` | Inheritance in CPP.| .. | 
+| `c++ 04` | Subtype polymorphism, abstract classes and interfaces in CPP.| .. | 
+| `c++ 05` | Try/Catch and Exceptions in CPP.| .,. |
+| `c++ 06` |This module is designed to help you understand the different casts in CPP.| ...| 
+| `c++ 07` | Templates in CPP.| .,..| 
+| `c++ 08` | templated containers, iterators and algorithms in CPP.| ... | 
+| `c++ 09` | understand the containers in CPP. | ...             |
