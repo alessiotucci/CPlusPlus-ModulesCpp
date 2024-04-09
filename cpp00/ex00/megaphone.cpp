@@ -3,32 +3,32 @@
 #include <cctype>
 #include <string>
 
-void	function_a(void)
+using namespace std;
+void	no_args(void)
 {
-	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 }
 
-void	function_b(char **av)
+void	make_upper(char **av)
 {
-	char text;
-	for (int i = 1; av[i] != 0; i++)
+	int		i;
+	int		j;
+
+	i = 1;
+	while (av[i] != 0)
 	{
-		for (int j = 0; av[i][j] != 0; j++)
+		j = 0;
+		while (av[i][j] != 0)
 		{
-			text = av[i][j];
-			std::cout << (char)std::toupper(text);
+			cout << (char)toupper(av[i][j]);
+			j++;
 		}
+	i++;
 	}
 }
-
 int	main(int ac, char **av)
 {
-
-//	std::string str = "Hello World";
-//	std::cout << str << std::endl;
-//	std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-//	std::cout << str << std::endl;
-	(ac == 1) ? function_a() : function_b(av);
-	std::cout << std::endl;
+	(ac == 1) ? no_args() : make_upper(av);
+	cout << endl;
 	return 0;
 }
