@@ -6,7 +6,7 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 20:13:45 by atucci            #+#    #+#              #
-#    Updated: 2024/04/09 20:22:19 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/10 19:29:41 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,14 +60,14 @@ all: $(NAME)
 # Rule for building the program *
 # *******************************
 $(NAME): $(OBJ)
-	@echo "$(GREEN)Linking...$(RESET)"
+	@echo "$(GREEN)Linking...$(RESET)\n"
 	$(CXX) $(FLAG) -o $(NAME) $(OBJ) $(HEADERS)
-	@echo "$(GREEN)Done!$(RESET)"
+	@echo "$(GREEN)Done!\n$(RESET)"
 
 %.o: %.cpp
 	@echo "$(CYAN)Compiling $<...$(RESET)"
 	$(CXX) $(FLAG) -c $< -o $@
-	@echo "$(CYAN)Done compiling $<.$(RESET)"
+	@echo "$(CYAN)Done compiling $<.$(RESET)\n"
 
 
 # ****************************************
@@ -76,7 +76,7 @@ $(NAME): $(OBJ)
 clean:
 	@echo "$(YELLOW)Cleaning up object files...$(RESET)"
 	rm -f $(OBJ)
-	@echo "$(YELLOW)Done!$(RESET)"
+	@echo "$(YELLOW)Done!\n$(RESET)"
 
 # *******************************************************
 # Rule for cleaning up the object files and the program *
@@ -84,7 +84,7 @@ clean:
 fclean: clean
 	@echo "$(RED)Removing executable...$(RESET)"
 	rm -f $(NAME)
-	@echo "$(RED)Done!$(RESET)"
+	@echo "$(RED)Done!\n$(RESET)"
 
 # **********************************
 # Rule for recompiling the program *
