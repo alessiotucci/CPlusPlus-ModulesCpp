@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:14:22 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 09:32:34 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 11:00:13 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ public:
 private:
 	Contact	_contacts[8];
 	int		_savedContacts;
+	int		_iterators;
 };
 #endif

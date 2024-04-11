@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:19:24 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 10:22:06 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 10:52:14 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main()
 	cout << "The program only accepts ADD, SEARCH and EXIT\n";
 	while (1)
 	{
-		cout << "| ADD | SEARCH | EXIT |\n";
+		//cout << "| ADD | SEARCH | EXIT |\n";
 		//getline(cin, command);
 		if (cin >> command)
 		{

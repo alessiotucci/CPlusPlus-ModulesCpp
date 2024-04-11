@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:14:50 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 10:26:41 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 11:39:21 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ using namespace std;
 PhoneBook::PhoneBook(void)
 {
 	this->_savedContacts = 0;
+	this->_iterators = 0;
 }
 
 void	PhoneBook::Add()
@@ -49,15 +50,18 @@ void	PhoneBook::Add()
 		cout << RED << "A saved contact can’t have empty field\n" << RESET;
 	}
 	new_Contact = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
-	if (this->_savedContacts < 8)
+	if (this->_iterators < 8)
 	{
-		this->_contacts[this->_savedContacts] = new_Contact;
-		_savedContacts++;
+		this->_contacts[this->_iterators] = new_Contact;
+		if (this->_savedContacts < 8) // this check fixed
+			_savedContacts++;
+		_iterators++;
 	}
 	else
 	{
-		this->_savedContacts = 0;
-		this->_contacts[this->_savedContacts] = new_Contact;
+		this->_iterators = 0;
+		this->_contacts[this->_iterators] = new_Contact;
+		this->_iterators++;
 	}
 	cout << GREEN << "Contact created\n" << RESET;
 	return ;
@@ -68,12 +72,17 @@ void	PhoneBook::Search()
 	string definitions[4] = {"INDEX", "FIRST NAME", "LAST NAME", "NICKNAME"};
 	string content[4];
 	stringstream sos;
-	//ss << input;
-	//content[0] = sos.str();
+	int count;
+
+	if (_contacts[0].getFirstName().empty())
+	{
+		cout << RED << "The phonebook is empty\n" << RESET ;
+		return ;
+	}
 	PhoneBook::PrintLine();
 	PhoneBook::PrintLine(definitions);
 	PhoneBook::PrintLine();
-	int count = this->_savedContacts - 1;
+	count = this->_savedContacts - 1;
 	while (count >= 0)
 	{
 		sos.str(""); // Clear the string stream
@@ -88,13 +97,14 @@ void	PhoneBook::Search()
 		count--;
 	}
 	int	input;
-	cout << "Enter the index of the contact you want to display: ";
+	cout << "\nEnter the index of the contact you want to display: ";
 	if (cin >> input)
 		cout << "Looking for contact at index " << input << endl;
 	else
 	{
 		cin.clear();
 		cout << RED << "Invalid input\n" << RESET;
+		return ;
 	}
 	
 	if (input >= 8 || input < 0)
@@ -107,8 +117,6 @@ void	PhoneBook::Search()
 	cout << "Nickname: " << YELLOW << _contacts[input].getNickname() << RESET << endl;
 	cout << "Phone number: " << YELLOW << _contacts[input].getPhoneNumber() << RESET << endl;
 	cout << "Darkest Secret: " << YELLOW << _contacts[input].getDarkestSecret() << RESET << endl;
-	//stringstream ss;
-	//ss << input;
 
 	return ;
 }
@@ -129,12 +137,8 @@ void	PhoneBook::PrintLine(string param[4])
 	for (int i = 0; i < 4; i++)
 	{
 		cout << "|";
-		int len = param[i].length();
-		if (len > 10)
-		{
+		if (!param[i].empty() && param[i].length() > 10)
 			param[i] = param[i].substr(0, 9) + ".";
-			len = 10;
-		}
 		cout << right << setw(10) << param[i]; // Right align with field width of 10
 	}
 	cout << "|\n";
