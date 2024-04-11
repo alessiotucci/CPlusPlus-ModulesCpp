@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:19:24 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/10 19:51:35 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 10:22:06 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,24 @@ int	main()
 	cout << "The program only accepts ADD, SEARCH and EXIT\n";
 	while (1)
 	{
-		cout << "Waiting for a command\n";
-		getline(cin, command);
-		if (command.compare("SEARCH") == 0)
+		cout << "| ADD | SEARCH | EXIT |\n";
+		//getline(cin, command);
+		if (cin >> command)
 		{
-			cout << "Start search...\n";
-			my_new_phonebook.Search();
+			if (command.compare("SEARCH") == 0)
+				my_new_phonebook.Search();
+			if (command.compare("ADD") == 0)
+				my_new_phonebook.Add();
+			if (command.compare("EXIT") == 0)
+			{
+				cout << "Exiting the program\n";
+				return (0);
+			}
 		}
-		if (command.compare("ADD") == 0)
+		else
 		{
-			cout << "Let's add\n";
-			my_new_phonebook.Add();
-		}
-		if (command.compare("EXIT") == 0)
-		{
-			cout << "Exiting the program\n";
-			return (0);
+			cout << "error with the cin\n";
+			return (-1);
 		}
 	}
 	return (1);
