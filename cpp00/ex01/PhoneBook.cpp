@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:14:50 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 19:39:39 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 21:38:50 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <iomanip>
 #include <sstream>
 #include <string>
+#include <limits>
+#include <cctype>
 
 PhoneBook::PhoneBook(void)
 {
@@ -45,19 +47,15 @@ void	PhoneBook::Add()
 					std::cout << "4) Enter phoneNumber\n";
 					if (std::cin >> phoneNumber)//;
 					{
+						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 						std::cout << "5) Enter darkestSecret\n";
 						std::getline(std::cin, darkestSecret);
-						/*if (std::cin.eof())
-							return;*/ //TODO: FIX THIS!!!
 						if(!darkestSecret.empty())
-							break ;
+							break;
 					}
 				}
 			}
 		}
-		/*if (!firstName.empty() && !lastName.empty() && !nickName.empty()
-			&& !phoneNumber.empty() && !darkestSecret.empty())
-			break ;*/
 		std::cout << RED << "A saved contact can’t have empty field\n" << RESET;
 		return ;
 	}
