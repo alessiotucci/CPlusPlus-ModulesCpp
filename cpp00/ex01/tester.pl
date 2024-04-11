@@ -10,18 +10,17 @@ open(my $pipe, '|-', $command) or die "Could not start $command: $!";
 
 # Define the contacts
 my @contacts = (
-	['Alessio', 'Tucci', 'tuccio', '123-456-7890', 'Loves Perl'],
-	['Alfred', 'Sines', 'afly', '098-765-4321', 'Loves C#'],
-	['Venelin', 'Zashef', 'venny', '098-765-4321', 'Loves Bulgaria'],
-	['Flavio', 'Biondo', 'flavietto', '098-765-4321', 'Loves PIng pong'],
-	['Ruggero', 'Dolzi', 'ruggy', '098-765-4321', 'Loves IBM'],
-	['Daniel', 'Ugzebu', 'young bull', '098-765-4321', 'Loves womens'],
+	['Alessio', 'Tucci', 'tuccio', '123-456-7890', 'Loves_Perl'],
+	['Alfredo', 'Sines', 'af', '098-765-4321', 'Loves_C#'],
+	['Venelin', 'Zashef', 'venny', '098-765-4321', 'Loves_Bulgaria'],
+	['Flavio', 'Biondo', 'flavietto', '098-765-4321', 'Loves_PIng_pong'],
+	['Ruggero', 'Dolzi', 'ruggy', '098-765-4321', 'Loves_IBM'],
+	['Daniel', 'Ugzebu', 'youngbull', '098-765-4321', 'Loves womens'],
 	['Osema', 'Fadhel', 'oscena', '398-765-4321', 'Loves sicily'],
-	['Fadhtes', 'Ciccio', 'jadodfe', '098-765-4321', 'Loves Python'],
+	['Marco', 'Ciccio', 'jadodfe', '098-765-4321', 'Loves Python'],
 	# Add more contacts here...
 );
-#my @index = (
-#	0, 1, 2, 3, 4, 5, 6, 7);
+
 # Send the ADD commands
 for my $contact (@contacts)
 {
@@ -31,9 +30,25 @@ for my $contact (@contacts)
 		print $pipe "$field\n";
 	}
 }
-
-# Send the SEARCH command
+# Send the PRINT command for each index
 print $pipe "SEARCH\n";
+print $pipe "1\n";
+print $pipe "SEARCH\n";
+print $pipe "2\n";
+print $pipe "SEARCH\n";
+print $pipe "3\n";
+print $pipe "SEARCH\n";
+print $pipe "4\n";
+print $pipe "SEARCH\n";
+print $pipe "5\n";
+print $pipe "SEARCH\n";
+print $pipe "6\n";
+print $pipe "SEARCH\n";
+print $pipe "7\n";
+print $pipe "SEARCH\n";
+print $pipe "8\n";
+print $pipe "SEARCH\n";
+print $pipe "9\n";
 
 # Send the EXIT command
 print $pipe "EXIT\n";

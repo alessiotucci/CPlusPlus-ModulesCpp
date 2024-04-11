@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:14:50 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 15:59:46 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 19:39:39 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,32 @@ void	PhoneBook::Add()
 	while (1)
 	{
 		std::cout << "1) Enter firstName\n";
-		std::cin >> firstName; // add control
-		std::cout << "2) Enter lastName\n";
-		std::cin >> lastName; // add controll
-		std::cout << "3) Enter nickName\n";
-		std::cin >> nickName; // ADD CONTROL
-		std::cout << "4) Enter phoneNumber\n";
-		std::cin >> phoneNumber;
-		std::cout << "5) Enter darkestSecret\n";
-		std::cin >> darkestSecret;
-		if (!firstName.empty() && !lastName.empty() && !nickName.empty()
+		if (std::cin >> firstName) //; // add control
+		{
+			std::cout << "2) Enter lastName\n";
+			if (std::cin >> lastName)//; // add controll
+			{
+				std::cout << "3) Enter nickName\n";
+				if (std::cin >> nickName)//; // ADD CONTROL
+				{
+					std::cout << "4) Enter phoneNumber\n";
+					if (std::cin >> phoneNumber)//;
+					{
+						std::cout << "5) Enter darkestSecret\n";
+						std::getline(std::cin, darkestSecret);
+						/*if (std::cin.eof())
+							return;*/ //TODO: FIX THIS!!!
+						if(!darkestSecret.empty())
+							break ;
+					}
+				}
+			}
+		}
+		/*if (!firstName.empty() && !lastName.empty() && !nickName.empty()
 			&& !phoneNumber.empty() && !darkestSecret.empty())
-			break ;
+			break ;*/
 		std::cout << RED << "A saved contact can’t have empty field\n" << RESET;
+		return ;
 	}
 	new_Contact = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	if (this->_iterators < 8)
@@ -105,12 +118,17 @@ void	PhoneBook::Search()
 		std::cout << RED << "Invalid input\n" << RESET;
 		return ;
 	}
-	
 	if (input >= 8 || input < 0)
 	{
 		std::cout << RED << "Out of bound, be carefull\n" << RESET;
 		return ;
 	}
+	if (input >= this->_savedContacts)
+	{
+		std::cout << RED << "Nothing at this index\n" << RESET;
+		return ;
+	}
+
 	std::cout << "First name: "<< YELLOW << _contacts[input].getFirstName() << RESET << std::endl;
 	std::cout << "Last name: " << YELLOW << _contacts[input].getLastName() << RESET << std::endl;
 	std::cout << "Nickname: " << YELLOW << _contacts[input].getNickname() << RESET << std::endl;
