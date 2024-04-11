@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:10:02 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/09 21:43:11 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 15:58:43 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Contact::Contact() {} //empty constructor
 
-Contact::Contact(string firstN, string lastN, string nick, string phoneN, string darkestSecret)
+Contact::Contact(std::string firstN, std::string lastN, std::string nick, std::string phoneN, std::string darkestSecret)
 {
 	this->_firstName = firstN;
 	this->_lastName = lastN;
@@ -22,27 +22,27 @@ Contact::Contact(string firstN, string lastN, string nick, string phoneN, string
 	this->_phoneNumber = phoneN;
 	this->_darkestSecret = darkestSecret;
 }
-string	Contact::getFirstName()
+std::string	Contact::getFirstName()
 {
 	return this->_firstName;
 }
 
-string	Contact::getLastName()
+std::string	Contact::getLastName()
 {
 	return this->_lastName;
 }
 
-string	Contact::getNickname()
+std::string	Contact::getNickname()
 {
 	return this->_nickname;
 }
 
-string	Contact::getPhoneNumber()
+std::string	Contact::getPhoneNumber()
 {
 	return this->_phoneNumber;
 }
 
-string	Contact::getDarkestSecret()
+std::string	Contact::getDarkestSecret()
 {
 	return this->_darkestSecret;
 }

@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:14:50 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 11:39:21 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 15:59:46 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <sstream>
 #include <string>
 
-using namespace std;
 PhoneBook::PhoneBook(void)
 {
 	this->_savedContacts = 0;
@@ -25,29 +24,29 @@ PhoneBook::PhoneBook(void)
 
 void	PhoneBook::Add()
 {
-	string	firstName;
-	string	lastName;
-	string	nickName;
-	string	phoneNumber;
-	string	darkestSecret;
+	std::string	firstName;
+	std::string	lastName;
+	std::string	nickName;
+	std::string	phoneNumber;
+	std::string	darkestSecret;
 	Contact	new_Contact;
 
 	while (1)
 	{
-		cout << "1) Enter firstName\n";
-		cin >> firstName;
-		cout << "2) Enter lastName\n";
-		cin >> lastName;
-		cout << "3) Enter nickName\n";
-		cin >> nickName;
-		cout << "4) Enter phoneNumber\n";
-		cin >> phoneNumber;
-		cout << "5) Enter darkestSecret\n";
-		cin >> darkestSecret;
+		std::cout << "1) Enter firstName\n";
+		std::cin >> firstName; // add control
+		std::cout << "2) Enter lastName\n";
+		std::cin >> lastName; // add controll
+		std::cout << "3) Enter nickName\n";
+		std::cin >> nickName; // ADD CONTROL
+		std::cout << "4) Enter phoneNumber\n";
+		std::cin >> phoneNumber;
+		std::cout << "5) Enter darkestSecret\n";
+		std::cin >> darkestSecret;
 		if (!firstName.empty() && !lastName.empty() && !nickName.empty()
 			&& !phoneNumber.empty() && !darkestSecret.empty())
 			break ;
-		cout << RED << "A saved contact can’t have empty field\n" << RESET;
+		std::cout << RED << "A saved contact can’t have empty field\n" << RESET;
 	}
 	new_Contact = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	if (this->_iterators < 8)
@@ -63,20 +62,20 @@ void	PhoneBook::Add()
 		this->_contacts[this->_iterators] = new_Contact;
 		this->_iterators++;
 	}
-	cout << GREEN << "Contact created\n" << RESET;
+	std::cout << GREEN << "Contact created\n" << RESET;
 	return ;
 }
 
 void	PhoneBook::Search()
 {
-	string definitions[4] = {"INDEX", "FIRST NAME", "LAST NAME", "NICKNAME"};
-	string content[4];
-	stringstream sos;
+	std::string definitions[4] = {"INDEX", "FIRST NAME", "LAST NAME", "NICKNAME"};
+	std::string content[4];
+	std::stringstream sos;
 	int count;
 
 	if (_contacts[0].getFirstName().empty())
 	{
-		cout << RED << "The phonebook is empty\n" << RESET ;
+		std::cout << RED << "The phonebook is empty\n" << RESET ;
 		return ;
 	}
 	PhoneBook::PrintLine();
@@ -97,26 +96,26 @@ void	PhoneBook::Search()
 		count--;
 	}
 	int	input;
-	cout << "\nEnter the index of the contact you want to display: ";
-	if (cin >> input)
-		cout << "Looking for contact at index " << input << endl;
+	std::cout << "\nEnter the index of the contact you want to display: ";
+	if (std::cin >> input)
+		std::cout << "Looking for contact at index " << input << std::endl;
 	else
 	{
-		cin.clear();
-		cout << RED << "Invalid input\n" << RESET;
+		std::cin.clear();
+		std::cout << RED << "Invalid input\n" << RESET;
 		return ;
 	}
 	
 	if (input >= 8 || input < 0)
 	{
-		cout << RED << "Out of bound, be carefull\n" << RESET;
+		std::cout << RED << "Out of bound, be carefull\n" << RESET;
 		return ;
 	}
-	cout << "First name: "<< YELLOW << _contacts[input].getFirstName() << RESET << endl;
-	cout << "Last name: " << YELLOW << _contacts[input].getLastName() << RESET << endl;
-	cout << "Nickname: " << YELLOW << _contacts[input].getNickname() << RESET << endl;
-	cout << "Phone number: " << YELLOW << _contacts[input].getPhoneNumber() << RESET << endl;
-	cout << "Darkest Secret: " << YELLOW << _contacts[input].getDarkestSecret() << RESET << endl;
+	std::cout << "First name: "<< YELLOW << _contacts[input].getFirstName() << RESET << std::endl;
+	std::cout << "Last name: " << YELLOW << _contacts[input].getLastName() << RESET << std::endl;
+	std::cout << "Nickname: " << YELLOW << _contacts[input].getNickname() << RESET << std::endl;
+	std::cout << "Phone number: " << YELLOW << _contacts[input].getPhoneNumber() << RESET << std::endl;
+	std::cout << "Darkest Secret: " << YELLOW << _contacts[input].getDarkestSecret() << RESET << std::endl;
 
 	return ;
 }
@@ -125,22 +124,22 @@ void	PhoneBook::PrintLine()
 {
 	for (int i = 0; i < 4; i++)
 	{
-	 cout << "|";
+		std::cout << "|";
 		for (int j= 0; j < 10; j++)
-			cout << "-";
+			std::cout << "-";
 	}
-	cout << "|\n";
+	std::cout << "|\n";
 }
 
-void	PhoneBook::PrintLine(string param[4])
+void	PhoneBook::PrintLine(std::string param[4])
 {
 	for (int i = 0; i < 4; i++)
 	{
-		cout << "|";
+		std::cout << "|";
 		if (!param[i].empty() && param[i].length() > 10)
 			param[i] = param[i].substr(0, 9) + ".";
-		cout << right << setw(10) << param[i]; // Right align with field width of 10
+		std::cout << std::right << std::setw(10) << param[i]; // Right align with field width of 10
 	}
-	cout << "|\n";
+	std::cout << "|\n";
 }
 

@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:19:18 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 12:21:31 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 16:07:16 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,24 @@ int main(void)
 	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t; // A pair of iterators
 
 	// Initialize arrays with the initial deposit amounts, deposit amounts, and withdrawal amounts
-	int const amounts[] = {42, 54, 957, 432, 1234, 0, 754, 16576};
-	int const d[] = {5, 765, 564, 2, 87, 23, 9, 20};
-	int const w[] = {321, 34, 657, 4, 76, 275, 657, 7654};
+	int const amounts[] = {42,  54, 957, 432, 1234,  0,  754, 16576};
+	int const d[] =       { 5, 765, 564,   2,   87,  23,   9,    20};
+	int const w[] =       {321, 34, 657,   4,   76, 275, 657,  7654};
 
 	// Create vectors from the arrays
 	accounts_t accounts(amounts, amounts + sizeof(amounts) / sizeof(int));
+	// deposits
 	ints_t deposits(d, d + sizeof(d) / sizeof(int));
+	// withdrawals
 	ints_t withdrawals(w, w + sizeof(w) / sizeof(int));
 
 	// Create iterators pointing to the beginning and end of the vectors
 	accounts_t::iterator acc_begin = accounts.begin();
 	accounts_t::iterator acc_end = accounts.end();
+	// Deposits
 	ints_t::iterator dep_begin = deposits.begin();
 	ints_t::iterator dep_end = deposits.end();
+	// Withdrawals
 	ints_t::iterator wit_begin = withdrawals.begin();
 	ints_t::iterator wit_end = withdrawals.end();
 

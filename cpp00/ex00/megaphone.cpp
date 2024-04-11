@@ -3,10 +3,9 @@
 #include <cctype>
 #include <string>
 
-using namespace std;
 void	no_args(void)
 {
-	cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 }
 
 void	make_upper(char **av)
@@ -20,7 +19,7 @@ void	make_upper(char **av)
 		j = 0;
 		while (av[i][j] != 0)
 		{
-			cout << (char)toupper(av[i][j]);
+		 std::cout << (char)std::toupper(av[i][j]);
 			j++;
 		}
 	i++;
@@ -29,6 +28,6 @@ void	make_upper(char **av)
 int	main(int ac, char **av)
 {
 	(ac == 1) ? no_args() : make_upper(av);
-	cout << endl;
+	std::cout << std::endl;
 	return 0;
 }

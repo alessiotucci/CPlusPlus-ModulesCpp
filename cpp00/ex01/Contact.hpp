@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:14:37 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/10 20:07:21 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 15:57:32 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,24 @@
 # define BG_CYAN         "\033[46m"
 # define BG_YELLOW       "\033[43m"
 # define BG_RED          "\033[41m"
-using std::string;
 
 class	Contact
 {
 public:
 	Contact();
-	Contact(string firstName, string lastName, string nickname, string phoneNumber, string darkestSecret);
-	string	getFirstName();
-	string	getLastName();
-	string	getNickname();
-	string	getPhoneNumber();
-	string	getDarkestSecret();
+	Contact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
+	std::string	getFirstName();
+	std::string	getLastName();
+	std::string	getNickname();
+	std::string	getPhoneNumber();
+	std::string	getDarkestSecret();
 
 private:
-	string	_firstName;
-	string	_lastName;
-	string	_nickname;
-	string	_phoneNumber;
-	string	_darkestSecret;
+	std::string	_firstName;
+	std::string	_lastName;
+	std::string	_nickname;
+	std::string	_phoneNumber;
+	std::string	_darkestSecret;
 };
 
 #endif

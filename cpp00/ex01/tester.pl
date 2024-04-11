@@ -16,17 +16,20 @@ my @contacts = (
 	['Flavio', 'Biondo', 'flavietto', '098-765-4321', 'Loves PIng pong'],
 	['Ruggero', 'Dolzi', 'ruggy', '098-765-4321', 'Loves IBM'],
 	['Daniel', 'Ugzebu', 'young bull', '098-765-4321', 'Loves womens'],
-	['Osema', 'Fadhesl', 'osena', '098-765-4321', 'Loves sicily'],
+	['Osema', 'Fadhel', 'oscena', '398-765-4321', 'Loves sicily'],
 	['Fadhtes', 'Ciccio', 'jadodfe', '098-765-4321', 'Loves Python'],
 	# Add more contacts here...
 );
-
+#my @index = (
+#	0, 1, 2, 3, 4, 5, 6, 7);
 # Send the ADD commands
-for my $contact (@contacts) {
-    print $pipe "ADD\n";
-    for my $field (@$contact) {
-        print $pipe "$field\n";
-    }
+for my $contact (@contacts)
+{
+	print $pipe "ADD\n";
+	for my $field (@$contact)
+	{
+		print $pipe "$field\n";
+	}
 }
 
 # Send the SEARCH command

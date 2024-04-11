@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:19:24 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/11 10:52:14 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/11 15:00:48 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main()
 		}
 		else
 		{
+			cin.clear();
 			cout << "error with the cin\n";
 			return (-1);
 		}
