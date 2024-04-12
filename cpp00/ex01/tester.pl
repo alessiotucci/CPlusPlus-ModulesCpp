@@ -30,7 +30,7 @@ my @contacts = (
 	['Dario', 'abi-rachets', 'lebanese', '098-765-4321', 'Loves C#'],
 	['Venelin', 'Zashef', 'venny', '098-765-4321', 'Loves Bulgaria'],
 	['Flavio', 'Biondo', 'flavietto', '098-765-4321', 'Loves PIng pong'],
-	['Ruggero', 'Dolzi', 'ruggy', '098-765-4321', 'Loves_IBM'],
+	['Ruggero', '        Dolzi', 'ruggy', '098-765-4321', 'Loves_IBM'],
 	['Daniel', 'Ugzebu', 'youngbull', '098-765-4321', 'Loves womens'],
 	['Osema', 'Fadhel', 'oscena', '398-765-4321', 'Loves sicily'],
 	['Lorenzo', 'Nicotera', 'jadodfe', '098-765-4321', 'Loves Python'],

@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:50:34 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/12 11:19:11 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/12 14:22:41 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int		Account::checkAmount( void ) const
 
 void	Account::displayStatus( void ) const
 {
-	Account::_displayTimestamp();
+	_displayTimestamp();
 	std::cout	<< "index:" << _accountIndex
 				<< ";amount:" << _amount
 				<< ";deposits:" << _nbDeposits
