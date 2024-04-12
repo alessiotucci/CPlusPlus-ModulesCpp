@@ -6,21 +6,24 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:28:34 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 17:29:18 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/12 22:09:07 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 
+NAME = BraiiiiiiinnnzzzZ
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = 
+SOURCE = Zombie.cpp \
+		 newZombie.cpp \
+		 randomChump.cpp \
+		 main.cpp \
 
-HEADERS = 
+HEADERS = Zombie.hpp
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
