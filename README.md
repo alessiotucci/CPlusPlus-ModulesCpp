@@ -19,8 +19,8 @@ Those modules of C++ are designed to help you understand the specifities of the 
 # Cpp 00
 | Module | Exercise | Title | About |
 |---|---|---|---|
-| CPP00 | ex00 | Megaphone |...|
-| CPP00 | ex01 | Phonebook |...|
+| CPP00 | ex00 | Megaphone |Small program, you will have to use the `std::toupper()` function |
+| CPP00 | ex01 | Phonebook |Small but tedious program, you will use `std::cin`, `std::getline`, and `std::setw`|
 | CPP00 | ex02 | The Job of your Dreams |...|
 
 # Cpp 01
