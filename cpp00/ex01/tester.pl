@@ -2,9 +2,11 @@
 use strict;
 use warnings;
 use Term::ANSIColor;
+use Time::HiRes;
 
 print
-"\n  _____                  _     _                  _                 
+"\n
+  _____                  _     _                  _                 
  |  __ \                | |   | |                | |                
  | |__) |   ___   _ __  | |   | |_    ___   ___  | |_    ___   _ __ 
  |  ___/   / _ \ | '__| | |   | __|  / _ \ / __| | __|  / _ \ | '__|
@@ -43,7 +45,7 @@ for my $i (0..$#contacts)
 	for my $field (@$contact)
 	{
 		print $pipe "$field\n";
-		sleep(1.1);
+		sleep(0.9);
 	}
 }
 
@@ -53,7 +55,7 @@ for my $i (1..9)
 	print color('bold green'), "🕺 Checking the SEARCH function for index $i...\n", color('reset');
 	print $pipe "SEARCH\n";
 	print $pipe "$i\n";
-	sleep(1.1);
+	sleep(1);
 }
 
 # Send the EXIT command
