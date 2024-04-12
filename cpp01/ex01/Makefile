@@ -6,21 +6,23 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:30:09 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 17:30:17 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/12 22:26:53 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 
+NAME = "Moar brainz!"
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = 
+SOURCE = Zombie.cpp \
+		 main.cpp \
+		 zombieHorde.cpp \
 
-HEADERS = 
+HEADERS = Zombie.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
