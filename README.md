@@ -2,9 +2,9 @@
 Those modules of C++ are designed to help you understand the specifities of the language when compared to C. Time to dive into Object Oriented Programming!
 
 
-|Modules|Key Concepts| Useful Resources | 
+|Modules|Key Concepts| Final result | 
 |-------|------------|------------------|
-| `c++ 00` |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ... | 
+| `c++ 00` |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/61e3b72c-e8c7-4d6d-9d37-84b8806397ae)| 
 | `c++ 01` |Memory allocation, pointers to members, references, switch statement.| .. | 
 | `c++ 02` | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ,, | 
 | `c++ 03` | Inheritance in CPP.| .. | 
