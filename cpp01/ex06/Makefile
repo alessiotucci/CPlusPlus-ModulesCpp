@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:33:58 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 17:34:03 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/13 14:13:23 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,15 @@
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 
+NAME = harlFilter
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = 
+SOURCE = Harl.cpp \
+		 main.cpp \
 
-HEADERS = 
+HEADERS = Harl.hpp
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
