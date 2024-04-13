@@ -6,21 +6,21 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:31:35 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 17:31:48 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/13 10:37:52 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 
+NAME = "HI THIS IS BRAIN"
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = 
+SOURCE = main.cpp
 
-HEADERS = 
+#HEADERS = 
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
@@ -59,7 +59,7 @@ all: $(NAME)
 # *******************************
 $(NAME): $(OBJ)
 	@echo "$(GREEN)Linking...$(RESET)\n"
-	$(CXX) $(FLAG) -o $(NAME) $(OBJ) $(HEADERS)
+	$(CXX) $(FLAG) -o $(NAME) $(OBJ) #$(HEADERS)
 	@echo "$(GREEN)Done!\n$(RESET)"
 
 %.o: %.cpp

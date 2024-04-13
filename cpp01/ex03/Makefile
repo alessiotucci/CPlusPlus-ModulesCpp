@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:32:17 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 17:32:21 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/13 11:22:58 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,19 @@
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 
+NAME = Unnecessary_violence
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = 
+SOURCE = Weapon.cpp \
+		  HumanA.cpp \
+		  HumanB.cpp \
+		  main.cpp \
 
-HEADERS = 
+HEADERS = Weapon.hpp \
+		  HumanA.hpp \
+		  HumanB.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
