@@ -6,10 +6,12 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:03:36 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/12 22:45:56 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/13 14:38:40 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 // Zombie class definition
 #include <iostream>
 # define BLUE    "\033[1;34m"
@@ -41,3 +43,4 @@ public:
 
 Zombie* zombieHorde( int N, std::string name );
 
+#endif

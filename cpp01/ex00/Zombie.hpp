@@ -6,10 +6,12 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:53:33 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/12 22:11:55 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/13 14:37:57 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 // Zombie class definition
 #include <iostream>
 /* Define color macros */
@@ -45,3 +47,4 @@ public:
 // outside the class I can put some outer methods
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
+#endif
