@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:32:41 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 17:32:45 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/13 11:41:42 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,15 @@
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 
+NAME = "Sed is for losers"
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = 
+SOURCE = main.cpp \
+		 SedLoser.cpp \
 
-HEADERS = 
+HEADERS = SedLoser.hpp
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
