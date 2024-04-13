@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:06:09 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/13 15:32:32 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/13 16:41:02 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 HumanB::HumanB(std::string name)
 {
 	this->name = name;
+	this->weapon = NULL;
 }
 
 void HumanB::setWeapon(Weapon& newWeapon)
@@ -26,9 +27,9 @@ void HumanB::setWeapon(Weapon& newWeapon)
 void HumanB::attack() const
 {
 	//TODO: Add the check for null since we are using a pointer
-	std::cout << name
-			   << " attack with their "
-			   << weapon->getType()
-			   << std::endl;
+	if (weapon)
+		std::cout << name << " attack with their " << weapon->getType() << "\n";
+	else
+		std::cout << name << " attack with without any weapon " << "\n";
 }
 
