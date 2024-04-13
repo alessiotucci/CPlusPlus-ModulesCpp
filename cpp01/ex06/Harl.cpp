@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:08:19 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/13 14:16:55 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/13 16:21:18 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,65 +19,63 @@ Harl::~Harl() {}
 
 void Harl::_debug()
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!\n";
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!\n"
+			<< std::endl;
 }
 
 void Harl::_info()
 {
-	std::cout << GREEN << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!\n" << RESET;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << GREEN << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!\n"
+		<< RESET
+		<< std::endl;
 }
 
 void Harl::_warning()
 {
-	std::cout << YELLOW << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month.\n" << RESET;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << YELLOW << "I think I deserve to have some extra bacon for free."
+			  << std::endl
+			  <<"I’ve been coming for years whereas you started working here since last month.\n"
+			  << RESET << std::endl;;
 }
 
 void Harl::_error()
 {
-	std::cout << RED << "This is unacceptable! I want to speak to the manager now.\n" << RESET;
+	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << RED << "This is unacceptable! I want to speak to the manager now.\n"
+			  << RESET<< std::endl;;
 }
 
 void Harl::complain( std::string level)
 {
-//	if (level.compare("DEBUG") == 0)
-//		this->*_debug();
-//	if (level.compare("INFO") == 0)
-//		this->*_info();
-//	if (level.compare("WARNING") == 0)
-//		this->*_warning();
-//	if (level.compare("ERROR") == 0)
-//		this->*_error();
-/*			TODO: study well this part! */
-// Declare a member function pointer and initialize it to NULL
-//
-    void (Harl::*complaint)() = NULL;
-/*
-    // Assign the appropriate member function to the pointer
-    if (level == "DEBUG")
-        complaint = &Harl::_debug;
-    else if (level == "INFO")
-        complaint = &Harl::_info;
-    else if (level == "WARNING")
-        complaint = &Harl::_warning;
-    else if (level == "ERROR")
-        complaint = &Harl::_error;
-*/
+	// create here an array instead of a single elements
+	void (Harl::*complaint[4])() ={&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+
+	int start_level = 0;
+	/*void (Harl::*complaint)() = NULL;*/
+	if (level.empty())
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]\n";
+		return ;
+	}
 	switch (level[0])
 	{
 		case 'D':
-		complaint = &Harl::_debug;
+		start_level = 0;
 		break ;
 
 		case 'I':
-		complaint = &Harl::_info;
+		start_level = 1;
 		break ;
 
 		case 'W':
-		complaint = &Harl::_warning;
+		start_level = 2;
 		break ;
 
 		case 'E':
-		complaint = &Harl::_error;
+		start_level = 3;
 		break ;
 
 		default:
@@ -85,7 +83,11 @@ void Harl::complain( std::string level)
 		break;
 	}
 
-    // If a valid level was provided, call the corresponding function
-    if (complaint != NULL)
-        (this->*complaint)();
+	// If a valid level was provided, call the corresponding function
+	// here instead of a if, create a while cicle!
+	/*if (complaint != NULL)*/
+	for(int i = start_level; i < 4; i++)
+	{
+		(this->*complaint[i])();
+	}
 }
