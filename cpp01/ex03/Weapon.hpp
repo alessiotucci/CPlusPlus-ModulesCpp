@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:05:01 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/13 14:40:32 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/13 15:33:44 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Weapon
 private:
 	std:: string type;
 public:
-	const string&	getType();
+	const	std::string&	getType() const;
 	void	setType(std::string param);
-	Weapon(std:: string boh);
+	Weapon(std:: string _type);
 	~Weapon();
 };
 #endif
