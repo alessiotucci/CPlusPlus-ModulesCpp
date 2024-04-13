@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:04:40 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/13 16:38:05 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/13 17:52:09 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,19 @@ int	main()
 	}
 
 	{
-		//Weapon club = Weapon("crude spiked club");
+		std::cout << "JIM IS A HUMAN B" << std::endl;
 		HumanB jim("Jim");
-		//jim.setWeapon(0);
-		//club.setType("some other type of club");
 		jim.attack();
+	}
+	{
+		std::cout << "JOSEPH IS A HUMAN B" << std::endl;
+		Weapon club = Weapon("crude spiked club");
+		HumanB joseph("Joseph");
+		joseph.setWeapon(club);
+		club.setType("kalashnikov");
+		joseph.attack();
+		club.setType("small gun");
+		joseph.attack();
 	}
 return (0);
 }
