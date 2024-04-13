@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:32:41 by atucci            #+#    #+#              #
-#    Updated: 2024/04/13 11:41:42 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/13 17:00:16 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = "Sed is for losers"
+NAME = "Sed_is_for_losers"
 
 # *************************************************
 # setting up the variable that will be the source *
