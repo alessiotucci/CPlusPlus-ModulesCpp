@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:32:41 by atucci            #+#    #+#              #
-#    Updated: 2024/04/14 15:36:27 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/14 15:54:56 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ all: $(NAME)
 # *******************************
 $(NAME): $(OBJ)
 	@echo "$(GREEN)Linking...$(RESET)\n"
-	$(CXX) -o $(NAME) $(OBJ)
+	$(CXX) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Done!\n$(RESET)"
 
 %.o: %.cpp
