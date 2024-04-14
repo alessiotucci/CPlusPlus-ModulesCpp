@@ -6,10 +6,11 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:27:20 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/14 13:15:46 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/14 22:06:46 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
 #include <iostream>
 int main( void )
 {
