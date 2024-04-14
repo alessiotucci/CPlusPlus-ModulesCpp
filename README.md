@@ -44,6 +44,13 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | CPP02 | ex02 | Now we’re talking |...|
 | CPP02 | ex03 | BSP |...|
 
+|  short description | file | 
+|----|----| 
+|    | [1](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html) | .. |  
+|    | [2](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html) | ... | 
+|    | [3](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html) | ... | 
+|    | [4](https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html) | .. | 
+
 # Cpp 03
  | Module | Exercise | Title |About |
 |---|---|---|---|
