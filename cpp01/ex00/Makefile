@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 17:28:34 by atucci            #+#    #+#              #
-#    Updated: 2024/04/12 22:09:07 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/14 15:27:33 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,14 +28,12 @@ HEADERS = Zombie.hpp
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
 # ***********************************************************
-FLAG = -Wall -Wextra -Werror -std=c++98
-
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # ***************************************************************
 # setting up the compiler that will be used for the compilation *
 # ***************************************************************
 CXX = c++
-
 
 # ***************************************************************
 # using the implicit rules of makefile, we will create the objs *
@@ -62,14 +60,13 @@ all: $(NAME)
 # *******************************
 $(NAME): $(OBJ)
 	@echo "$(GREEN)Linking...$(RESET)\n"
-	$(CXX) $(FLAG) -o $(NAME) $(OBJ) $(HEADERS)
+	$(CXX) -o $(NAME) $(OBJ)
 	@echo "$(GREEN)Done!\n$(RESET)"
 
 %.o: %.cpp
 	@echo "$(CYAN)Compiling $<...$(RESET)"
-	$(CXX) $(FLAG) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 	@echo "$(CYAN)Done compiling $<.$(RESET)\n"
-
 
 # ****************************************
 #  Rule for cleaning up the object files *
