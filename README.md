@@ -5,7 +5,7 @@ Those modules of C++ are designed to help you understand the specifities of the 
 |Modules|Key Concepts| Final result | 
 |-------|------------|------------------|
 | `c++ 00` |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/61e3b72c-e8c7-4d6d-9d37-84b8806397ae)| 
-| `c++ 01` |Memory allocation, pointers to members, references, switch statement.| .. | 
+| `c++ 01` |Memory allocation, pointers to members, references, switch statement.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/b6a271e8-1c5f-46cc-8d0b-b9b84f2936e3)| 
 | `c++ 02` | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ,, | 
 | `c++ 03` | Inheritance in CPP.| .. | 
 | `c++ 04` | Subtype polymorphism, abstract classes and interfaces in CPP.| .. | 
