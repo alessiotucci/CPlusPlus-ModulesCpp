@@ -6,14 +6,14 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 12:25:47 by atucci            #+#    #+#              #
-#    Updated: 2024/04/14 19:01:04 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/14 21:22:00 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = "Moar brainz!"
+NAME = Fixed
 
 # *************************************************
 # setting up the variable that will be the source *

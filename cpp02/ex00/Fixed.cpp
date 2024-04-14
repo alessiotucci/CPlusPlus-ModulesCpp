@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:25:54 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/14 20:05:55 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/14 21:15:57 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 const int Fixed::_bits = 8;
 Fixed::Fixed()
 {
-	std::cout << GREEN << "Constructor called" << RESET << std::endl;
+	std::cout << GREEN << "Default Constructor called" << RESET << std::endl;
 	this->_value = 0;
 }
 
@@ -36,10 +36,10 @@ Fixed::Fixed(const Fixed& other)
 Fixed& Fixed::operator=(const Fixed &obj)
 {
 	// self-assignment guard
-	std::cout << BG_YELLOW << "Copy constructor called" << BG_RESET << std::endl;
+	std::cout << BG_YELLOW << "Copy assignment operator called" << BG_RESET << std::endl;
 	if (this == &obj)
 		return *this;
-	_value = obj._value; // can handle self-assignment
+	_value = obj.getRawBits(); // can handle self-assignment
 
 	// return the existing object so we can chain this operator
 	return *this;
