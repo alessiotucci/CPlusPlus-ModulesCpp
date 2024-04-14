@@ -27,13 +27,13 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
  | Module | Exercise | Title |About |
 |---|---|---|---|
-| CPP01 | ex00 | BraiiiiiiinnnzzzZ |...|
-| CPP01 | ex01 | Moar brainz! |...|
-| CPP01 | ex02 | HI THIS IS BRAIN |...|
-| CPP01 | ex03 | Unnecessary violence |...|
-| CPP01 | ex04 | Sed is for losers |...|
-| CPP01 | ex05 | Harl 2.0 |...|
-| CPP01 | ex06 | Harl filter |...|
+| CPP01 | ex00 | BraiiiiiiinnnzzzZ | stack vs heap |
+| CPP01 | ex01 | Moar brainz! | create an array of objects|
+| CPP01 | ex02 | HI THIS IS BRAIN |learn about reference|
+| CPP01 | ex03 | Unnecessary violence | start using the  reference|
+| CPP01 | ex04 | Sed is for losers | how to handle file in c++ |
+| CPP01 | ex05 | Harl 2.0 | pointer to functions |
+| CPP01 | ex06 | Harl filter |switch statements|
 
 # Cpp 02
 
