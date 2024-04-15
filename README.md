@@ -44,12 +44,25 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | CPP02 | ex02 | Now we’re talking |...|
 | CPP02 | ex03 | BSP |...|
 
+<details>
+ <summary>
+ <h3> Fixed Points rabbit hole 🐇</h3>
+</summary>
+ 
 |  short description | file | 
 |----|----| 
 |    | [1](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html) | .. |  
 |    | [2](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html) | ... | 
 |    | [3](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html) | ... | 
 |    | [4](https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html) | .. | 
+|    | [![video 1](https://ytcards.demolab.com/?id=Is67DfCdvcE " ")](https://www.youtube.com/watch?v=Is67DfCdvcE) | .. | 
+|    | [![video 2](https://ytcards.demolab.com/?id=ZMsrZvBmQnU " ")](https://www.youtube.com/watch?v=ZMsrZvBmQnU) | .. | 
+|    |[![video pt1](https://ytcards.demolab.com/?id=f4ekifyijIg " ")](https://www.youtube.com/watch?v=f4ekifyijIg)| .. | 
+|    |[![video pt2](https://ytcards.demolab.com/?id=782QWNOD_Z0 " ")](https://www.youtube.com/watch?v=782QWNOD_Z0)| .. | 
+
+
+
+</details>
 
 # Cpp 03
  | Module | Exercise | Title |About |
