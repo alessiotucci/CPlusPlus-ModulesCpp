@@ -6,12 +6,12 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:27:23 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/14 22:11:15 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/15 15:56:13 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
+#include <cmath>
 const int Fixed::_bits = 8;
 Fixed::Fixed()
 {
@@ -22,16 +22,14 @@ Fixed::Fixed()
 // new ctor
 Fixed::Fixed(const int number)
 {
-	(void)number;
-	this->_value = 0;
+	this->_value = (number << this->_bits);
 	std::cout << "Int Constructor called" << std::endl;
 }
 
 // new ctor with float
 Fixed::Fixed(const float number)
 {
-	(void)number;
-	this->_value = 0;
+	this->_value = roundf(number * (1 << this->_bits));
 	std::cout << "Float Constructor called" << std::endl;
 }
 
@@ -61,7 +59,7 @@ Fixed& Fixed::operator=(const Fixed &obj)
 // overload of the insertion operator
 std::ostream& operator<<(std::ostream& output, const Fixed param)
 {
-	output << param.getRawBits();
+	output << param.toFloat();
 	return output;
 }
 
@@ -78,11 +76,11 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	return 0;
+	return ((float)this->_value / (1 << this->_bits));
 }
 
 int Fixed::toInt( void ) const
 {
-	return 0;
+	return (this->_value >> this->_bits);
 }
 
