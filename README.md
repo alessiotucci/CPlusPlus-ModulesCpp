@@ -17,11 +17,11 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 ---
 # Cpp 00
-| Module | Exercise | Title | About |
-|---|---|---|---|
-| CPP00 | ex00 | Megaphone |Small program, you will have to use the `std::toupper()` function |
-| CPP00 | ex01 | Phonebook |Small but tedious program, you will use `std::cin`, `std::getline`, and `std::setw`|
-| CPP00 | ex02 | The Job of your Dreams |Very tedious, you are given a .hpp a main and a log file and you have to implement the cpp class. |
+| Module | Exercise | Title | About | video |
+|---|---|---|---|---|
+| CPP00 | ex00 | Megaphone |Small program, you will have to use the `std::toupper()` function |  [![video 1](https://ytcards.demolab.com/?id=1xY0rF399j0 " ")](https://www.youtube.com/watch?v=1xY0rF399j0)  |
+| CPP00 | ex01 | Phonebook |Small but tedious program, you will use `std::cin`, `std::getline`, and `std::setw`|  [![video 2](https://ytcards.demolab.com/?id=hKqNb3Wo6z0 " " )](https://www.youtube.com/watch?v=hKqNb3Wo6z0) |
+| CPP00 | ex02 | The Job of your Dreams |Very tedious, you are given a .hpp a main and a log file and you have to implement the cpp class. Heavy use ot the `static` keyword  in the header, so you will learn about it during the exercise |  [![video 3](https://ytcards.demolab.com/?id=JJC1Ws0GXAs " ")](https://www.youtube.com/watch?v=JJC1Ws0GXAs)  |
 
 # Cpp 01
 
