@@ -39,7 +39,7 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 | Exercise | Title | About | video |
 |----------|-------|-------|-------|
-| ex00 | My First Class in Orthodox Canonical Form |...| [![video 1](https://ytcards.demolab.com/?id=Ldv5i14UhTA " ")](https://www.youtube.com/watch?v=Ldv5i14UhTA) |
+| ex00 | My First Class in [`Orthodox Canonical Form`](https://www.francescmm.com/orthodox-canonical-class-form/) |...| [![video 1](https://ytcards.demolab.com/?id=Ldv5i14UhTA " ")](https://www.youtube.com/watch?v=Ldv5i14UhTA) |
 | ex01 | Towards a more useful fixed-point number class |...| [![video 1](https://ytcards.demolab.com/?id=9tHu4mWtrnM " ")](https://www.youtube.com/watch?v=9tHu4mWtrnM) |
 | ex02 | Now we’re talking |...| [![video 1](https://ytcards.demolab.com/?id=ojUijPwTFrs " ")](https://www.youtube.com/watch?v=ojUijPwTFrs) |
 | ex03 | BSP |...| [![video 1](https://ytcards.demolab.com/?id=qObJQesvZUU " ")](https://www.youtube.com/watch?v=qObJQesvZUU) |
