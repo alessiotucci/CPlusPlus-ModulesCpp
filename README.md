@@ -39,10 +39,10 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 | Exercise | Title | About | video |
 |----------|-------|-------|-------|
-| ex00 | My First Class in Orthodox Canonical Form |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
-| ex01 | Towards a more useful fixed-point number class |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
-| ex02 | Now we’re talking |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
-| ex03 | BSP |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex00 | My First Class in Orthodox Canonical Form |...| [![video 1](https://ytcards.demolab.com/?id=Ldv5i14UhTA " ")](https://www.youtube.com/watch?v=Ldv5i14UhTA) |
+| ex01 | Towards a more useful fixed-point number class |...| [![video 1](https://ytcards.demolab.com/?id=9tHu4mWtrnM " ")](https://www.youtube.com/watch?v=9tHu4mWtrnM) |
+| ex02 | Now we’re talking |...| [![video 1](https://ytcards.demolab.com/?id=ojUijPwTFrs " ")](https://www.youtube.com/watch?v=ojUijPwTFrs) |
+| ex03 | BSP |...| [![video 1](https://ytcards.demolab.com/?id=qObJQesvZUU " ")](https://www.youtube.com/watch?v=qObJQesvZUU) |
 
 `small rabbit hole down there, click `
 <details>
@@ -61,22 +61,24 @@ Those modules of C++ are designed to help you understand the specifities of the 
 |    |[![video pt1](https://ytcards.demolab.com/?id=f4ekifyijIg " ")](https://www.youtube.com/watch?v=f4ekifyijIg)| .. | 
 |    |[![video pt2](https://ytcards.demolab.com/?id=782QWNOD_Z0 " ")](https://www.youtube.com/watch?v=782QWNOD_Z0)| .. | 
 
-
-
+ 
+<!---
+[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+-->
 </details>
 
 # Cpp 03
- | Module | Exercise | Title |About |
-|---|---|---|---|
-| CPP03 | ex00 | Aaaaand... OPEN! |...|
-| CPP03 | ex01 | Serena, my love! |...|
-| CPP03 | ex02 | Repetitive work |...|
-| CPP03 | ex03 | Now it’s weird! |...|
+| Exercise | Title | About | Video |
+|----------|-------|-------|-------|
+| ex00     | Aaaaand... OPEN! |...| [![video 1](https://ytcards.demolab.com/?id=rJlJ8qqVm3k " ")](https://www.youtube.com/watch?v=rJlJ8qqVm3k) |
+| ex01     | Serena, my love! |...|[![video 1](https://ytcards.demolab.com/?id=MmR_qpYthP8 " ")](https://www.youtube.com/watch?v=MmR_qpYthP8) |
+| ex02     | Repetitive work |...|[![video 1](https://ytcards.demolab.com/?id=eWx6AMcNRr0 " ")](https://www.youtube.com/watch?v=eWx6AMcNRr0) |
+| ex03     | Now it’s weird! |...|[![video 1](https://ytcards.demolab.com/?id=sswTE0u0r7g " ")](https://www.youtube.com/watch?v=sswTE0u0r7g) |
 
 # Cpp 04
- | Module | Exercise | Title |About |
-|---|---|---|---|
-| CPP04 | ex00 | Polymorphism |...|
-| CPP04 | ex01 | I don’t want to set the world on fire |...|
-| CPP04 | ex02 | Abstract class |...|
-| CPP04 | ex04 | Interface & recap |...|
+| Exercise | Title | About | video | 
+|----------|-------|-------|-------|
+| ex00     | Polymorphism |...|[![video 1](https://ytcards.demolab.com/?id=-FUhG98hdLI " ")](https://www.youtube.com/watch?v=-FUhG98hdLI) |
+| ex01     | I don’t want to set the world on fire |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02     | Abstract class |...| [![video 1](https://ytcards.demolab.com/?id=wE0_F4LpGVc " ")](https://www.youtube.com/watch?v=wE0_F4LpGVc) |
+| ex04     | Interface & recap |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
