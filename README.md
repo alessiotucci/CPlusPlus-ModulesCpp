@@ -28,7 +28,7 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | Exercise | Title | About | Video | 
 |----------|-------|-------|-------|
 | ex00 | BraiiiiiiinnnzzzZ | stack vs heap | [![video 1](https://ytcards.demolab.com/?id=wopESdEVJs4 " ")](https://www.youtube.com/watch?v=wopESdEVJs4) |
-| ex01 | Moar brainz! | create an array of objects| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01 | Moar brainz! | create an array of objects| [![video 1](https://ytcards.demolab.com/?id=ENnnAjZcuo0 " ")](https://www.youtube.com/watch?v=ENnnAjZcuo0) |
 | ex02 | HI THIS IS BRAIN | learn about reference| [![video 1](https://ytcards.demolab.com/?id=e3DN1RaYVYQ " ")](https://www.youtube.com/watch?v=e3DN1RaYVYQ) |
 | ex03 | Unnecessary violence | start using the  reference | [![video 1](https://ytcards.demolab.com/?id=IzoFn3dfsPA " ")](https://www.youtube.com/watch?v=IzoFn3dfsPA) |
 | ex04 | Sed is for losers | how to handle file in c++ | [![video 1](https://ytcards.demolab.com/?id=wVhCnzFwxt4 " ")](https://www.youtube.com/watch?v=wVhCnzFwxt4) |
