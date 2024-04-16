@@ -6,21 +6,24 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 14:46:53 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 15:42:40 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/16 17:48:10 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = ScavTrap
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE =  main.cpp \
+		  ClapTrap.cpp \
+		  ScavTrap.cpp \
 
-HEADERS =
+HEADERS = ClapTrap.hpp \
+		  ScavTrap.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
