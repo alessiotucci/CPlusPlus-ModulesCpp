@@ -75,8 +75,10 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | ex02     | Repetitive work |...|[![video 1](https://ytcards.demolab.com/?id=eWx6AMcNRr0 " ")](https://www.youtube.com/watch?v=eWx6AMcNRr0) |
 | ex03     | Now it’s weird! |...|[![video 1](https://ytcards.demolab.com/?id=sswTE0u0r7g " ")](https://www.youtube.com/watch?v=sswTE0u0r7g) |
 
-[`bonus`](https://www.youtube.com/watch?v=jOnVin6eHV8)
-
+| extra | 
+|-------| 
+| [`Destructor with inheritance`](https://www.youtube.com/watch?v=jOnVin6eHV8) |
+| [`protected keyword`](https://www.youtube.com/watch?v=jFtvOnkf9Dw) |
 # Cpp 04
 | Exercise | Title | About | video | 
 |----------|-------|-------|-------|
