@@ -6,21 +6,28 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 14:59:32 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 15:43:06 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/16 19:42:02 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = DiamondTrap
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE =  main.cpp \
+SOURCE = main.cpp \
+		 ClapTrap.cpp \
+		 ScavTrap.cpp \
+		 FragTrap.cpp \
+		 DiamondTrap.cpp \
 
-HEADERS =
+HEADERS = ClapTrap.hpp \
+		  ScavTrap.hpp \
+		  FragTrap.hpp \
+		  DiamondTrap.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
