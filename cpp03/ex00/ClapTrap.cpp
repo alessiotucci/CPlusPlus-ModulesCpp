@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:46:00 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 16:23:02 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/16 17:01:07 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->_name = name;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
-	this->_attackDamage = 1;// it was zero
+	this->_attackDamage = 0;// it was zero
 }
 
 // 2. Destructor
