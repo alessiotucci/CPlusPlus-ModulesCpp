@@ -6,7 +6,7 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 14:52:02 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 15:42:56 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/16 19:03:54 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,13 @@ NAME = standard
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE =  main.cpp \
+		  ClapTrap.cpp \
+		  FragTrap.cpp \
+		  ScavTrap.cpp \
 
-HEADERS =
-
+HEADERS = ClapTrap.cpp \
+		  FragTrap.cpp \
+		  ScavTrap.cpp \
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
 # ***********************************************************
