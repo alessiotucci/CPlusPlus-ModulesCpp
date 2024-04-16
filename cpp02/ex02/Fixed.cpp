@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:28:14 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/15 21:07:05 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:27:57 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 const int Fixed::_bits = 8;
 Fixed::Fixed()
 {
-	std::cout << GREEN << "Default Constructor called" << RESET << std::endl;
+	//std::cout << GREEN << "Default Constructor called" << RESET << std::endl;
 	this->_value = 0;
 }
 
@@ -23,25 +23,25 @@ Fixed::Fixed()
 Fixed::Fixed(const int number)
 {
 	this->_value = (number << this->_bits);
-	std::cout << "Int Constructor called" << std::endl;
+	//std::cout << "Int Constructor called" << std::endl;
 }
 
 // new ctor with float
 Fixed::Fixed(const float number)
 {
 	this->_value = roundf(number * (1 << this->_bits));
-	std::cout << "Float Constructor called" << std::endl;
+	//std::cout << "Float Constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << RED << "Destructor called" << RESET << std::endl;
+	//std::cout << RED << "Destructor called" << RESET << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
 	_value = other._value;
-	std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
+	//std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &obj)
@@ -146,17 +146,17 @@ Fixed	Fixed::operator/(const Fixed &obj)
 	return (result);
 }
 
-// Pre-increment
+// Pre-increment ++a
 Fixed Fixed::operator++()
 {
-	this->_value += 1 << _bits;
+	this->_value++; // += 1 << _bits;
 	return *this;
 }
 
-// Pre-decrement
+// Pre-decrement --a
 Fixed Fixed::operator--()
 {
-	this->_value -= 1 << _bits;
+	this->_value--;// -= 1 << _bits;
 	return *this;
 }
 
@@ -164,7 +164,7 @@ Fixed Fixed::operator--()
 Fixed Fixed::operator++(int)
 {
 	Fixed temp = *this;
-	this->_value += 1 << _bits;
+	this->_value++;// += 1 << _bits;
 	return temp;
 }
 
@@ -172,7 +172,7 @@ Fixed Fixed::operator++(int)
 Fixed Fixed::operator--(int)
 {
 	Fixed temp = *this;
-	this->_value -= 1 << _bits;
+	this->_value--;// -= 1 << _bits;
 	return temp;
 }
 
