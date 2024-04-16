@@ -37,13 +37,14 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 # Cpp 02
 
- | Module | Exercise | Title |About |
-|---|---|---|---|
-| CPP02 | ex00 | My First Class in Orthodox Canonical Form |...|
-| CPP02 | ex01 | Towards a more useful fixed-point number class |...|
-| CPP02 | ex02 | Now we’re talking |...|
-| CPP02 | ex03 | BSP |...|
+| Exercise | Title | About | video |
+|----------|-------|-------|-------|
+| ex00 | My First Class in Orthodox Canonical Form |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01 | Towards a more useful fixed-point number class |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02 | Now we’re talking |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex03 | BSP |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
 
+`small rabbit hole down there, click `
 <details>
  <summary>
  <h3> Fixed Points rabbit hole 🐇</h3>
@@ -51,10 +52,10 @@ Those modules of C++ are designed to help you understand the specifities of the 
  
 |  short description | file | 
 |----|----| 
-|    | [1](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html) | .. |  
-|    | [2](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html) | ... | 
-|    | [3](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html) | ... | 
-|    | [4](https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html) | .. | 
+|    | [1) Understanding floating points](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html) | .. |  
+|    | [2) the representation ](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html) | ... | 
+|    | [3) floating point printing](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html) | ... | 
+|    | [4) Berkeley on fixed points](https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html) | .. | 
 |    | [![video 1](https://ytcards.demolab.com/?id=Is67DfCdvcE " ")](https://www.youtube.com/watch?v=Is67DfCdvcE) | .. | 
 |    | [![video 2](https://ytcards.demolab.com/?id=ZMsrZvBmQnU " ")](https://www.youtube.com/watch?v=ZMsrZvBmQnU) | .. | 
 |    |[![video pt1](https://ytcards.demolab.com/?id=f4ekifyijIg " ")](https://www.youtube.com/watch?v=f4ekifyijIg)| .. | 
