@@ -17,23 +17,23 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 ---
 # Cpp 00
-| Module | Exercise | Title | About | video |
-|---|---|---|---|---|
-| CPP00 | ex00 | Megaphone |Small program, you will have to use the `std::toupper()` function |  [![video 3](https://ytcards.demolab.com/?id=JJC1Ws0GXAs " ")](https://www.youtube.com/watch?v=JJC1Ws0GXAs)  |
-| CPP00 | ex01 | Phonebook |Small but tedious program, you will use `std::cin`, `std::getline`, and `std::setw`|  [![video 2](https://ytcards.demolab.com/?id=hKqNb3Wo6z0 " " )](https://www.youtube.com/watch?v=hKqNb3Wo6z0) |
-| CPP00 | ex02 | The Job of your Dreams |Very tedious, you are given a .hpp a main and a log file and you have to implement the cpp class. Heavy use ot the `static` keyword  in the header, so you will learn about it during the exercise |  [![video 1](https://ytcards.demolab.com/?id=1xY0rF399j0 " ")](https://www.youtube.com/watch?v=1xY0rF399j0)   |
+| Exercise | Title | About | video |
+|----------|-------|-------|-------|
+| ex00 | Megaphone |Small program, you will have to use the `std::toupper()` function |  [![video 3](https://ytcards.demolab.com/?id=JJC1Ws0GXAs " ")](https://www.youtube.com/watch?v=JJC1Ws0GXAs)  |
+| ex01 | Phonebook |Small but tedious program, you will use `std::cin`, `std::getline`, and `std::setw`|  [![video 2](https://ytcards.demolab.com/?id=hKqNb3Wo6z0 " " )](https://www.youtube.com/watch?v=hKqNb3Wo6z0) |
+| ex02 | The Job of your Dreams |Very tedious, you are given a .hpp a main and a log file and you have to implement the cpp class. Heavy use ot the `static` keyword  in the header, so you will learn about it during the exercise |  [![video 1](https://ytcards.demolab.com/?id=1xY0rF399j0 " ")](https://www.youtube.com/watch?v=1xY0rF399j0)   |
 
 # Cpp 01
 
- | Module | Exercise | Title |About |
-|---|---|---|---|
-| CPP01 | ex00 | BraiiiiiiinnnzzzZ | stack vs heap |
-| CPP01 | ex01 | Moar brainz! | create an array of objects|
-| CPP01 | ex02 | HI THIS IS BRAIN |learn about reference|
-| CPP01 | ex03 | Unnecessary violence | start using the  reference|
-| CPP01 | ex04 | Sed is for losers | how to handle file in c++ |
-| CPP01 | ex05 | Harl 2.0 | pointer to functions |
-| CPP01 | ex06 | Harl filter |switch statements|
+| Exercise | Title | About | Video | 
+|----------|-------|-------|-------|
+| ex00 | BraiiiiiiinnnzzzZ | stack vs heap | [![video 1](https://ytcards.demolab.com/?id=wopESdEVJs4 " ")](https://www.youtube.com/watch?v=wopESdEVJs4) |
+| ex01 | Moar brainz! | create an array of objects| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02 | HI THIS IS BRAIN | learn about reference| [![video 1](https://ytcards.demolab.com/?id=e3DN1RaYVYQ " ")](https://www.youtube.com/watch?v=e3DN1RaYVYQ) |
+| ex03 | Unnecessary violence | start using the  reference | [![video 1](https://ytcards.demolab.com/?id=IzoFn3dfsPA " ")](https://www.youtube.com/watch?v=IzoFn3dfsPA) |
+| ex04 | Sed is for losers | how to handle file in c++ | [![video 1](https://ytcards.demolab.com/?id=wVhCnzFwxt4 " ")](https://www.youtube.com/watch?v=wVhCnzFwxt4) |
+| ex05 | Harl 2.0 | pointer to functions | [![video 1](https://ytcards.demolab.com/?id=p4sDgQ-jao4 " ")](https://www.youtube.com/watch?v=p4sDgQ-jao4) | 
+| ex06 | Harl filter |switch statements| [![video 1](https://ytcards.demolab.com/?id=loS5VEc0LJg " ")](https://www.youtube.com/watch?v=loS5VEc0LJg) |
 
 # Cpp 02
 
