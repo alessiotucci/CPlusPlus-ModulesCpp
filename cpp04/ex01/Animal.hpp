@@ -1,14 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:49:09 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 16:54:38 by atucci           ###   ########.fr       */
+/*   Created: 2024/04/16 21:38:55 by atucci            #+#    #+#             */
+/*   Updated: 2024/04/18 17:19:42 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 /*****************************************/
 /*   ORTHODOX CANONICAL CLASS FORM       */
@@ -22,20 +25,20 @@
 /*    };                                 */
 /*                                       */
 /*****************************************/
-
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
 #include <string>
 
-class Brain
+class Animal
 {
 	public:
-		Brain();
-		Brain(const Brain &obj);
-		~Brain();
-		Brain& operator=(const Brain &obj);
-	private:
-		std::string ideas[100];
+		Animal();
+		Animal(std::string p);
+		Animal(const Animal &obj);
+		virtual ~Animal();//TODO: finished
+		Animal & operator=(const Animal &obj);
+		virtual void makeSound() const;
+		std::string getType() const;
+	protected:
+		std::string type;
 };
 
 #endif

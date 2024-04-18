@@ -1,15 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:49:09 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 16:54:38 by atucci           ###   ########.fr       */
+/*   Created: 2024/04/16 21:40:43 by atucci            #+#    #+#             */
+/*   Updated: 2024/04/18 17:05:17 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#ifndef DOG_HPP
+#define DOG_HPP
 /*****************************************/
 /*   ORTHODOX CANONICAL CLASS FORM       */
 /*      class A                          */
@@ -22,20 +25,19 @@
 /*    };                                 */
 /*                                       */
 /*****************************************/
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
-#include <string>
-
-class Brain
+class Dog : public Animal
 {
 	public:
-		Brain();
-		Brain(const Brain &obj);
-		~Brain();
-		Brain& operator=(const Brain &obj);
+		Dog();
+		Dog(std::string name);
+		Dog(const Dog &obj);
+		~Dog();//TODO: finished
+		Dog & operator=(const Dog &obj);
+		void makeSound() const;
 	private:
-		std::string ideas[100];
+		Brain *brain;
 };
-
 #endif

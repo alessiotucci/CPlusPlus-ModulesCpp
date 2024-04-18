@@ -6,19 +6,23 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 15:05:44 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 15:43:23 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/18 17:20:40 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = AnimalIdea
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE =  main.cpp \
+		  Brain.cpp \
+		  Animal.cpp \
+		  Dog.cpp \
+		  Cat.cpp \
 
 HEADERS =
 
