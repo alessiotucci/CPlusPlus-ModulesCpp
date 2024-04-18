@@ -6,19 +6,24 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 15:04:56 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 21:39:17 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/18 16:24:41 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = Animals
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE =  main.cpp \
+		  Animal.cpp \
+		  Dog.cpp \
+		  Cat.cpp \
+		  WrongAnimal.cpp \
+		  WrongCat.cpp \
 
 HEADERS =
 
