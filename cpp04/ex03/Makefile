@@ -6,14 +6,14 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 15:07:23 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 15:43:41 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/18 18:10:32 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = Interface_Recap
 
 # *************************************************
 # setting up the variable that will be the source *
