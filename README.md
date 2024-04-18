@@ -35,6 +35,9 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | ex05 | Harl 2.0 | pointer to functions | [![video 1](https://ytcards.demolab.com/?id=p4sDgQ-jao4 " ")](https://www.youtube.com/watch?v=p4sDgQ-jao4) | 
 | ex06 | Harl filter |switch statements| [![video 1](https://ytcards.demolab.com/?id=loS5VEc0LJg " ")](https://www.youtube.com/watch?v=loS5VEc0LJg) |
 
+| Extra |
+|-------|
+| [`Build a menu with switch statements`](https://youtu.be/APh9_Ot9ovE?feature=shared) |
 # Cpp 02
 ## Before starting consider what this video about `inizializer List`
  [![video 1](https://ytcards.demolab.com/?id=X1dGUSVnavQ " ")](https://www.youtube.com/watch?v=X1dGUSVnavQ)
