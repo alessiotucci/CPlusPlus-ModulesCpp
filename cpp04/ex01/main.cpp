@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:05:50 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 17:35:02 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/18 17:37:45 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 
 int main()
 {
+/*	std::cout << "SUBJECT TEST \n\n";
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;*/
+
 	Animal** animals = new Animal*[10];  // Create an array of Animal pointers
 
 	// Fill the array with Dog and Cat objects

@@ -6,14 +6,14 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 14:52:02 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 19:03:54 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/16 19:42:23 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = FlagTrap
 
 # *************************************************
 # setting up the variable that will be the source *
