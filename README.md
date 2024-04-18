@@ -4,16 +4,16 @@ Those modules of C++ are designed to help you understand the specifities of the 
 
 |Modules|Key Concepts| Final result | 
 |-------|------------|------------------|
-| `c++ 00` |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/61e3b72c-e8c7-4d6d-9d37-84b8806397ae)| 
-| `c++ 01` |Memory allocation, pointers to members, references, switch statement.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/b6a271e8-1c5f-46cc-8d0b-b9b84f2936e3)| 
-| `c++ 02` | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ,, | 
-| `c++ 03` | Inheritance in CPP.| .. | 
-| `c++ 04` | Subtype polymorphism, abstract classes and interfaces in CPP.| .. | 
-| `c++ 05` | Try/Catch and Exceptions in CPP.| .,. |
-| `c++ 06` |This module is designed to help you understand the different casts in CPP.| ...| 
-| `c++ 07` | Templates in CPP.| .,..| 
-| `c++ 08` | templated containers, iterators and algorithms in CPP.| ... | 
-| `c++ 09` | understand the containers in CPP. | ...             |
+| [`c++ 00 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp00/cpp00.pdf) |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/61e3b72c-e8c7-4d6d-9d37-84b8806397ae)| 
+| [`c++ 01 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp01/cpp01.pdf) |Memory allocation, pointers to members, references, switch statement.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/b6a271e8-1c5f-46cc-8d0b-b9b84f2936e3)| 
+| [`c++ 02 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp02/cpp02.pdf) | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ,, | 
+| [`c++ 03 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp03/cpp03.pdf) | Inheritance in CPP.| .. | 
+| [`c++ 04 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp04/cpp04.pdf) | Subtype polymorphism, abstract classes and interfaces in CPP.| .. | 
+| [`c++ 05 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/tree/main/cpp05/cpp05.pdf) | Try/Catch and Exceptions in CPP.| .,. |
+| [`c++ 06 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp06/cpp06.pdf) |This module is designed to help you understand the different casts in CPP.| ...| 
+| [`c++ 07 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp07/cpp07.pdf) | Templates in CPP.| .,..| 
+| [`c++ 08 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp08/cpp08.pdf) | templated containers, iterators and algorithms in CPP.| ... | 
+| [`c++ 09 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp09/cpp09.pdf) | understand the containers in CPP. | ...             |
 
 ---
 # Cpp 00
