@@ -1,50 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 18:32:15 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 21:27:32 by atucci           ###   ########.fr       */
+/*   Created: 2024/04/18 21:55:00 by atucci            #+#    #+#             */
+/*   Updated: 2024/04/18 22:00:10 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
-#include <iostream>
-#include <string>
+#include "MateriaSoource.hpp"
 
-AMateria::AMateria() { }
+MateriaSource::MateriaSource () { }
 
-AMateria::~AMateria() { }
-
-AMateria::AMateria(const AMateria &obj)
+MateriaSource::MateriaSource (const MateriaSource &obj)
 {
 	*this = obj;
 }
 
-AMateria& AMateria::operator=(const AMateria &obj)
+MateriaSource::~MateriaSource () { }
+
+MateriaSource& MateriaSource::operator=(const MateriaSource &obj)
 {
-	if (this != &obj)
+	if (*this != obj)
 	{
-		// assign
+
 	}
 	return *this;
 }
 
-AMateria::AMateria(std::string const & type)
+void MateriaSource::learnMateria(AMateria*)
 {
-	(void)type;
+
 }
 
-std::string const& AMateria::getType() const
+AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	return this->type;
+
 }
 
-
-void AMateria::use(ICharacter& target)
-{
-	(void)target; // learn
-	return; // just for now
-}

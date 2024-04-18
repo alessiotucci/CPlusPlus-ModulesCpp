@@ -6,7 +6,7 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 15:07:23 by atucci            #+#    #+#              #
-#    Updated: 2024/04/18 18:10:32 by atucci           ###   ########.fr        #
+#    Updated: 2024/04/18 21:33:54 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ NAME = Interface_Recap
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE =  main.cpp \
+		  AMateria.cpp \
+		  Character.cpp \
 
 HEADERS =
 

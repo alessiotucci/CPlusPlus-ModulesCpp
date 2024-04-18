@@ -6,12 +6,15 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:17:08 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 18:29:24 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/18 21:28:03 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
+#include <string>
+#include "AMateria.hpp"
+
 class ICharacter
 {
 	public:

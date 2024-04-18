@@ -1,15 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:55:13 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 21:25:30 by atucci           ###   ########.fr       */
+/*   Created: 2024/04/18 21:45:34 by atucci            #+#    #+#             */
+/*   Updated: 2024/04/18 22:01:22 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
+#include "IMateriaSource.hpp"
+#include <string>
 /*****************************************/
 /*   ORTHODOX CANONICAL CLASS FORM       */
 /*      class A                          */
@@ -23,23 +27,16 @@
 /*                                       */
 /*****************************************/
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
-#include <string>
-#include "ICharacter.hpp"
 
-class AMateria
+class MateriaSource : public IMateriaSource
 {
-	protected:
-		std::string type;
-	public:
-		AMateria();
-		~AMateria();
-		AMateria(const AMateria &obj);
-		AMateria& operator=(const AMateria &obj);
-		AMateria(std::string const & type);
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+public:
+	MateriaSource ();
+	MateriaSource (const MateriaSource &obj);
+	~MateriaSource ();
+	MateriaSource & operator = (const MateriaSource &obj);
+	void learnMateria(AMateria*);
+	AMateria* createMateria(std::string const & type);
+
 };
 #endif
