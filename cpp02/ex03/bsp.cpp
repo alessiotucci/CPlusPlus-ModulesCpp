@@ -6,11 +6,12 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:29:42 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 14:41:49 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/18 10:02:19 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+#include "Fixed.hpp"
 #include <cmath>
 static float triangleArea(Point const a, Point const b, Point const c)
 {

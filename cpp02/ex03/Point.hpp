@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:29:56 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 15:03:19 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/18 10:49:08 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Point
 		Point(const float x, const float y);
 		~Point();
 		Point(const Point& other);
-		Point& operator=(/*const*/ Point &obj);
+		Point& operator=(const Point &obj);
 		Fixed getX() const;
 		Fixed getY() const;
 	private:
