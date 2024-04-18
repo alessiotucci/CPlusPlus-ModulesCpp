@@ -5,20 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/14 15:06:40 by atucci            #+#    #+#              #
-#    Updated: 2024/04/16 15:43:32 by atucci           ###   ########.fr        #
+#    Created: 2024/04/14 15:05:44 by atucci            #+#    #+#              #
+#    Updated: 2024/04/18 17:55:13 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = standard
+NAME = AbstractAnimal
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE =  main.cpp \
+		  Brain.cpp \
+		  Animal.cpp \
+		  Dog.cpp \
+		  Cat.cpp \
 
 HEADERS =
 
