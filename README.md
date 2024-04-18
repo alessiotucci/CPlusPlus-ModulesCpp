@@ -36,6 +36,8 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | ex06 | Harl filter |switch statements| [![video 1](https://ytcards.demolab.com/?id=loS5VEc0LJg " ")](https://www.youtube.com/watch?v=loS5VEc0LJg) |
 
 # Cpp 02
+## Before starting consider what this video about `inizializer List`
+ [![video 1](https://ytcards.demolab.com/?id=X1dGUSVnavQ " ")](https://www.youtube.com/watch?v=X1dGUSVnavQ)
 
 | Exercise | Title | About | video |
 |----------|-------|-------|-------|
@@ -61,7 +63,6 @@ Those modules of C++ are designed to help you understand the specifities of the 
 |    |[![video pt1](https://ytcards.demolab.com/?id=f4ekifyijIg " ")](https://www.youtube.com/watch?v=f4ekifyijIg)| .. | 
 |    |[![video pt2](https://ytcards.demolab.com/?id=782QWNOD_Z0 " ")](https://www.youtube.com/watch?v=782QWNOD_Z0)| .. | 
 
- 
 <!---
 [![video 1](https://ytcards.demolab.com/?id= " ")]() |
 -->
