@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:38:55 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 17:19:42 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:23:36 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 /*                                       */
 /*****************************************/
 #include <string>
+class Brain;
 
 class Animal
 {
@@ -35,6 +36,7 @@ class Animal
 		Animal(const Animal &obj);
 		virtual ~Animal();//TODO: finished
 		Animal & operator=(const Animal &obj);
+		virtual Brain* getBrain() = 0;
 		virtual void makeSound() const;
 		std::string getType() const;
 	protected:

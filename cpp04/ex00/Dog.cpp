@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:38:59 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 15:35:43 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:33:09 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ Dog::Dog(const Dog &obj) : Animal(obj)
 	*this = obj; // enough?
 }
 
-Dog::~Dog() {}
+Dog::~Dog()
+{
+	std::cout << "Dog Destructor called!" << std::endl;
+}
 
 // copy assignment operator
 Dog& Dog::operator=(const Dog &obj)

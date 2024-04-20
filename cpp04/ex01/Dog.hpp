@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:40:43 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 17:05:17 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:08:24 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Dog : public Animal
 		~Dog();//TODO: finished
 		Dog & operator=(const Dog &obj);
 		void makeSound() const;
+		Brain* getBrain(); // last minute fix;
 	private:
 		Brain *brain;
 };

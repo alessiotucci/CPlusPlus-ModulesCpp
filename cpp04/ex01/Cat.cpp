@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:39:01 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 17:11:36 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:36:23 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Cat::Cat(const Cat &obj) : Animal(obj)
 
 Cat::~Cat()
 {
+	std::cout << "Cat 🐈 Destructor called!" << std::endl;
 	delete this->brain;  // Delete the Brain object
 }
 
@@ -53,6 +54,10 @@ Cat& Cat::operator=(const Cat &obj)
 
 }
 
+Brain* Cat::getBrain()
+{
+	return this->brain;
+}
 /* virtual keyword */
 void Cat::makeSound() const
 {

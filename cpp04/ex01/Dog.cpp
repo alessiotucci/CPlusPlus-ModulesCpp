@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:38:59 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 17:24:07 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:36:48 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Dog::Dog(const Dog &obj) : Animal(obj)
 
 Dog::~Dog()
 {
+	std::cout << "Dog 🐕 Destructor called!" << std::endl;
 	delete this->brain;  // Delete the Brain object
 }
 
@@ -61,6 +62,10 @@ Dog& Dog::operator=(const Dog &obj)
 	return *this;
 }
 
+Brain* Dog::getBrain()
+{
+	return this->brain;
+}
 /* virtual keyword */
 void Dog::makeSound() const
 {

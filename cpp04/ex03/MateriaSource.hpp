@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:45:34 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 22:01:22 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 18:28:21 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,16 @@
 
 class MateriaSource : public IMateriaSource
 {
-public:
-	MateriaSource ();
-	MateriaSource (const MateriaSource &obj);
-	~MateriaSource ();
-	MateriaSource & operator = (const MateriaSource &obj);
-	void learnMateria(AMateria*);
-	AMateria* createMateria(std::string const & type);
+	private:
+		AMateria* materias[4]; //MateriaSource can know at most 4 Materias.
+		int index;
+	public:
+		MateriaSource ();
+		MateriaSource (const MateriaSource &obj);
+		~MateriaSource ();
+		MateriaSource & operator = (const MateriaSource &obj);
+		void learnMateria(AMateria* m);
+		AMateria* createMateria(std::string const & type);
 
 };
 #endif

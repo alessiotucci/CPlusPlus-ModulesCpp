@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:38:55 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 15:35:12 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:00:49 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal
 		Animal();
 		Animal(std::string p);
 		Animal(const Animal &obj);
-		~Animal();//TODO: finished
+		virtual ~Animal();//TODO: finished
 		Animal & operator=(const Animal &obj);
 		virtual void makeSound() const;
 		std::string getType() const;

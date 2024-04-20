@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:38:21 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 15:35:22 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 20:32:20 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ Animal::Animal(const Animal &obj)
 	*this = obj; // enough?
 }
 
-Animal::~Animal() {}
+Animal::~Animal()
+{
+	std::cout << "Animal Destructor called!" << std::endl;
+}
 
 // copy assignment operator
 Animal& Animal::operator=(const Animal &obj)
