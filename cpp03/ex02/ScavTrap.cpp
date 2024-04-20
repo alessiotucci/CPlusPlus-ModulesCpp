@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:52:53 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 18:59:38 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 15:59:36 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,19 @@
 
 ScavTrap::ScavTrap(std:: string name)
 {
-	std::cout << BG_GREEN << "ScavTrap" << BG_RESET << " default constructor called\n";
+	std::cout << BG_GREEN << "ScavTrap " << BG_RESET << "strings  constructor called\n";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 }
-
+ScavTrap::ScavTrap()
+{
+	std::cout << BG_GREEN << "ScavTrap " << BG_RESET << " default constructor called\n";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+}
 ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
 	*this = obj;

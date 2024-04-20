@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:48:23 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 18:38:00 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 15:48:47 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 class ScavTrap : public ClapTrap
 {
 	public:
+		ScavTrap(); // add empty constructor
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap &obj);
 		~ScavTrap();

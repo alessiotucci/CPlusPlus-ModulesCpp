@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:00:09 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 21:28:37 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 16:11:52 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 
 ScavTrap::ScavTrap(std:: string name)
 {
-	std::cout << BG_GREEN << "ScavTrap" << BG_RESET << " default constructor called\n";
+	std::cout << BG_GREEN << "ScavTrap " << BG_RESET << " default constructor called\n";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
@@ -51,7 +51,7 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << RED << "ScavTrap" << RESET << "destructor is called\n";
+	std::cout << RED << "ScavTrap " << RESET << "destructor is called\n";
 }
 
 ScavTrap& ScavTrap::operator= (const ScavTrap &obj)

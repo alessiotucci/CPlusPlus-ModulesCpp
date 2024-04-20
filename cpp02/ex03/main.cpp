@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:29:46 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 10:50:11 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 11:43:49 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,18 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 int	main(void)
 {
-	std::cout << std::boolalpha
+	std::cout << std::boolalpha;
 
-	<< "a(0, 0), b(0, 5), c(5, 0), point(1, 1): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(1, 1)) << std::endl
+	std::cout << GREEN << "Testing with points inside the triangle:" << RESET << std::endl;
+	std::cout << "a(0, 0), b(0, 5), c(5, 0), point(2, 2): " << bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(2, 2)) << std::endl;
+	std::cout << "a(0, 0), b(0, 5), c(5, 0), point(1, 2): " << bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(1, 2)) << std::endl;
 
-	<< "a(0, 0), b(0, 5), c(5, 0), point(0, 5): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0, 5)) << std::endl
+	std::cout << YELLOW << "Testing with points on the edges of the triangle:" << RESET << std::endl;
+	std::cout << "a(0, 0), b(0, 5), c(5, 0), point(0, 3): " << bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0, 3)) << std::endl;
+	std::cout << "a(0, 0), b(0, 5), c(5, 0), point(2.5, 0): " << bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(2.5, 0)) << std::endl;
 
-	<< "a(0, 0), b(0, 5), c(5, 0), point(0, 3): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0, 3)) << std::endl
-
-	<< "a(0, 0), b(0, 5), c(5, 0), point(0, 0): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0, 0)) << std::endl
-
-	<< "a(0, 0), b(0, 5), c(5, 0), point(0.1, 0.01): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0.1f, 0.01f)) << std::endl
-
-	<< "a(0, 0), b(0, 5), c(5, 0), point(10, 0.01): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(10, 0.01f)) << std::endl
-
-	<< "a(0, 0), b(0, 5), c(5, 0), point(0, -0.01): "
-	<< bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0, -0.01f)) << std::endl;
+	std::cout << RED << "Testing with points outside the triangle:" << RESET << std::endl;
+	std::cout << "a(0, 0), b(0, 5), c(5, 0), point(10, 10): " << bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(10, 10)) << std::endl;
+	std::cout << "a(0, 0), b(0, 5), c(5, 0), point(-1, -1): " << bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(-1, -1)) << std::endl;
 }
+

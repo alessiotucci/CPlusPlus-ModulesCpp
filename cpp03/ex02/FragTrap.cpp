@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:53:01 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 18:56:56 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 16:00:39 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,21 @@
 # define BG_RED          "\033[41m"
 
 
-FragTrap::FragTrap(std:: string name)
+FragTrap::FragTrap()
 {
 	std::cout << BG_GREEN << "FragTrap" << BG_RESET << " default constructor called\n";
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+}
+FragTrap::FragTrap(std:: string name)
+{
+	std::cout << BG_GREEN << "FragTrap" << BG_RESET << "strings  constructor called\n";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
 }
-
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 {
 	*this = obj;

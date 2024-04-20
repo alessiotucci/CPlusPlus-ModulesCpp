@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:28:14 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 14:27:57 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 11:39:35 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,14 +149,14 @@ Fixed	Fixed::operator/(const Fixed &obj)
 // Pre-increment ++a
 Fixed Fixed::operator++()
 {
-	this->_value++; // += 1 << _bits;
+	this->_value++;
 	return *this;
 }
 
 // Pre-decrement --a
 Fixed Fixed::operator--()
 {
-	this->_value--;// -= 1 << _bits;
+	this->_value--;
 	return *this;
 }
 
@@ -164,7 +164,7 @@ Fixed Fixed::operator--()
 Fixed Fixed::operator++(int)
 {
 	Fixed temp = *this;
-	this->_value++;// += 1 << _bits;
+	this->_value++;
 	return temp;
 }
 
@@ -172,7 +172,7 @@ Fixed Fixed::operator++(int)
 Fixed Fixed::operator--(int)
 {
 	Fixed temp = *this;
-	this->_value--;// -= 1 << _bits;
+	this->_value--;
 	return temp;
 }
 

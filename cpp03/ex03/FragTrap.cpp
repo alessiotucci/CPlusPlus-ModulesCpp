@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:00:11 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 21:30:11 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 16:11:37 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 
 FragTrap::~FragTrap()
 {
-	std::cout << RED << "FragTrap" << RESET << "destructor is called\n";
+	std::cout << RED << "FragTrap " << RESET << "destructor is called\n";
 }
 
 FragTrap& FragTrap::operator= (const FragTrap &obj)

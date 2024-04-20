@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:00:07 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 21:32:03 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 16:08:46 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,52 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
 
+
+#define GREEN "\033[1;32m"
+#define CYAN "\033[1;36m"
+#define YELLOW "\033[1;33m"
+#define RED "\033[1;31m"
+#define RESET "\033[0m"
+
 int main()
 {
-/*	ClapTrap	b("@#$234j1");
-	ScavTrap	c("!#$!$!");
-	FragTrap	o("otto");
+	std::cout << GREEN << "Starting the program...\n" << RESET;
 
-	b.takeDamage(c.getAttackDamage());
+	ClapTrap clapTrapOne("ClapMaster"), clapTrapTwo("ClapCommander");
+	std::cout << CYAN << "Created ClapTrap instances: ClapMaster and ClapCommander\n" << RESET;
 
-	c.attack(b.getName());
-	b.takeDamage(c.getAttackDamage());
-	c.guardGate();
-	o.highFivesGuys();
-	return (0); */
-	ClapTrap	alberto("alberto"), mario("mario");
+	clapTrapOne.attack(clapTrapTwo.getName());
+	clapTrapTwo.takeDamage(clapTrapOne.getAttackDamage());
+	clapTrapTwo.attack(clapTrapOne.getName());
+	clapTrapOne.takeDamage(clapTrapTwo.getAttackDamage());
 
-	alberto.attack(mario.getName());
-	mario.takeDamage(alberto.getAttackDamage());
-	mario.attack(alberto.getName());
-	alberto.takeDamage(mario.getAttackDamage());
+	ScavTrap scavTrapOne("Scavenger");
+	std::cout << YELLOW << "Created ScavTrap instance: Scavenger\n" << RESET;
 
-	ScavTrap	maurizio("maurizio");
-	maurizio.guardGate();
-	maurizio.attack(alberto.getName());
-	alberto.takeDamage(maurizio.getAttackDamage());
-	maurizio.attack(mario.getName());
-	mario.takeDamage(maurizio.getAttackDamage());
+	scavTrapOne.guardGate();
+	scavTrapOne.attack(clapTrapOne.getName());
+	clapTrapOne.takeDamage(scavTrapOne.getAttackDamage());
+	scavTrapOne.attack(clapTrapTwo.getName());
+	clapTrapTwo.takeDamage(scavTrapOne.getAttackDamage());
 
-	FragTrap	carlone("carlone");
-	carlone.highFivesGuys();
+	FragTrap fragTrapOne("Fragger");
+	std::cout << RED << "Created FragTrap instance: Fragger\n" << RESET;
+
+	fragTrapOne.highFivesGuys();
 	for (int i = 0; i < 4; i++)
 	{
-		carlone.attack(maurizio.getName());
-		maurizio.takeDamage(carlone.getAttackDamage());
+		fragTrapOne.attack(scavTrapOne.getName());
+		scavTrapOne.takeDamage(fragTrapOne.getAttackDamage());
 	}
-	DiamondTrap	alfredo("Alfredo");
-	alfredo.whoAmI();
-	alfredo.attack(carlone.getName());
-	carlone.takeDamage(alfredo.getAttackDamage());
-	return (0);
 
+	DiamondTrap diamondTrapOne("DiamondKing");
+	std::cout << CYAN << "Created DiamondTrap instance: DiamondKing 💎\n" << RESET;
+
+	diamondTrapOne.whoAmI();
+	diamondTrapOne.attack(fragTrapOne.getName());
+	fragTrapOne.takeDamage(diamondTrapOne.getAttackDamage());
+
+	std::cout << GREEN << "End of the program.\n" << RESET;
+	return 0;
 }
+

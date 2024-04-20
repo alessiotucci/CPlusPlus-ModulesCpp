@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:48:33 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 18:36:44 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 15:49:34 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,20 @@
 
 ScavTrap::ScavTrap(std:: string name)
 {
-	std::cout << BG_GREEN << "ScavTrap" << BG_RESET << " default constructor called\n";
+	std::cout << BG_GREEN << "ScavTrap" << BG_RESET << " name constructor called\n";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 }
 
+ScavTrap::ScavTrap()
+{
+	std::cout << BG_GREEN << "ScavTrap" << BG_RESET << " default constructor called\n";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+}
 ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
 	*this = obj;
@@ -44,7 +51,7 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << RED << "ScavTrap" << RESET << "destructor is called\n";
+	std::cout << BG_RED << "ScavTrap" << BG_RESET << "destructor is called\n";
 }
 
 ScavTrap& ScavTrap::operator= (const ScavTrap &obj)
@@ -61,7 +68,8 @@ ScavTrap& ScavTrap::operator= (const ScavTrap &obj)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate keeper mode.\n";
+	std::cout << RED << "ScavTrap is now in Gate keeper mode." << RESET
+			  << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)

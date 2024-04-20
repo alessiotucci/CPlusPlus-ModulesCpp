@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:00:13 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/16 21:27:42 by atucci           ###   ########.fr       */
+/*   Updated: 2024/04/20 16:10:56 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &obj)
 void DiamondTrap::whoAmI()
 {
 	std::cout << "WhoamI: " << _name;
+	std::cout << std::endl;
 	std::cout << " Base class: " << ClapTrap::getName();
+	std::cout << std::endl;
 }
 
 void DiamondTrap::attack(const std::string& target)
