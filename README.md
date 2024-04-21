@@ -87,6 +87,10 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | Exercise | Title | About | video | 
 |----------|-------|-------|-------|
 | ex00     | Polymorphism |...|[![video 1](https://ytcards.demolab.com/?id=-FUhG98hdLI " ")](https://www.youtube.com/watch?v=-FUhG98hdLI) |
-| ex01     | I don’t want to set the world on fire |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01     | I don’t want to set the world on fire |...|[![video 1](https://ytcards.demolab.com/?id=76FlItOH8cE " ")](https://www.youtube.com/watch?v=76FlItOH8cE) |
 | ex02     | Abstract class |...| [![video 1](https://ytcards.demolab.com/?id=wE0_F4LpGVc " ")](https://www.youtube.com/watch?v=wE0_F4LpGVc) |
-| ex04     | Interface & recap |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex04     | Interface & recap |...| [![video 1](https://ytcards.demolab.com/?id=UWAdd13EfM8 " ")](https://www.youtube.com/watch?v=UWAdd13EfM8) |
+
+| extra |
+|-------|
+|[`hidden feature of cpp`](https://www.youtube.com/watch?v=NqP_tuFp3pQ)|
