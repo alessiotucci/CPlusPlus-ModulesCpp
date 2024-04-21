@@ -6,9 +6,9 @@ Those modules of C++ are designed to help you understand the specifities of the 
 |-------|------------|------------------|
 | [`c++ 00 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp00/cpp00.pdf) |Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff | ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/61e3b72c-e8c7-4d6d-9d37-84b8806397ae)| 
 | [`c++ 01 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp01/cpp01.pdf) |Memory allocation, pointers to members, references, switch statement.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/b6a271e8-1c5f-46cc-8d0b-b9b84f2936e3)| 
-| [`c++ 02 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp02/cpp02.pdf) | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ,, | 
-| [`c++ 03 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp03/cpp03.pdf) | Inheritance in CPP.| .. | 
-| [`c++ 04 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp04/cpp04.pdf) | Subtype polymorphism, abstract classes and interfaces in CPP.| .. | 
+| [`c++ 02 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp02/cpp02.pdf) | Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/300eea60-db95-45b6-899b-5314db0e9c81) | 
+| [`c++ 03 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp03/cpp03.pdf) | Inheritance in CPP.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/8989e72f-5791-4fca-b262-ce7b2bdadd88)| 
+| [`c++ 04 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp04/cpp04.pdf) | Subtype polymorphism, abstract classes and interfaces in CPP.| ![image](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/assets/116757689/76cec069-137e-46bd-8ca4-9f4ebc98784d) | 
 | [`c++ 05 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/tree/main/cpp05/cpp05.pdf) | Try/Catch and Exceptions in CPP.| .,. |
 | [`c++ 06 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp06/cpp06.pdf) |This module is designed to help you understand the different casts in CPP.| ...| 
 | [`c++ 07 pdf`](https://github.com/alessiotucci/CPlusPlus-ModulesCpp/blob/main/cpp07/cpp07.pdf) | Templates in CPP.| .,..| 
