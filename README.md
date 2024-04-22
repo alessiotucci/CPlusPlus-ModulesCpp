@@ -89,8 +89,48 @@ Those modules of C++ are designed to help you understand the specifities of the 
 | ex00     | Polymorphism |...|[![video 1](https://ytcards.demolab.com/?id=-FUhG98hdLI " ")](https://www.youtube.com/watch?v=-FUhG98hdLI) |
 | ex01     | I don’t want to set the world on fire |...|[![video 1](https://ytcards.demolab.com/?id=76FlItOH8cE " ")](https://www.youtube.com/watch?v=76FlItOH8cE) |
 | ex02     | Abstract class |...| [![video 1](https://ytcards.demolab.com/?id=wE0_F4LpGVc " ")](https://www.youtube.com/watch?v=wE0_F4LpGVc) |
-| ex04     | Interface & recap |...| [![video 1](https://ytcards.demolab.com/?id=UWAdd13EfM8 " ")](https://www.youtube.com/watch?v=UWAdd13EfM8) |
+| ex03     | Interface & recap |...| [![video 1](https://ytcards.demolab.com/?id=UWAdd13EfM8 " ")](https://www.youtube.com/watch?v=UWAdd13EfM8) |
 
 | extra |
 |-------|
 |[`hidden feature of cpp`](https://www.youtube.com/watch?v=NqP_tuFp3pQ)|
+
+
+# Cpp 05
+| Exercise | Title | About | video | 
+|----------|-------|-------|-------|
+| ex00     | Mommy, when I grow up, I want to be a bureaucrat! |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01     | Form up, maggots! |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02     | No, you need form 28B, not 28C... |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex03     | At least this beats coffee-making |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+
+
+# Cpp 06
+| Exercise | Title | About | video | 
+|----------|-------|-------|-------|
+| ex00     | Conversion of scalar types |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01     |Serialization |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02     |Identify real type |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+
+# Cpp 07
+| Exercise | Title | About | video | 
+|----------|-------|-------|-------|
+| ex00     | Start with a few functions |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01     | Iter |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02     |  Array |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+
+# Cpp 08
+| Exercise | Title | About | video | 
+|----------|-------|-------|-------|
+| ex00     | Easy find |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01     | Span |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02     |  Mutated abomination |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+
+# Cpp 09
+| Exercise | Title | About | video | 
+|----------|-------|-------|-------|
+| ex00     | Bitcoin Exchange |...|   [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex01     | Reverse Polish Notation  |...|  [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex02     | PmergeMe |...|  [![video 1](https://ytcards.demolab.com/?id= " ")]() |
+
+
