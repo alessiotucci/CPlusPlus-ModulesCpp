@@ -6,7 +6,7 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:36:02 by atucci            #+#    #+#              #
-#    Updated: 2025/03/03 14:58:37 by atucci           ###   ########.fr        #
+#    Updated: 2025/03/05 09:28:24 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,17 @@ $(NAME): $(OBJ)
 	@echo "$(GREEN)Linking...$(RESET)\n"
 	$(CXX) -o $(NAME) $(OBJ)
 	@echo "$(GREEN)Done!\n$(RESET)"
+
+# ************************************************************** #
+#                 MAKEFILE VARIABLE                              #
+# $@ : Represents the name of the target file.                   #
+# $> : Contains the name of the first prerequisite (dependency). #
+# Substitution: $(var:pattern=replacement)                       #
+# Example: $(SRC:.c=.o) # Converts .c files to .o files.         #
+# Memory Trick:                                                  #
+# $@ = Assembly All (Target)                                     #
+# $> = First to Go (First prerequisite)                          #
+# ************************************************************** #
 
 %.o: %.cpp
 	@echo "$(CYAN)Compiling $<...$(RESET)"

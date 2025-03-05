@@ -9,3 +9,23 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+BUREAUCRAT_HPP	Bureaucrat.hpp	/^#define BUREAUCRAT_HPP$/;"	d
+Bureaucrat	Bureaucrat.hpp	/^class Bureaucrat$/;"	c
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+HEADERS	Makefile	/^HEADERS =$/;"	m
+NAME	Makefile	/^NAME = default$/;"	m
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+hidden	Makefile	/^hidden:$/;"	t
+main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
+re	Makefile	/^re: fclean all$/;"	t
