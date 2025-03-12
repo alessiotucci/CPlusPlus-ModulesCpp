@@ -4,10 +4,12 @@
 *However, you must avoid the problem of double inclusion by adding include guards.
 *Otherwise, your grade will be 0.                                            *
 *****************************************************************************/
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
 #include <string>
+#include <exception>
 
 # define BLUE    "\033[1;34m"
 # define PURPLE  "\033[1;35m"
@@ -55,7 +57,7 @@ class Bureaucrat
 
 	public:
 		Bureaucrat();
-		Bureaucrat(int grade);
+		Bureaucrat(int grade, std::string name);
 		Bureaucrat(const Bureaucrat &other);
 		~Bureaucrat();
 		Bureaucrat & operator = (const Bureaucrat &other);
@@ -68,8 +70,23 @@ class Bureaucrat
 		void IncrementGrade();
 		// function to decrement
 		void DecrementGrade();
-		// overload operator
+
+ // nested class for exception
+	public:
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
+
+// outside the class we try to implement the overload to stream insertion
+std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj);
 
 // https://www.francescmm.com/orthodox-canonical-class-form/
 // implement the class in canonical form

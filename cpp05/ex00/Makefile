@@ -6,7 +6,7 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:36:02 by atucci            #+#    #+#              #
-#    Updated: 2025/03/05 09:28:24 by atucci           ###   ########.fr        #
+#    Updated: 2025/03/12 16:53:51 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,15 @@
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = default
+NAME = Bureaucrat
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE = main.cpp \
+		Bureaucrat.cpp \
 
-HEADERS =
+HEADERS = Bureaucrat.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *

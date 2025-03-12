@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/nfs/homes/atucci/Desktop/CPlusPlus-ModulesCpp/cpp05/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	ex00/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	ex01/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	ex02/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	ex03/Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	ex00/Makefile	/^%.o: %.cpp$/;"	t
+%.o	ex01/Makefile	/^%.o: %.cpp$/;"	t
+%.o	ex02/Makefile	/^%.o: %.cpp$/;"	t
+%.o	ex03/Makefile	/^%.o: %.cpp$/;"	t
+BG_CYAN	ex00/Bureaucrat.hpp	/^# define BG_CYAN /;"	d
+BG_GREEN	ex00/Bureaucrat.hpp	/^# define BG_GREEN /;"	d
+BG_RED	ex00/Bureaucrat.hpp	/^# define BG_RED /;"	d
+BG_RESET	ex00/Bureaucrat.hpp	/^# define BG_RESET /;"	d
+BG_YELLOW	ex00/Bureaucrat.hpp	/^# define BG_YELLOW /;"	d
+BLUE	ex00/Bureaucrat.hpp	/^# define BLUE /;"	d
+BUREAUCRAT_HPP	ex00/Bureaucrat.hpp	/^#define BUREAUCRAT_HPP$/;"	d
+Bureaucrat	ex00/Bureaucrat.cpp	/^Bureaucrat::Bureaucrat()$/;"	f	class:Bureaucrat
+Bureaucrat	ex00/Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(const Bureaucrat &other)$/;"	f	class:Bureaucrat
+Bureaucrat	ex00/Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade)$/;"	f	class:Bureaucrat
+Bureaucrat	ex00/Bureaucrat.hpp	/^class Bureaucrat$/;"	c
+CXX	ex00/Makefile	/^CXX = c++$/;"	m
+CXX	ex01/Makefile	/^CXX = c++$/;"	m
+CXX	ex02/Makefile	/^CXX = c++$/;"	m
+CXX	ex03/Makefile	/^CXX = c++$/;"	m
+CYAN	ex00/Bureaucrat.hpp	/^# define CYAN /;"	d
+CYAN	ex00/Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	ex01/Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	ex02/Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	ex03/Makefile	/^CYAN := \\033[1;36m$/;"	m
+FLAG	ex00/Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+FLAG	ex01/Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+FLAG	ex02/Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+FLAG	ex03/Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GRAY	ex00/Bureaucrat.hpp	/^# define GRAY /;"	d
+GREEN	ex00/Bureaucrat.hpp	/^# define GREEN /;"	d
+GREEN	ex00/Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	ex01/Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	ex02/Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	ex03/Makefile	/^GREEN := \\033[1;32m$/;"	m
+GradeTooHighException	ex00/Bureaucrat.hpp	/^		class GradeTooHighException : public std::exception$/;"	c	class:Bureaucrat
+GradeTooLowException	ex00/Bureaucrat.hpp	/^		class GradeTooLowException : public std::exception$/;"	c	class:Bureaucrat
+HEADERS	ex00/Makefile	/^HEADERS =$/;"	m
+HEADERS	ex01/Makefile	/^HEADERS =$/;"	m
+HEADERS	ex02/Makefile	/^HEADERS =$/;"	m
+HEADERS	ex03/Makefile	/^HEADERS =$/;"	m
+NAME	ex00/Makefile	/^NAME = default$/;"	m
+NAME	ex01/Makefile	/^NAME = default$/;"	m
+NAME	ex02/Makefile	/^NAME = default$/;"	m
+NAME	ex03/Makefile	/^NAME = default$/;"	m
+PURPLE	ex00/Bureaucrat.hpp	/^# define PURPLE /;"	d
+RED	ex00/Bureaucrat.hpp	/^# define RED /;"	d
+RED	ex00/Makefile	/^RED := \\033[1;31m$/;"	m
+RED	ex01/Makefile	/^RED := \\033[1;31m$/;"	m
+RED	ex02/Makefile	/^RED := \\033[1;31m$/;"	m
+RED	ex03/Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	ex00/Bureaucrat.hpp	/^# define RESET /;"	d
+RESET	ex00/Makefile	/^RESET := \\033[0m$/;"	m
+RESET	ex01/Makefile	/^RESET := \\033[0m$/;"	m
+RESET	ex02/Makefile	/^RESET := \\033[0m$/;"	m
+RESET	ex03/Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	ex00/Makefile	/^SOURCE = main.cpp \\$/;"	m
+SOURCE	ex01/Makefile	/^SOURCE = main.cpp \\$/;"	m
+SOURCE	ex02/Makefile	/^SOURCE = main.cpp \\$/;"	m
+SOURCE	ex03/Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	ex00/Bureaucrat.hpp	/^# define YELLOW /;"	d
+YELLOW	ex00/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	ex01/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	ex02/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	ex03/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_grade	ex00/Bureaucrat.hpp	/^		int _grade;$/;"	m	class:Bureaucrat	typeref:typename:int
+_name	ex00/Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string
+all	ex00/Makefile	/^all: $(NAME)$/;"	t
+all	ex01/Makefile	/^all: $(NAME)$/;"	t
+all	ex02/Makefile	/^all: $(NAME)$/;"	t
+all	ex03/Makefile	/^all: $(NAME)$/;"	t
+clean	ex00/Makefile	/^clean:$/;"	t
+clean	ex01/Makefile	/^clean:$/;"	t
+clean	ex02/Makefile	/^clean:$/;"	t
+clean	ex03/Makefile	/^clean:$/;"	t
+fclean	ex00/Makefile	/^fclean: clean$/;"	t
+fclean	ex01/Makefile	/^fclean: clean$/;"	t
+fclean	ex02/Makefile	/^fclean: clean$/;"	t
+fclean	ex03/Makefile	/^fclean: clean$/;"	t
+getGrade	ex00/Bureaucrat.cpp	/^int getGrade() const$/;"	f	typeref:typename:int
+getName	ex00/Bureaucrat.cpp	/^std::string getName() const$/;"	f	typeref:typename:std::string
+hidden	ex00/Makefile	/^hidden:$/;"	t
+hidden	ex01/Makefile	/^hidden:$/;"	t
+hidden	ex02/Makefile	/^hidden:$/;"	t
+hidden	ex03/Makefile	/^hidden:$/;"	t
+main	ex00/main.cpp	/^int	main()$/;"	f	typeref:typename:int
+main	ex01/main.cpp	/^int	main()$/;"	f	typeref:typename:int
+main	ex02/main.cpp	/^int	main()$/;"	f	typeref:typename:int
+main	ex03/main.cpp	/^int	main()$/;"	f	typeref:typename:int
+operator =	ex00/Bureaucrat.cpp	/^Bureaucrat::Bureaucrat & operator = (const Bureaucrat &other)$/;"	f	typeref:typename:Bureaucrat::Bureaucrat &
+re	ex00/Makefile	/^re: fclean all$/;"	t
+re	ex01/Makefile	/^re: fclean all$/;"	t
+re	ex02/Makefile	/^re: fclean all$/;"	t
+re	ex03/Makefile	/^re: fclean all$/;"	t
+~Bureaucrat	ex00/Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat()$/;"	f	class:Bureaucrat

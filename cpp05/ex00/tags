@@ -18,19 +18,23 @@ BG_RESET	Bureaucrat.hpp	/^# define BG_RESET /;"	d
 BG_YELLOW	Bureaucrat.hpp	/^# define BG_YELLOW /;"	d
 BLUE	Bureaucrat.hpp	/^# define BLUE /;"	d
 BUREAUCRAT_HPP	Bureaucrat.hpp	/^#define BUREAUCRAT_HPP$/;"	d
-Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat()$/;"	f	class:Bureaucrat
-Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(const Bureaucrat &other)$/;"	f	class:Bureaucrat
-Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade)$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat() : _name("default"), _grade(150) \/\/ lowest grade$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName())$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade, std::string name)$/;"	f	class:Bureaucrat
 Bureaucrat	Bureaucrat.hpp	/^class Bureaucrat$/;"	c
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Bureaucrat.hpp	/^# define CYAN /;"	d
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+DecrementGrade	Bureaucrat.cpp	/^void Bureaucrat::DecrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 GRAY	Bureaucrat.hpp	/^# define GRAY /;"	d
 GREEN	Bureaucrat.hpp	/^# define GREEN /;"	d
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
-HEADERS	Makefile	/^HEADERS =$/;"	m
-NAME	Makefile	/^NAME = default$/;"	m
+GradeTooHighException	Bureaucrat.hpp	/^		class GradeTooHighException : public std::exception$/;"	c	class:Bureaucrat
+GradeTooLowException	Bureaucrat.hpp	/^		class GradeTooLowException : public std::exception$/;"	c	class:Bureaucrat
+HEADERS	Makefile	/^HEADERS = Bureaucrat.hpp \\$/;"	m
+IncrementGrade	Bureaucrat.cpp	/^void Bureaucrat::IncrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
+NAME	Makefile	/^NAME = Bureaucrat$/;"	m
 PURPLE	Bureaucrat.hpp	/^# define PURPLE /;"	d
 RED	Bureaucrat.hpp	/^# define RED /;"	d
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
@@ -44,10 +48,13 @@ _name	Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typen
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
-getGrade	Bureaucrat.cpp	/^int getGrade() const$/;"	f	typeref:typename:int
-getName	Bureaucrat.cpp	/^std::string getName() const$/;"	f	typeref:typename:std::string
+getGrade	Bureaucrat.cpp	/^int Bureaucrat::getGrade() const$/;"	f	class:Bureaucrat	typeref:typename:int
+getName	Bureaucrat.cpp	/^std::string Bureaucrat::getName() const$/;"	f	class:Bureaucrat	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
-main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
-operator =	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat & operator = (const Bureaucrat &other)$/;"	f	typeref:typename:Bureaucrat::Bureaucrat &
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj)$/;"	f	typeref:typename:std::ostream &
+operator =	Bureaucrat.cpp	/^Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)$/;"	f	class:Bureaucrat	typeref:typename:Bureaucrat &
 re	Makefile	/^re: fclean all$/;"	t
-~Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat()$/;"	f	class:Bureaucrat
+what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooHighException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *
+what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooLowException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooLowException	typeref:typename:const char *
+~Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat() {}$/;"	f	class:Bureaucrat
