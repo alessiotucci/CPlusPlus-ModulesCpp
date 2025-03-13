@@ -4,7 +4,8 @@
 int main() {
     // Test 1: Valid constructions
     std::cout << BLUE << "\n==== TEST 1: Valid Constructions ====\n" << RESET;
-    try {
+    try
+	{
         std::cout << CYAN << "Creating Alice (grade 1)" << RESET << std::endl;
         Bureaucrat b1(1, "Alice");
         std::cout << "CREATED: " << b1 << std::endl;
@@ -18,17 +19,22 @@ int main() {
         std::cout << "CREATED: " << b3 << std::endl;
 
         std::cout << GREEN << "\n✓ All valid bureaucrats created" << RESET << std::endl;
-    } catch (const std::exception& e) {
+    }
+	catch (const std::exception& e)
+	{
         std::cout << RED << "✗ FAIL: " << e.what() << RESET << std::endl;
     }
 
     // Test 2: Invalid constructions
     std::cout << BLUE << "\n==== TEST 2: Invalid Constructions ====\n" << RESET;
-    try {
+    try
+	{
         std::cout << CYAN << "Attempting grade 0 (too high):" << RESET << std::endl;
         Bureaucrat b0(0, "TooHigh");
         std::cout << RED << "✗ Unexpectedly created: " << b0 << RESET << std::endl;
-    } catch (const Bureaucrat::GradeTooHighException& e) {
+    }
+	catch (const Bureaucrat::GradeTooHighException& e)
+	{
         std::cout << GREEN << "✓ CAUGHT: " << e.what() << RESET << std::endl;
     }
 

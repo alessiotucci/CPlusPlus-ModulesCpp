@@ -9,3 +9,69 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+BG_CYAN	Bureaucrat.hpp	/^# define BG_CYAN /;"	d
+BG_GREEN	Bureaucrat.hpp	/^# define BG_GREEN /;"	d
+BG_RED	Bureaucrat.hpp	/^# define BG_RED /;"	d
+BG_RESET	Bureaucrat.hpp	/^# define BG_RESET /;"	d
+BG_YELLOW	Bureaucrat.hpp	/^# define BG_YELLOW /;"	d
+BLUE	Bureaucrat.hpp	/^# define BLUE /;"	d
+BUREAUCRAT_HPP	Bureaucrat.hpp	/^#define BUREAUCRAT_HPP$/;"	d
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat() : _name("default"), _grade(150) \/\/ lowest grade$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName())$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade, std::string name)$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.hpp	/^class Bureaucrat$/;"	c
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Bureaucrat.hpp	/^# define CYAN /;"	d
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+DEFAULT_HPP	Form.hpp	/^# define DEFAULT_HPP$/;"	d
+DecrementGrade	Bureaucrat.cpp	/^void Bureaucrat::DecrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+Form	Form.cpp	/^	Form()$/;"	f
+Form	Form.cpp	/^	Form(const Form& other)$/;"	f
+Form	Form.hpp	/^class Form$/;"	c
+GRAY	Bureaucrat.hpp	/^# define GRAY /;"	d
+GREEN	Bureaucrat.hpp	/^# define GREEN /;"	d
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+GradeTooHighException	Bureaucrat.hpp	/^		class GradeTooHighException : public std::exception$/;"	c	class:Bureaucrat
+GradeTooHighException	Form.hpp	/^		class GradeTooHighException : public std::exception$/;"	c	class:Form
+GradeTooLowException	Bureaucrat.hpp	/^		class GradeTooLowException : public std::exception$/;"	c	class:Bureaucrat
+GradeTooLowException	Form.hpp	/^		class GradeTooLowException : public std::exception$/;"	c	class:Form
+HEADERS	Makefile	/^HEADERS = Bureaucrat.hpp \\$/;"	m
+IncrementGrade	Bureaucrat.cpp	/^void Bureaucrat::IncrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
+NAME	Makefile	/^NAME = Form$/;"	m
+PURPLE	Bureaucrat.hpp	/^# define PURPLE /;"	d
+RED	Bureaucrat.hpp	/^# define RED /;"	d
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	Bureaucrat.hpp	/^# define RESET /;"	d
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	Bureaucrat.hpp	/^# define YELLOW /;"	d
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_grade	Bureaucrat.hpp	/^		int _grade;$/;"	m	class:Bureaucrat	typeref:typename:int
+_gradeToExec	Form.hpp	/^	const int _gradeToExec;$/;"	m	class:Form	typeref:typename:const int
+_gradeToSign	Form.hpp	/^	const int _gradeToSign;$/;"	m	class:Form	typeref:typename:const int
+_isSigned	Form.hpp	/^	bool _isSigned;$/;"	m	class:Form	typeref:typename:bool
+_name	Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string
+_name	Form.hpp	/^	const std::string _name;$/;"	m	class:Form	typeref:typename:const std::string
+all	Makefile	/^all: $(NAME)$/;"	t
+beSigned	Form.cpp	/^	void beSigned(const Bureaucrat &bureaucrat)$/;"	f	typeref:typename:void
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+getGrade	Bureaucrat.cpp	/^int Bureaucrat::getGrade() const$/;"	f	class:Bureaucrat	typeref:typename:int
+getGradeToExec	Form.cpp	/^	int getGradeToExec() const$/;"	f	typeref:typename:int
+getGradeToSign	Form.cpp	/^	int getGradeToSign() const$/;"	f	typeref:typename:int
+getName	Bureaucrat.cpp	/^std::string Bureaucrat::getName() const$/;"	f	class:Bureaucrat	typeref:typename:std::string
+getName	Form.cpp	/^	std::string getName() const$/;"	f	typeref:typename:std::string
+hidden	Makefile	/^hidden:$/;"	t
+isFormSigned	Form.cpp	/^	bool isFormSigned() const$/;"	f	typeref:typename:bool
+main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj)$/;"	f	typeref:typename:std::ostream &
+operator =	Bureaucrat.cpp	/^Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)$/;"	f	class:Bureaucrat	typeref:typename:Bureaucrat &
+operator =	Form.cpp	/^	Form& operator=(const Form& other)$/;"	f	typeref:typename:Form &
+re	Makefile	/^re: fclean all$/;"	t
+what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooHighException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *
+what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooLowException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooLowException	typeref:typename:const char *
+~Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat() {}$/;"	f	class:Bureaucrat
+~Form	Form.cpp	/^	~Form()$/;"	f

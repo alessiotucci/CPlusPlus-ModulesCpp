@@ -6,21 +6,24 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:36:13 by atucci            #+#    #+#              #
-#    Updated: 2025/03/03 14:59:48 by atucci           ###   ########.fr        #
+#    Updated: 2025/03/13 18:11:13 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = default
+NAME = Form
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE = main.cpp \
+		 Bureaucrat.cpp \
+		 Form.cpp \
 
-HEADERS =
+HEADERS = Bureaucrat.hpp \
+		  Form.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
