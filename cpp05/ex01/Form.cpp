@@ -2,7 +2,7 @@
 #include "Form.hpp"
 
 //1)Default constructor implementation
-Form::Form() : _name("Default Form"), _isSigned(false), _gradeToSign(150), _gradeToExec(150)
+Form::Form() : _name("Default Form"),  _gradeToSign(150), _gradeToExec(150), _isSigned(false)
 { }
 
 //2)Copy constructor

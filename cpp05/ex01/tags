@@ -28,7 +28,7 @@ CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 DEFAULT_HPP	Form.hpp	/^# define DEFAULT_HPP$/;"	d
 DecrementGrade	Bureaucrat.cpp	/^void Bureaucrat::DecrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
-Form	Form.cpp	/^Form::Form() : _name("Default Form"), _isSigned(false), _gradeToSign(150), _gradeToExec(150)$/;"	f	class:Form
+Form	Form.cpp	/^Form::Form() : _name("Default Form"),  _gradeToSign(150), _gradeToExec(150), _isSigned(false)$/;"	f	class:Form
 Form	Form.cpp	/^Form::Form(const Form& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _g/;"	f	class:Form
 Form	Form.hpp	/^class Form$/;"	c
 GRAY	Bureaucrat.hpp	/^# define GRAY /;"	d

@@ -11,7 +11,7 @@
 #include <string>
 #include <exception>
 #include "Form.hpp"
-
+class Form;
 # define BLUE    "\033[1;34m"
 # define PURPLE  "\033[1;35m"
 # define GRAY    "\033[1;30m"
