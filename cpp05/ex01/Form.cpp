@@ -1,6 +1,17 @@
 //TODO:
 #include "Form.hpp"
 
+//0) Constructor with parameters (has to raised exceptions)
+Form::Form(int gradeToSign, int gradeToExec) : _name("Default Form"), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec), _isSigned(false)
+{
+	if (gradeToSign > 150 || gradeToExec > 150)
+		throw GradeTooLowException();
+	if (gradeToSign < 1 || gradeToExec < 1)
+		throw GradeTooHighException();
+	//TODO: this is not allowed
+/*	this->_gradeToSign = gradeToSign;
+	this->_gradeToExec = gradeToExec;*/
+}
 //1)Default constructor implementation
 Form::Form() : _name("Default Form"),  _gradeToSign(150), _gradeToExec(150), _isSigned(false)
 { }
@@ -51,7 +62,25 @@ bool Form::isFormSigned() const
 //TODO implement this function
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
+	//Example
+	// buro grade : 5 > form grade needed is 1
+	if (bureaucrat.getGrade() > this->_gradeToSign)
+		throw GradeTooLowException();
+	else
+	{
+		this->_isSigned = true;
+	}
+}
 
+// Exception what() implementations
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
 }
 
 //OVERLOAD OF THE PRINT OPERATOR

@@ -26,6 +26,7 @@ public:
 	~Form();
 	// No member variables or additional methods
 
+	Form(int gradeToSign, int gradeToExec);
 	// Getters for the private fields
 	std::string getName() const;
 	int getGradeToSign() const;

@@ -30,6 +30,7 @@ DecrementGrade	Bureaucrat.cpp	/^void Bureaucrat::DecrementGrade()$/;"	f	class:Bu
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 Form	Form.cpp	/^Form::Form() : _name("Default Form"),  _gradeToSign(150), _gradeToExec(150), _isSigned(false)$/;"	f	class:Form
 Form	Form.cpp	/^Form::Form(const Form& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _g/;"	f	class:Form
+Form	Form.cpp	/^Form::Form(int gradeToSign, int gradeToExec) : _name("Default Form"), _gradeToSign(gradeToSign),/;"	f	class:Form
 Form	Form.hpp	/^class Form$/;"	c
 GRAY	Bureaucrat.hpp	/^# define GRAY /;"	d
 GREEN	Bureaucrat.hpp	/^# define GREEN /;"	d
@@ -74,5 +75,7 @@ operator =	Form.cpp	/^Form& Form::operator=(const Form& other)$/;"	f	class:Form	
 re	Makefile	/^re: fclean all$/;"	t
 what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooHighException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *
 what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooLowException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooLowException	typeref:typename:const char *
+what	Form.cpp	/^const char *Form::GradeTooHighException::what() const throw()$/;"	f	class:Form::GradeTooHighException	typeref:typename:const char *
+what	Form.cpp	/^const char *Form::GradeTooLowException::what() const throw()$/;"	f	class:Form::GradeTooLowException	typeref:typename:const char *
 ~Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat() {}$/;"	f	class:Bureaucrat
 ~Form	Form.cpp	/^Form::~Form() {}$/;"	f	class:Form
