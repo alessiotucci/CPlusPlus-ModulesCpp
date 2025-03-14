@@ -6,7 +6,7 @@ Form::Form() : _name("Default Form"), _isSigned(false), _gradeToSign(150), _grad
 { }
 
 //2)Copy constructor
-Form::Form(const Form& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _gradeToExec(other._gradeToExec())
+Form::Form(const Form& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _gradeToExec(other.getGradeToExec())
 {
 	*this = other;
 	return ;
@@ -25,27 +25,27 @@ Form& Form::operator=(const Form& other)
 Form::~Form() {}
 
 //GETTER
-std::string getName() const
+std::string Form::getName() const
 {
-	return (_name);
+	return (this->_name);
 }
 
 //GETTER
 int Form::getGradeToSign() const
 {
-	return (_gradeToSign);
+	return (this->_gradeToSign);
 }
 
 //GETTER
 int Form::getGradeToExec() const
 {
-	return (_gradeToExec);
+	return (this->_gradeToExec);
 }
 
 //GETTER
 bool Form::isFormSigned() const
 {
-	return (_isSigned);
+	return (this->_isSigned);
 }
 
 //TODO implement this function
@@ -55,7 +55,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 }
 
 //OVERLOAD OF THE PRINT OPERATOR
-std::ostream& operator<< (std::ostream &out_fille, const Form &obj)
+std::ostream& operator<< (std::ostream &out_file, const Form &obj)
 {
 	out_file << obj. getName()
 	<< "grade to sign: ["
@@ -67,4 +67,5 @@ std::ostream& operator<< (std::ostream &out_fille, const Form &obj)
 	<< "is it signed: [" 
 	<< obj.isFormSigned()
 	<< "]" << std::endl;
+	return (out_file);
 }

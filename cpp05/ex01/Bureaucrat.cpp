@@ -1,7 +1,7 @@
 //TODO
 #include "Bureaucrat.hpp"
 #include <iostream> //TO USE THE PRINT STATEMENTS
-
+#include "Form.hpp"
 //Default constructor implementation
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150) // lowest grade
 { }

@@ -63,12 +63,12 @@ getGrade	Bureaucrat.cpp	/^int Bureaucrat::getGrade() const$/;"	f	class:Bureaucra
 getGradeToExec	Form.cpp	/^int Form::getGradeToExec() const$/;"	f	class:Form	typeref:typename:int
 getGradeToSign	Form.cpp	/^int Form::getGradeToSign() const$/;"	f	class:Form	typeref:typename:int
 getName	Bureaucrat.cpp	/^std::string Bureaucrat::getName() const$/;"	f	class:Bureaucrat	typeref:typename:std::string
-getName	Form.cpp	/^std::string getName() const$/;"	f	typeref:typename:std::string
+getName	Form.cpp	/^std::string Form::getName() const$/;"	f	class:Form	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
 isFormSigned	Form.cpp	/^bool Form::isFormSigned() const$/;"	f	class:Form	typeref:typename:bool
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj)$/;"	f	typeref:typename:std::ostream &
-operator <<	Form.cpp	/^std::ostream& operator<< (std::ostream &out_fille, const Form &obj)$/;"	f	typeref:typename:std::ostream &
+operator <<	Form.cpp	/^std::ostream& operator<< (std::ostream &out_file, const Form &obj)$/;"	f	typeref:typename:std::ostream &
 operator =	Bureaucrat.cpp	/^Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)$/;"	f	class:Bureaucrat	typeref:typename:Bureaucrat &
 operator =	Form.cpp	/^Form& Form::operator=(const Form& other)$/;"	f	class:Form	typeref:typename:Form &
 re	Makefile	/^re: fclean all$/;"	t
