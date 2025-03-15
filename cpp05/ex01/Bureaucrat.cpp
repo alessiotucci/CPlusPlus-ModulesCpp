@@ -101,3 +101,18 @@ void Bureaucrat::DecrementGrade()
 	this->_grade++;
 }
 
+//TODO: In Bureaucrat.hpp
+void Bureaucrat::signForm(Form &form) const
+{
+	try
+	{
+		form.beSigned(*this); // calling the form function with this as param
+		std::cout << this->_name << "signed " << form.getName() << std::endl;
+	}
+	catch(std:: exception &e)
+	{
+		std::cout << this->_name << "couldn't sign " << form.getName()
+		<< "because " << e.what() << std::endl;
+	}
+}
+
