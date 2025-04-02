@@ -5,22 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/01 16:36:32 by atucci            #+#    #+#              #
-#    Updated: 2025/03/03 14:59:42 by atucci           ###   ########.fr        #
+#    Created: 2025/03/01 16:36:13 by atucci            #+#    #+#              #
+#    Updated: 2025/04/02 18:16:32 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = default
+NAME = 'No, you need form 28B, not 28C...'
 
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
 SOURCE = main.cpp \
+		 Bureaucrat.cpp \
+		 AForm.cpp \
+		 PresidentialPardonForm.cpp \
+		 RobotomyRequestForm.cpp \
+		 ShrubberyCreationForm.cpp \
 
-HEADERS =
+HEADERS = Bureaucrat.hpp \
+		  AForm.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *

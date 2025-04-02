@@ -9,3 +9,74 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+AFORM_HPP	AForm.hpp	/^# define AFORM_HPP$/;"	d
+AForm	AForm.cpp	/^AForm::AForm() : _name("Default AForm"),  _gradeToSign(150), _gradeToExec(150), _isSigned(false)$/;"	f	class:AForm
+AForm	AForm.cpp	/^AForm::AForm(const AForm& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()),/;"	f	class:AForm
+AForm	AForm.cpp	/^AForm::AForm(int gradeToSign, int gradeToExec) : _name("Default Form"), _gradeToSign(gradeToSign/;"	f	class:AForm
+AForm	AForm.hpp	/^class AForm$/;"	c
+BG_CYAN	Bureaucrat.hpp	/^# define BG_CYAN /;"	d
+BG_GREEN	Bureaucrat.hpp	/^# define BG_GREEN /;"	d
+BG_RED	Bureaucrat.hpp	/^# define BG_RED /;"	d
+BG_RESET	Bureaucrat.hpp	/^# define BG_RESET /;"	d
+BG_YELLOW	Bureaucrat.hpp	/^# define BG_YELLOW /;"	d
+BLUE	Bureaucrat.hpp	/^# define BLUE /;"	d
+BUREAUCRAT_HPP	Bureaucrat.hpp	/^#define BUREAUCRAT_HPP$/;"	d
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat() : _name("default"), _grade(150) \/\/ lowest grade$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName())$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade, std::string name)$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.hpp	/^class Bureaucrat$/;"	c
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Bureaucrat.hpp	/^# define CYAN /;"	d
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+DecrementGrade	Bureaucrat.cpp	/^void Bureaucrat::DecrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GRAY	Bureaucrat.hpp	/^# define GRAY /;"	d
+GREEN	Bureaucrat.hpp	/^# define GREEN /;"	d
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+GradeTooHighException	AForm.hpp	/^		class GradeTooHighException : public std::exception$/;"	c	class:AForm
+GradeTooHighException	Bureaucrat.hpp	/^		class GradeTooHighException : public std::exception$/;"	c	class:Bureaucrat
+GradeTooLowException	AForm.hpp	/^		class GradeTooLowException : public std::exception$/;"	c	class:AForm
+GradeTooLowException	Bureaucrat.hpp	/^		class GradeTooLowException : public std::exception$/;"	c	class:Bureaucrat
+HEADERS	Makefile	/^HEADERS = Bureaucrat.hpp \\$/;"	m
+IncrementGrade	Bureaucrat.cpp	/^void Bureaucrat::IncrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
+NAME	Makefile	/^NAME = 'No, you need form 28B, not 28C...'$/;"	m
+PURPLE	Bureaucrat.hpp	/^# define PURPLE /;"	d
+RED	Bureaucrat.hpp	/^# define RED /;"	d
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	Bureaucrat.hpp	/^# define RESET /;"	d
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	Bureaucrat.hpp	/^# define YELLOW /;"	d
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_grade	Bureaucrat.hpp	/^		int _grade;$/;"	m	class:Bureaucrat	typeref:typename:int
+_gradeToExec	AForm.hpp	/^	const int _gradeToExec;$/;"	m	class:AForm	typeref:typename:const int
+_gradeToSign	AForm.hpp	/^	const int _gradeToSign;$/;"	m	class:AForm	typeref:typename:const int
+_isSigned	AForm.hpp	/^	bool _isSigned;$/;"	m	class:AForm	typeref:typename:bool
+_name	AForm.hpp	/^	const std::string _name;$/;"	m	class:AForm	typeref:typename:const std::string
+_name	Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string
+all	Makefile	/^all: $(NAME)$/;"	t
+beSigned	AForm.cpp	/^void AForm::beSigned(const Bureaucrat &bureaucrat)$/;"	f	class:AForm	typeref:typename:void
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+getGrade	Bureaucrat.cpp	/^int Bureaucrat::getGrade() const$/;"	f	class:Bureaucrat	typeref:typename:int
+getGradeToExec	AForm.cpp	/^int AForm::getGradeToExec() const$/;"	f	class:AForm	typeref:typename:int
+getGradeToSign	AForm.cpp	/^int AForm::getGradeToSign() const$/;"	f	class:AForm	typeref:typename:int
+getName	AForm.cpp	/^std::string AForm::getName() const$/;"	f	class:AForm	typeref:typename:std::string
+getName	Bureaucrat.cpp	/^std::string Bureaucrat::getName() const$/;"	f	class:Bureaucrat	typeref:typename:std::string
+hidden	Makefile	/^hidden:$/;"	t
+isAFormSigned	AForm.cpp	/^bool AForm::isAFormSigned() const$/;"	f	class:AForm	typeref:typename:bool
+main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+operator <<	AForm.cpp	/^std::ostream& operator<< (std::ostream &out_file, const AForm &obj)$/;"	f	typeref:typename:std::ostream &
+operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj)$/;"	f	typeref:typename:std::ostream &
+operator =	AForm.cpp	/^AForm& AForm::operator=(const AForm& other)$/;"	f	class:AForm	typeref:typename:AForm &
+operator =	Bureaucrat.cpp	/^Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)$/;"	f	class:Bureaucrat	typeref:typename:Bureaucrat &
+re	Makefile	/^re: fclean all$/;"	t
+signForm	Bureaucrat.cpp	/^void Bureaucrat::signForm(Form &form) const$/;"	f	class:Bureaucrat	typeref:typename:void
+what	AForm.cpp	/^const char *AForm::GradeTooHighException::what() const throw()$/;"	f	class:AForm::GradeTooHighException	typeref:typename:const char *
+what	AForm.cpp	/^const char *AForm::GradeTooLowException::what() const throw()$/;"	f	class:AForm::GradeTooLowException	typeref:typename:const char *
+what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooHighException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *
+what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooLowException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooLowException	typeref:typename:const char *
+~AForm	AForm.cpp	/^AForm::~AForm() {}$/;"	f	class:AForm
+~Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat() {}$/;"	f	class:Bureaucrat
