@@ -73,7 +73,7 @@ operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, co
 operator =	AForm.cpp	/^AForm& AForm::operator=(const AForm& other)$/;"	f	class:AForm	typeref:typename:AForm &
 operator =	Bureaucrat.cpp	/^Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)$/;"	f	class:Bureaucrat	typeref:typename:Bureaucrat &
 re	Makefile	/^re: fclean all$/;"	t
-signForm	Bureaucrat.cpp	/^void Bureaucrat::signForm(Form &form) const$/;"	f	class:Bureaucrat	typeref:typename:void
+signForm	Bureaucrat.cpp	/^void Bureaucrat::signForm(AForm &form) const$/;"	f	class:Bureaucrat	typeref:typename:void
 what	AForm.cpp	/^const char *AForm::GradeTooHighException::what() const throw()$/;"	f	class:AForm::GradeTooHighException	typeref:typename:const char *
 what	AForm.cpp	/^const char *AForm::GradeTooLowException::what() const throw()$/;"	f	class:AForm::GradeTooLowException	typeref:typename:const char *
 what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooHighException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *

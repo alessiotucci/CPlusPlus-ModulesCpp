@@ -11,7 +11,7 @@
 #include <string>
 #include <exception>
 #include "AForm.hpp"
-class Form;
+class AForm;
 # define BLUE    "\033[1;34m"
 # define PURPLE  "\033[1;35m"
 # define GRAY    "\033[1;30m"
@@ -72,8 +72,8 @@ class Bureaucrat
 		// function to decrement
 		void DecrementGrade();
 
-		//TODO: In Bureaucrat.hpp
-		void signForm(Form &form) const;
+		//TODO: In Bureaucrat.hpp ?? what to do with pure virtual?
+		void signForm(AForm &form) const;
 
 	 // nested class for exception
 	public:
