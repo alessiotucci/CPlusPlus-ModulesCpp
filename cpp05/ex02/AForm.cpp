@@ -75,12 +75,12 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 // Exception what() implementations
 const char *AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high");
+	return ("Grade too high!");
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low");
+	return ("Grade too low!");
 }
 
 //OVERLOAD OF THE PRINT OPERATOR

@@ -4,10 +4,8 @@
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
-
 class Bureaucrat;
 
-/*TODO: update this class to be ABSTRACT */
 class AForm
 {
 private:
@@ -23,8 +21,8 @@ public:
 	AForm(const AForm& other);
 	// 3. Copy assignment operator
 	AForm& operator=(const AForm& other);
-	// 4. Destructor
-	~AForm();
+	// 4. virtual Destructor (it is an abstract class)
+	virtual ~AForm();
 	// No member variables or additional methods
 
 	AForm(int gradeToSign, int gradeToExec);
@@ -34,9 +32,12 @@ public:
 	int getGradeToExec() const;
 	bool isAFormSigned() const;
 
-	//TODO: In AForm.hpp
 	void beSigned(const Bureaucrat &bureaucrat);
-	 // nested class for exception
+
+/*Now, add the execute(Bureaucrat const & executor) const member function to
+the base form*/
+	virtual void execute(Bureaucrat const & executor) const = 0;
+
 	public:
 		class GradeTooHighException : public std::exception
 		{
