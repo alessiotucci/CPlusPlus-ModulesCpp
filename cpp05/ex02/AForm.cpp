@@ -2,7 +2,7 @@
 #include "AForm.hpp"
 
 //0) Constructor with parameters (has to raised exceptions)
-AForm::AForm(int gradeToSign, int gradeToExec) : _name("Default Form"), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec), _isSigned(false)
+AForm::AForm(std::string target, int gradeToSign, int gradeToExec) : _name(target), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec), _isSigned(false)
 {
 	if (gradeToSign > 150 || gradeToExec > 150)
 		throw GradeTooLowException();

@@ -1,12 +1,12 @@
 #include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
-#include <strings>
+#include <string>
 
 PresidentialPardonForm::PresidentialPardonForm(std::string &target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(other), _target(other._target) {}
 
-PresidentialPardonForm::PresidentialPardonForm& operator=(const PresidentialPardonForm& other)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
 	if (this != &other)
 	{
@@ -19,3 +19,9 @@ PresidentialPardonForm::PresidentialPardonForm& operator=(const PresidentialPard
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
 //TODO: implement the execute function
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	// perform the checks
+	(void)executor;
+	return ;
+}

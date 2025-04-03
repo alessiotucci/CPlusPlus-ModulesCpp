@@ -14,7 +14,7 @@ $(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
 AFORM_HPP	AForm.hpp	/^# define AFORM_HPP$/;"	d
 AForm	AForm.cpp	/^AForm::AForm() : _name("Default AForm"),  _gradeToSign(150), _gradeToExec(150), _isSigned(false)$/;"	f	class:AForm
 AForm	AForm.cpp	/^AForm::AForm(const AForm& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()),/;"	f	class:AForm
-AForm	AForm.cpp	/^AForm::AForm(int gradeToSign, int gradeToExec) : _name("Default Form"), _gradeToSign(gradeToSign/;"	f	class:AForm
+AForm	AForm.cpp	/^AForm::AForm(std::string target, int gradeToSign, int gradeToExec) : _name(target), _gradeToSign/;"	f	class:AForm
 AForm	AForm.hpp	/^class AForm$/;"	c
 BG_CYAN	Bureaucrat.hpp	/^# define BG_CYAN /;"	d
 BG_GREEN	Bureaucrat.hpp	/^# define BG_GREEN /;"	d
@@ -46,13 +46,15 @@ PRESIDENTIALPARDONFORM_HPP	PresidentialPardonForm.hpp	/^# define PRESIDENTIALPAR
 PURPLE	Bureaucrat.hpp	/^# define PURPLE /;"	d
 PresidentialPardonForm	PresidentialPardonForm.cpp	/^PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(othe/;"	f	class:PresidentialPardonForm
 PresidentialPardonForm	PresidentialPardonForm.cpp	/^PresidentialPardonForm::PresidentialPardonForm(std::string &target) : AForm("PresidentialPardonF/;"	f	class:PresidentialPardonForm
-PresidentialPardonForm	PresidentialPardonForm.hpp	/^class PresidentialPardonForm$/;"	c
+PresidentialPardonForm	PresidentialPardonForm.hpp	/^class PresidentialPardonForm : public AForm$/;"	c
 RED	Bureaucrat.hpp	/^# define RED /;"	d
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Bureaucrat.hpp	/^# define RESET /;"	d
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
 ROBOTOMYREQUESTFORM_HPP	RobotomyRequestForm.hpp	/^# define ROBOTOMYREQUESTFORM_HPP$/;"	d
-RobotomyRequestForm	RobotomyRequestForm.hpp	/^class RobotomyRequestForm$/;"	c
+RobotomyRequestForm	RobotomyRequestForm.cpp	/^RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other), _targ/;"	f	class:RobotomyRequestForm
+RobotomyRequestForm	RobotomyRequestForm.cpp	/^RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, /;"	f	class:RobotomyRequestForm
+RobotomyRequestForm	RobotomyRequestForm.hpp	/^class RobotomyRequestForm : public AForm$/;"	c
 SHRUBBERY_HPP	ShrubberyCreationForm.hpp	/^# define SHRUBBERY_HPP$/;"	d
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 ShrubberyCreationForm	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other),/;"	f	class:ShrubberyCreationForm
@@ -72,6 +74,9 @@ _target	ShrubberyCreationForm.hpp	/^	std::string _target; \/\/ The target where 
 all	Makefile	/^all: $(NAME)$/;"	t
 beSigned	AForm.cpp	/^void AForm::beSigned(const Bureaucrat &bureaucrat)$/;"	f	class:AForm	typeref:typename:void
 clean	Makefile	/^clean:$/;"	t
+execute	PresidentialPardonForm.cpp	/^void PresidentialPardonForm::execute(Bureaucrat const & executor) const$/;"	f	class:PresidentialPardonForm	typeref:typename:void
+execute	RobotomyRequestForm.cpp	/^void RobotomyRequestForm::execute(Bureaucrat const & executor) const$/;"	f	class:RobotomyRequestForm	typeref:typename:void
+execute	ShrubberyCreationForm.cpp	/^void ShrubberyCreationForm::execute(Bureaucrat const & executor) const$/;"	f	class:ShrubberyCreationForm	typeref:typename:void
 fclean	Makefile	/^fclean: clean$/;"	t
 getGrade	Bureaucrat.cpp	/^int Bureaucrat::getGrade() const$/;"	f	class:Bureaucrat	typeref:typename:int
 getGradeToExec	AForm.cpp	/^int AForm::getGradeToExec() const$/;"	f	class:AForm	typeref:typename:int
@@ -85,8 +90,9 @@ operator <<	AForm.cpp	/^std::ostream& operator<< (std::ostream &out_file, const 
 operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj)$/;"	f	typeref:typename:std::ostream &
 operator =	AForm.cpp	/^AForm& AForm::operator=(const AForm& other)$/;"	f	class:AForm	typeref:typename:AForm &
 operator =	Bureaucrat.cpp	/^Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)$/;"	f	class:Bureaucrat	typeref:typename:Bureaucrat &
-operator =	PresidentialPardonForm.cpp	/^PresidentialPardonForm::PresidentialPardonForm& operator=(const PresidentialPardonForm& other)$/;"	f	typeref:typename:PresidentialPardonForm::PresidentialPardonForm &
-operator =	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm::ShrubberyCreationForm& operator=(const ShrubberyCreationForm &other)$/;"	f	typeref:typename:ShrubberyCreationForm::ShrubberyCreationForm &
+operator =	PresidentialPardonForm.cpp	/^PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)$/;"	f	class:PresidentialPardonForm	typeref:typename:PresidentialPardonForm &
+operator =	RobotomyRequestForm.cpp	/^RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)$/;"	f	class:RobotomyRequestForm	typeref:typename:RobotomyRequestForm &
+operator =	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)$/;"	f	class:ShrubberyCreationForm	typeref:typename:ShrubberyCreationForm &
 re	Makefile	/^re: fclean all$/;"	t
 signForm	Bureaucrat.cpp	/^void Bureaucrat::signForm(AForm &form) const$/;"	f	class:Bureaucrat	typeref:typename:void
 what	AForm.cpp	/^const char *AForm::GradeTooHighException::what() const throw()$/;"	f	class:AForm::GradeTooHighException	typeref:typename:const char *
@@ -96,3 +102,5 @@ what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooLowException::what() const
 ~AForm	AForm.cpp	/^AForm::~AForm() {}$/;"	f	class:AForm
 ~Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::~Bureaucrat() {}$/;"	f	class:Bureaucrat
 ~PresidentialPardonForm	PresidentialPardonForm.cpp	/^PresidentialPardonForm::~PresidentialPardonForm() {}$/;"	f	class:PresidentialPardonForm
+~RobotomyRequestForm	RobotomyRequestForm.cpp	/^RobotomyRequestForm::~RobotomyRequestForm() {}$/;"	f	class:RobotomyRequestForm
+~ShrubberyCreationForm	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm::~ShrubberyCreationForm() {}$/;"	f	class:ShrubberyCreationForm

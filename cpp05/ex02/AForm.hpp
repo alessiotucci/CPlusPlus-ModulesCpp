@@ -15,6 +15,7 @@ private:
 	bool _isSigned;
 
 public:
+	AForm(std::string target, int gradeToSign, int gradeToExec);
 	// 1. AForm constructor
 	AForm();
 	// 2. Copy constructor

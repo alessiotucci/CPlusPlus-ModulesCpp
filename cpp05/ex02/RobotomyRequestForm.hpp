@@ -1,9 +1,10 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
+#include "AForm.hpp"
 #include <string>
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public AForm
 {
 	// some stuff to change here
 private:
@@ -19,6 +20,8 @@ public:
 	// 4. virtual Destructor
 	virtual ~RobotomyRequestForm();
 
+	//TODO: implement this function in the concrete form
+	virtual void execute(Bureaucrat const & executor) const;
 };
 #endif
 
