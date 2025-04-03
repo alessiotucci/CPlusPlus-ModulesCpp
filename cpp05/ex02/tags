@@ -51,6 +51,8 @@ RED	Bureaucrat.hpp	/^# define RED /;"	d
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Bureaucrat.hpp	/^# define RESET /;"	d
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
+ROBOTOMYREQUESTFORM_HPP	RobotomyRequestForm.hpp	/^# define ROBOTOMYREQUESTFORM_HPP$/;"	d
+RobotomyRequestForm	RobotomyRequestForm.hpp	/^class RobotomyRequestForm$/;"	c
 SHRUBBERY_HPP	ShrubberyCreationForm.hpp	/^# define SHRUBBERY_HPP$/;"	d
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 ShrubberyCreationForm	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other),/;"	f	class:ShrubberyCreationForm
@@ -65,6 +67,7 @@ _isSigned	AForm.hpp	/^	bool _isSigned;$/;"	m	class:AForm	typeref:typename:bool
 _name	AForm.hpp	/^	const std::string _name;$/;"	m	class:AForm	typeref:typename:const std::string
 _name	Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string
 _target	PresidentialPardonForm.hpp	/^	std::string _target;$/;"	m	class:PresidentialPardonForm	typeref:typename:std::string
+_target	RobotomyRequestForm.hpp	/^	std::string _target;$/;"	m	class:RobotomyRequestForm	typeref:typename:std::string
 _target	ShrubberyCreationForm.hpp	/^	std::string _target; \/\/ The target where the shrubbery will be created.$/;"	m	class:ShrubberyCreationForm	typeref:typename:std::string
 all	Makefile	/^all: $(NAME)$/;"	t
 beSigned	AForm.cpp	/^void AForm::beSigned(const Bureaucrat &bureaucrat)$/;"	f	class:AForm	typeref:typename:void
