@@ -109,8 +109,8 @@ void Bureaucrat::signForm(AForm &form) const
 	try
 	{
 		//TODO: Update this shit
-		//form.beSigned(*this); // calling the form function with this as param
-		std::cout << this->_name << "signed " << /*form.getName() <<*/ std::endl;
+		form.beSigned(*this); // calling the form function with this as param
+		std::cout << this->_name << "signed " << form.getName() << std::endl;
 	}
 	catch(std:: exception &e)
 	{
