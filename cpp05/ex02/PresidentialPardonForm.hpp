@@ -12,7 +12,7 @@ private:
 public:
 	// 1. PresidentialPardonForm constructor
 	// TODO:All of them take only one parameter in their constructor: the target of the form.
-	PresidentialPardonForm(std::string &target);
+	PresidentialPardonForm(const std::string &target);
 	// 2. Copy constructor
 	PresidentialPardonForm(const PresidentialPardonForm& other);
 	// 3. Copy assignment operator

@@ -11,6 +11,12 @@ int main()
 	std::cout << BLUE << "TEST 1: Create Bureaucrat Bob (grade 120)" << RESET << std::endl;
 	Bureaucrat Bob = Bureaucrat(120, "Bob");
 	std::cout << "Name of: " << Bob;
+
+	ShrubberyCreationForm Shrubbery = ShrubberyCreationForm("string");
+	RobotomyRequestForm Robotomy = RobotomyRequestForm("string");
+	PresidentialPardonForm Presidential = PresidentialPardonForm("Prisoner");
+	std::cout << "PresidentialPardonForm name: " << Presidential;
+
 	// Test 2: Bob signs and executes a ShrubberyCreationForm (required: sign 145, exec 137).
 	std::cout << BLUE << "TEST 2: Bob signs and executes ShrubberyCreationForm targeting 'Home'" << RESET << std::endl;
 	try
@@ -35,6 +41,7 @@ int main()
 	std::cout << BLUE << "TEST 4: Bob attempts to sign PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	try
 	{
+		Bob.signForm(Presidential);
 	}
 	catch (std::exception &e)
 	{

@@ -45,7 +45,7 @@ NAME	Makefile	/^NAME = 'No, you need form 28B, not 28C...'$/;"	m
 PRESIDENTIALPARDONFORM_HPP	PresidentialPardonForm.hpp	/^# define PRESIDENTIALPARDONFORM_HPP$/;"	d
 PURPLE	Bureaucrat.hpp	/^# define PURPLE /;"	d
 PresidentialPardonForm	PresidentialPardonForm.cpp	/^PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(othe/;"	f	class:PresidentialPardonForm
-PresidentialPardonForm	PresidentialPardonForm.cpp	/^PresidentialPardonForm::PresidentialPardonForm(std::string &target) : AForm("PresidentialPardonF/;"	f	class:PresidentialPardonForm
+PresidentialPardonForm	PresidentialPardonForm.cpp	/^PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialP/;"	f	class:PresidentialPardonForm
 PresidentialPardonForm	PresidentialPardonForm.hpp	/^class PresidentialPardonForm : public AForm$/;"	c
 RED	Bureaucrat.hpp	/^# define RED /;"	d
 RED	Makefile	/^RED := \\033[1;31m$/;"	m

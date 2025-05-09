@@ -105,7 +105,6 @@ void Bureaucrat::DecrementGrade()
 void Bureaucrat::signForm(AForm &form) const
 {
 	//TODO: UPDATE
-	(void)form;
 	try
 	{
 		//TODO: Update this shit
@@ -114,7 +113,7 @@ void Bureaucrat::signForm(AForm &form) const
 	}
 	catch(std:: exception &e)
 	{
-		std::cout << this->_name << "couldn't sign "/* << form.getName()*/
+		std::cout << this->_name << "couldn't sign " << form.getName()
 		<< "because " << e.what() << std::endl;
 	}
 }
