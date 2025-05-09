@@ -24,6 +24,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 
 //TODO: implement the execute function
+// Create a file <target>_shrubbery in the working directory, and writes ASCII tree inside it.
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	// perform the checks

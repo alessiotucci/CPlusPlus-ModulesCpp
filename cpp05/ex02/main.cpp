@@ -9,6 +9,8 @@ int main()
 {
 	// Test 1: Create a Bureaucrat Bob with grade 120 and print him.
 	std::cout << BLUE << "TEST 1: Create Bureaucrat Bob (grade 120)" << RESET << std::endl;
+	Bureaucrat Bob = Bureaucrat(120, "Bob");
+	std::cout << "Name of: " << Bob;
 	// Test 2: Bob signs and executes a ShrubberyCreationForm (required: sign 145, exec 137).
 	std::cout << BLUE << "TEST 2: Bob signs and executes ShrubberyCreationForm targeting 'Home'" << RESET << std::endl;
 	try
@@ -16,7 +18,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Error in Test 2: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Error in Test 2: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 3: Bob attempts to sign a RobotomyRequestForm (required: sign 72, exec 45) - should fail.
@@ -26,7 +28,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 3 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 3 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 4: Bob attempts to sign a PresidentialPardonForm (required: sign 25, exec 5) - should fail.
@@ -36,7 +38,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 4 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 4 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 5: High-ranked Bureaucrat Alice (grade 1) signs and executes PresidentialPardonForm.
@@ -46,7 +48,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 5 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 5 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 6: Bureaucrat Charlie (grade 50) signs a RobotomyRequestForm but fails execution.
@@ -56,7 +58,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 6 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 6 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 7: Bureaucrat Dave (grade 40) successfully signs and executes a RobotomyRequestForm.
@@ -66,7 +68,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 7 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 7 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 8: Bureaucrat Eve (grade 150) tries to sign a ShrubberyCreationForm (should fail because 150 > 145).
@@ -76,7 +78,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 8 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 8 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 9: Bureaucrat Frank (grade 25) signs a PresidentialPardonForm successfully, but fails execution (25 > 5).
@@ -86,7 +88,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 9 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 9 Exception: " << RESET << e.what() << std::endl;
 	}
 	
 	// Test 10: Execute a form without signing it.
@@ -96,9 +98,8 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Test 10 Exception: " << e.what() << RESET << std::endl;
+		std::cout << RED << "Test 10 Exception: " << RESET << e.what() << std::endl;
 	}
-	
-	return 0;
+	return (0);
 }
 

@@ -19,9 +19,11 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
 //TODO: implement the execute function
+// Informs that <target> has been pardoned by Zaphod Beeblebrox.
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	// perform the checks
 	(void)executor;
+	std::cout << _target << "has beeen pardoned by Zaphod Beeblebrox\n";
 	return ;
 }
