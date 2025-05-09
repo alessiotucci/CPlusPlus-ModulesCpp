@@ -60,6 +60,7 @@ SHRUBBERY_HPP	ShrubberyCreationForm.hpp	/^# define SHRUBBERY_HPP$/;"	d
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 ShrubberyCreationForm	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other),/;"	f	class:ShrubberyCreationForm
 ShrubberyCreationForm	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreati/;"	f	class:ShrubberyCreationForm
+ShrubberyCreationForm	ShrubberyCreationForm.hpp	/^class ShrubberyCreationForm : public AForm$/;"	c
 YELLOW	Bureaucrat.hpp	/^# define YELLOW /;"	d
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 _grade	Bureaucrat.hpp	/^		int _grade;$/;"	m	class:Bureaucrat	typeref:typename:int
@@ -70,6 +71,7 @@ _name	AForm.hpp	/^	const std::string _name;$/;"	m	class:AForm	typeref:typename:c
 _name	Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string
 _target	PresidentialPardonForm.hpp	/^	std::string _target;$/;"	m	class:PresidentialPardonForm	typeref:typename:std::string
 _target	RobotomyRequestForm.hpp	/^	std::string _target;$/;"	m	class:RobotomyRequestForm	typeref:typename:std::string
+_target	ShrubberyCreationForm.hpp	/^	std::string _target; \/\/ The target where the shrubbery will be created.$/;"	m	class:ShrubberyCreationForm	typeref:typename:std::string
 all	Makefile	/^all: $(NAME)$/;"	t
 beSigned	AForm.cpp	/^void AForm::beSigned(const Bureaucrat &bureaucrat)$/;"	f	class:AForm	typeref:typename:void
 clean	Makefile	/^clean:$/;"	t
