@@ -1,6 +1,7 @@
 #include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include <string>
+#include <cstdlib>
 
 //1) Constructor: Calls the base class constructor with the formś name and
 //required grades
@@ -26,7 +27,13 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 // Otherwise, informs that the robotomy failed.
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	// perform the checks
 	(void)executor;
+	std::cout << "!!DRILL NOISES!!" << std::endl;
+	// perform the checks
+	srand(time(NULL));
+	if (rand() & 1) // Check least significant bit
+		std::cout << _target << "has been robotomized successfully!\n";
+	else
+		std::cout << _target << "has NOT been robotomized ";
 	return ;
 }
