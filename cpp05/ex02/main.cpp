@@ -14,7 +14,7 @@ int main()
 
 
 	// Test 2: Bob signs and executes a ShrubberyCreationForm (required: sign 145, exec 137).
-	std::cout << BLUE << "TEST 2: Bob signs and executes ShrubberyCreationForm targeting 'Home'" << RESET << std::endl;
+	std::cout << BLUE << "TEST 2: Bob signs ShrubberyCreationForm targeting 'Home'" << RESET << std::endl;
 	ShrubberyCreationForm Home = ShrubberyCreationForm("Home");
 	try
 	{
@@ -24,7 +24,15 @@ int main()
 	{
 		std::cout << RED << "Error in Test 2: " << RESET << e.what() << std::endl;
 	}
-	
+	std::cout << YELLOW << "TEST 2.1: Bob execute ShrubberyCreationForm targeting 'Home' --> creating a ascii three" << RESET << std::endl;
+	try
+	{
+		Home.execute(Bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Error in Test 2: " << RESET << e.what() << std::endl;
+	}
 	// Test 3: Bob attempts to sign a RobotomyRequestForm (required: sign 72, exec 45) - should fail.
 	std::cout << BLUE << "TEST 3: Bob attempts to sign RobotomyRequestForm targeting 'Office'" << RESET << std::endl;
 	RobotomyRequestForm Office = RobotomyRequestForm("Office");
@@ -115,16 +123,6 @@ int main()
 	catch (std::exception &e)
 	{
 		std::cout << RED << "Test 9 Exception: " << RESET << e.what() << std::endl;
-	}
-	
-	// Test 10: Execute a form without signing it.
-	std::cout << BLUE << "TEST 10: Attempt to execute an unsigned ShrubberyCreationForm targeting 'Office'" << RESET << std::endl;
-	try
-	{
-	}
-	catch (std::exception &e)
-	{
-		std::cout << RED << "Test 10 Exception: " << RESET << e.what() << std::endl;
 	}
 	return (0);
 }

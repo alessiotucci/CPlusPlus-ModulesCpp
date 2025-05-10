@@ -109,12 +109,12 @@ void Bureaucrat::signForm(AForm &form) const
 	{
 		//TODO: Update this shit
 		form.beSigned(*this); // calling the form function with this as param
-		std::cout << this->_name << "signed " << form.getName() << std::endl;
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch(std:: exception &e)
 	{
-		std::cout << this->_name << "couldn't sign " << form.getName()
-		<< "because " << e.what() << std::endl;
+		std::cout << this->_name << " couldn't sign " << form.getName()
+		<< "because [" << e.what()  << "] " << std::endl;
 	}
 }
 
