@@ -24,6 +24,7 @@ int main()
 	{
 		std::cout << RED << "Error in Test 2: " << RESET << e.what() << std::endl;
 	}
+
 	std::cout << YELLOW << "TEST 2.1: Bob execute ShrubberyCreationForm targeting 'Home' --> creating a ascii three" << RESET << std::endl;
 	try
 	{
@@ -44,7 +45,15 @@ int main()
 	{
 		std::cout << RED << "Test 3 Exception: " << RESET << e.what() << std::endl;
 	}
-	
+	std::cout << YELLOW << "TEST 3.1: Bob attempts to exec RobotomyRequestForm targeting 'Office'" << RESET << std::endl;
+	try
+	{
+		Office.execute(Bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 3 Exception: " << RESET << e.what() << std::endl;
+	}
 	// Test 4: Bob attempts to sign a PresidentialPardonForm (required: sign 25, exec 5) - should fail.
 	std::cout << BLUE << "TEST 4: Bob attempts to sign PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	PresidentialPardonForm Prisoner = PresidentialPardonForm("Prisoner");
@@ -56,9 +65,17 @@ int main()
 	{
 		std::cout << RED << "Test 4 Exception: " << RESET << e.what() << std::endl;
 	}
-	
+	std::cout << YELLOW << "TEST 4.1: Bob attempts to exec PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
+	try
+	{
+		Prisoner.execute(Bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 4 Exception: " << RESET << e.what() << std::endl;
+	}
 	// Test 5: High-ranked Bureaucrat Alice (grade 1) signs and executes PresidentialPardonForm.
-	std::cout << BLUE << "TEST 5: Alice (grade 1) signs and executes PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
+	std::cout << BLUE << "TEST 5: Alice (grade 1) signs PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	Bureaucrat Alice = Bureaucrat(1, "Alice");
 	std::cout << "Name of high rank: " << Alice;
 	try
@@ -69,9 +86,18 @@ int main()
 	{
 		std::cout << RED << "Test 5 Exception: " << RESET << e.what() << std::endl;
 	}
-	
+	std::cout << YELLOW << "TEST 5.1: Alice executes PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
+	try
+	{
+		Prisoner.execute(Alice);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 5.1 Exception: " << RESET << e.what() << std::endl;
+	}
+
 	// Test 6: Bureaucrat Charlie (grade 50) signs a RobotomyRequestForm but fails execution.
-	std::cout << BLUE << "TEST 6: Charlie (grade 50) signs RobotomyRequestForm targeting 'Machine', execution should fail" << RESET << std::endl;
+	std::cout << BLUE << "TEST 6: Charlie (grade 50) signs RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
 	RobotomyRequestForm Machine= RobotomyRequestForm("Machine");
 	Bureaucrat Charlie = Bureaucrat(50, "Charlie");
 	std::cout << "Name : " << Charlie;
@@ -83,9 +109,18 @@ int main()
 	{
 		std::cout << RED << "Test 6 Exception: " << RESET << e.what() << std::endl;
 	}
+	std::cout << YELLOW << "TEST 6.1: Charlie exec RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
+	try
+	{
+		Machine.execute(Charlie);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 6 Exception: " << RESET << e.what() << std::endl;
+	}
 	
 	// Test 7: Bureaucrat Dave (grade 40) successfully signs and executes a RobotomyRequestForm.
-	std::cout << BLUE << "TEST 7: Dave (grade 40) signs and executes RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
+	std::cout << BLUE << "TEST 7: Dave (grade 40) signs RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
 	Bureaucrat Dave = Bureaucrat(40, "Dave");
 	std::cout << "Name : " << Dave;
 	try
@@ -96,7 +131,16 @@ int main()
 	{
 		std::cout << RED << "Test 7 Exception: " << RESET << e.what() << std::endl;
 	}
-	
+	std::cout << YELLOW << "TEST 7.1: Dave executes RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
+	try
+	{
+		Machine.execute(Dave);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 7 Exception: " << RESET << e.what() << std::endl;
+	}
+
 	// Test 8: Bureaucrat Eve (grade 150) tries to sign a ShrubberyCreationForm (should fail because 150 > 145).
 	std::cout << BLUE << "TEST 8: Eve (grade 150) attempts to sign ShrubberyCreationForm targeting 'Garden'" << RESET << std::endl;
 	ShrubberyCreationForm Garden = ShrubberyCreationForm("Garden");
@@ -110,7 +154,16 @@ int main()
 	{
 		std::cout << RED << "Test 8 Exception: " << RESET << e.what() << std::endl;
 	}
-	
+	std::cout << YELLOW << "TEST 8.1: Eve exec ShrubberyCreationForm targeting 'Garden'" << RESET << std::endl;
+	try
+	{
+		Garden.execute(Eve);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 8 Exception: " << RESET << e.what() << std::endl;
+	}
+
 	// Test 9: Bureaucrat Frank (grade 25) signs a PresidentialPardonForm successfully, but fails execution (25 > 5).
 	std::cout << BLUE << "TEST 9: Frank (grade 25) signs PresidentialPardonForm targeting 'Politician', but execution fails" << RESET << std::endl;
 	PresidentialPardonForm Politician = PresidentialPardonForm("Politician");
@@ -119,6 +172,15 @@ int main()
 	try
 	{
 		Frank.signForm(Politician);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Test 9 Exception: " << RESET << e.what() << std::endl;
+	}
+	std::cout << YELLOW << "TEST 9.1: Frank  exec PresidentialPardonForm targeting 'Politician'" << RESET << std::endl;
+	try
+	{
+		Politician.execute(Frank);
 	}
 	catch (std::exception &e)
 	{

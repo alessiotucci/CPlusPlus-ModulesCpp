@@ -32,8 +32,8 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	// perform the checks
 	srand(time(NULL));
 	if (rand() & 1) // Check least significant bit
-		std::cout << _target << "has been robotomized successfully!\n";
+		std::cout << "[" << _target << "] has been robotomized successfully!\n";
 	else
-		std::cout << _target << "has NOT been robotomized ";
+		std::cout << "[" << _target << "] has NOT been robotomized ";
 	return ;
 }
