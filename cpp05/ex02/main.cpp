@@ -16,6 +16,7 @@ int main()
 	// Test 2: Bob signs and executes a ShrubberyCreationForm (required: sign 145, exec 137).
 	std::cout << BLUE << "TEST 2: Bob signs ShrubberyCreationForm targeting 'Home'" << RESET << std::endl;
 	ShrubberyCreationForm Home = ShrubberyCreationForm("Home");
+	std::cout << "---\n" << Home << "---\n";
 	try
 	{
 		Bob.signForm(Home);
@@ -37,6 +38,7 @@ int main()
 	// Test 3: Bob attempts to sign a RobotomyRequestForm (required: sign 72, exec 45) - should fail.
 	std::cout << BLUE << "TEST 3: Bob attempts to sign RobotomyRequestForm targeting 'Office'" << RESET << std::endl;
 	RobotomyRequestForm Office = RobotomyRequestForm("Office");
+	std::cout << "---\n" << Office << "---\n";
 	try
 	{
 		Bob.signForm(Office);
@@ -57,6 +59,7 @@ int main()
 	// Test 4: Bob attempts to sign a PresidentialPardonForm (required: sign 25, exec 5) - should fail.
 	std::cout << BLUE << "TEST 4: Bob attempts to sign PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	PresidentialPardonForm Prisoner = PresidentialPardonForm("Prisoner");
+	std::cout << "---\n" << Prisoner << "---\n";
 	try
 	{
 		Bob.signForm(Prisoner);
@@ -77,7 +80,8 @@ int main()
 	// Test 5: High-ranked Bureaucrat Alice (grade 1) signs and executes PresidentialPardonForm.
 	std::cout << BLUE << "TEST 5: Alice (grade 1) signs PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	Bureaucrat Alice = Bureaucrat(1, "Alice");
-	std::cout << "Name of high rank: " << Alice;
+	std::cout << "***\nName of high rank: " << Alice << "***\n";
+	std::cout << "---\n" << Prisoner << "---\n";
 	try
 	{
 		Alice.signForm(Prisoner);
@@ -99,6 +103,7 @@ int main()
 	// Test 6: Bureaucrat Charlie (grade 50) signs a RobotomyRequestForm but fails execution.
 	std::cout << BLUE << "TEST 6: Charlie (grade 50) signs RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
 	RobotomyRequestForm Machine= RobotomyRequestForm("Machine");
+	std::cout << "---\n" << Machine << "---\n";
 	Bureaucrat Charlie = Bureaucrat(50, "Charlie");
 	std::cout << "Name : " << Charlie;
 	try
@@ -144,6 +149,7 @@ int main()
 	// Test 8: Bureaucrat Eve (grade 150) tries to sign a ShrubberyCreationForm (should fail because 150 > 145).
 	std::cout << BLUE << "TEST 8: Eve (grade 150) attempts to sign ShrubberyCreationForm targeting 'Garden'" << RESET << std::endl;
 	ShrubberyCreationForm Garden = ShrubberyCreationForm("Garden");
+	std::cout << "---\n" << Garden << "---\n";
 	Bureaucrat Eve = Bureaucrat(150, "Eve");
 	std::cout << "Name : " << Eve;
 	try
@@ -167,6 +173,7 @@ int main()
 	// Test 9: Bureaucrat Frank (grade 25) signs a PresidentialPardonForm successfully, but fails execution (25 > 5).
 	std::cout << BLUE << "TEST 9: Frank (grade 25) signs PresidentialPardonForm targeting 'Politician', but execution fails" << RESET << std::endl;
 	PresidentialPardonForm Politician = PresidentialPardonForm("Politician");
+	std::cout << "---\n" << Politician << "---\n";
 	Bureaucrat Frank = Bureaucrat(25, "Frank");
 	std::cout << "Name : " << Frank;
 	try

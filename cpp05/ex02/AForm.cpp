@@ -93,8 +93,9 @@ std::ostream& operator<< (std::ostream &out_file, const AForm &obj)
 	<< "grate to exect: ["
 	<< obj.getGradeToExec()
 	<< "]" << std::endl
-	<< "is it signed: [" 
-	<< obj.isAFormSigned()
+	<< "is it signed: ["
+	<< (obj.isAFormSigned() ? "TRUE" : "FALSE")
 	<< "]" << std::endl;
 	return (out_file);
 }
+
