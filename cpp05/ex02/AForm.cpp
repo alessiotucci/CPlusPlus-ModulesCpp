@@ -110,8 +110,8 @@ const char *AForm::FormNotSignedException::what() const throw()
 //OVERLOAD OF THE PRINT OPERATOR
 std::ostream& operator<< (std::ostream &out_file, const AForm &obj)
 {
-	out_file << obj. getName()
-	<< "grade to sign: ["
+	out_file << "[" << obj. getName() << "]"
+	<< "\ngrade to sign: ["
 	<< obj.getGradeToSign()
 	<< "]" << std::endl
 	<< "grate to exect: ["
