@@ -27,9 +27,9 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 // Otherwise, informs that the robotomy failed.
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
-	std::cout << "!!DRILL NOISES!!" << std::endl;
 	// perform the checks
+	checkRequired(executor);
+	std::cout << "!!DRILL NOISES!!" << std::endl;
 	srand(time(NULL));
 	if (rand() & 1) // Check least significant bit
 		std::cout << "[" << _target << "] has been robotomized successfully!\n";

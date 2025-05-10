@@ -34,7 +34,7 @@ public:
 	bool isAFormSigned() const;
 
 	void beSigned(const Bureaucrat &bureaucrat);
-
+	void checkRequired(const Bureaucrat &bureaucrat) const;
 /*Now, add the execute(Bureaucrat const & executor) const member function to
 the base form*/
 	virtual void execute(Bureaucrat const & executor) const = 0;
@@ -46,6 +46,16 @@ the base form*/
 				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class FormAlreadySignedException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

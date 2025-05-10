@@ -28,7 +28,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	// perform the checks
-	(void)executor;
+	checkRequired(executor);
 	std::cout << "creating a file with + _shrubbery\n";
 	std::ofstream file((_target + "_shrubbery").c_str());
 	file << BIG_TREE_ART;

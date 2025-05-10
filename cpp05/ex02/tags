@@ -33,6 +33,8 @@ CYAN	Bureaucrat.hpp	/^# define CYAN /;"	d
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 DecrementGrade	Bureaucrat.cpp	/^void Bureaucrat::DecrementGrade()$/;"	f	class:Bureaucrat	typeref:typename:void
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+FormAlreadySignedException	AForm.hpp	/^		class FormAlreadySignedException : public std::exception$/;"	c	class:AForm
+FormNotSignedException	AForm.hpp	/^		class FormNotSignedException : public std::exception$/;"	c	class:AForm
 GRAY	Bureaucrat.hpp	/^# define GRAY /;"	d
 GREEN	Bureaucrat.hpp	/^# define GREEN /;"	d
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
@@ -74,6 +76,7 @@ _target	RobotomyRequestForm.hpp	/^	std::string _target;$/;"	m	class:RobotomyRequ
 _target	ShrubberyCreationForm.hpp	/^	std::string _target; \/\/ The target where the shrubbery will be created.$/;"	m	class:ShrubberyCreationForm	typeref:typename:std::string
 all	Makefile	/^all: $(NAME)$/;"	t
 beSigned	AForm.cpp	/^void AForm::beSigned(const Bureaucrat &bureaucrat)$/;"	f	class:AForm	typeref:typename:void
+checkRequired	AForm.cpp	/^void AForm::checkRequired(const Bureaucrat& bureaucrat) const$/;"	f	class:AForm	typeref:typename:void
 clean	Makefile	/^clean:$/;"	t
 execute	PresidentialPardonForm.cpp	/^void PresidentialPardonForm::execute(Bureaucrat const & executor) const$/;"	f	class:PresidentialPardonForm	typeref:typename:void
 execute	RobotomyRequestForm.cpp	/^void RobotomyRequestForm::execute(Bureaucrat const & executor) const$/;"	f	class:RobotomyRequestForm	typeref:typename:void
@@ -96,6 +99,8 @@ operator =	RobotomyRequestForm.cpp	/^RobotomyRequestForm& RobotomyRequestForm::o
 operator =	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)$/;"	f	class:ShrubberyCreationForm	typeref:typename:ShrubberyCreationForm &
 re	Makefile	/^re: fclean all$/;"	t
 signForm	Bureaucrat.cpp	/^void Bureaucrat::signForm(AForm &form) const$/;"	f	class:Bureaucrat	typeref:typename:void
+what	AForm.cpp	/^const char *AForm::FormAlreadySignedException::what() const throw()$/;"	f	class:AForm::FormAlreadySignedException	typeref:typename:const char *
+what	AForm.cpp	/^const char *AForm::FormNotSignedException::what() const throw()$/;"	f	class:AForm::FormNotSignedException	typeref:typename:const char *
 what	AForm.cpp	/^const char *AForm::GradeTooHighException::what() const throw()$/;"	f	class:AForm::GradeTooHighException	typeref:typename:const char *
 what	AForm.cpp	/^const char *AForm::GradeTooLowException::what() const throw()$/;"	f	class:AForm::GradeTooLowException	typeref:typename:const char *
 what	Bureaucrat.cpp	/^const char *Bureaucrat::GradeTooHighException::what() const throw()$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *

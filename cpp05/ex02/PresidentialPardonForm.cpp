@@ -22,8 +22,8 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 // Informs that <target> has been pardoned by Zaphod Beeblebrox.
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
 	// perform the checks
+	checkRequired(executor);
 	std::cout << "[" << _target << "] has been pardoned by Zaphod Beeblebrox\n";
 	return ;
 }

@@ -59,7 +59,6 @@ bool AForm::isAFormSigned() const
 	return (this->_isSigned);
 }
 
-//TODO implement this function
 void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
 	//Example
@@ -69,6 +68,21 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 	else
 	{
 		this->_isSigned = true;
+	}
+}
+
+//TODO: implement the function that checks the requirememtns
+void AForm::checkRequired(const Bureaucrat& bureaucrat) const
+{
+	// 1. Form must be signed
+	if (!_isSigned)
+	{
+		throw FormNotSignedException();
+	}
+	// 2. Bureaucrat's grade must be high enough to execute
+	if (bureaucrat.getGrade() > _gradeToExec)
+	{
+		throw GradeTooLowException();
 	}
 }
 
@@ -83,6 +97,16 @@ const char *AForm::GradeTooLowException::what() const throw()
 	return ("Grade too low!");
 }
 
+const char *AForm::FormAlreadySignedException::what() const throw()
+{
+	return ("Form already signed!");
+}
+
+const char *AForm::FormNotSignedException::what() const throw()
+{
+	return ("Form not signed!");
+}
+
 //OVERLOAD OF THE PRINT OPERATOR
 std::ostream& operator<< (std::ostream &out_file, const AForm &obj)
 {
@@ -94,7 +118,7 @@ std::ostream& operator<< (std::ostream &out_file, const AForm &obj)
 	<< obj.getGradeToExec()
 	<< "]" << std::endl
 	<< "is it signed: ["
-	<< (obj.isAFormSigned() ? "TRUE" : "FALSE")
+	<< (obj.isAFormSigned() ? "\033[1;32mTRUE\033[0m" : "\033[1;31mFALSE\033[0m")
 	<< "]" << std::endl;
 	return (out_file);
 }
