@@ -95,7 +95,7 @@ getName	AForm.cpp	/^std::string AForm::getName() const$/;"	f	class:AForm	typeref
 getName	Bureaucrat.cpp	/^std::string Bureaucrat::getName() const$/;"	f	class:Bureaucrat	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
 isAFormSigned	AForm.cpp	/^bool AForm::isAFormSigned() const$/;"	f	class:AForm	typeref:typename:bool
-main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
 makeForm	Intern.cpp	/^AForm* Intern::makeForm(std::string nameForm, std::string target)$/;"	f	class:Intern	typeref:typename:AForm *
 operator <<	AForm.cpp	/^std::ostream& operator<< (std::ostream &out_file, const AForm &obj)$/;"	f	typeref:typename:std::ostream &
 operator <<	Bureaucrat.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Bureaucrat &obj)$/;"	f	typeref:typename:std::ostream &
