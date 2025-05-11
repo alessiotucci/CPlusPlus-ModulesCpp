@@ -6,14 +6,14 @@
 #    By: atucci <atucci@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:36:13 by atucci            #+#    #+#              #
-#    Updated: 2025/04/02 18:16:32 by atucci           ###   ########.fr        #
+#    Updated: 2025/05/11 19:23:37 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = 'No, you need form 28B, not 28C...'
+NAME = 'At least this beats coffee-making'
 
 # *************************************************
 # setting up the variable that will be the source *
@@ -24,9 +24,11 @@ SOURCE = main.cpp \
 		 PresidentialPardonForm.cpp \
 		 RobotomyRequestForm.cpp \
 		 ShrubberyCreationForm.cpp \
+		 Intern.cpp \
 
 HEADERS = Bureaucrat.hpp \
 		  AForm.hpp \
+		  Intern.hpp \
 
 # ***********************************************************
 # setting up the flag that will be used for the compilation *
