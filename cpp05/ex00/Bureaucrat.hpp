@@ -49,8 +49,8 @@
 class Bureaucrat
 {
 	private:
-		// private string for name
-		std::string _name;
+		// private const string for name
+		std::string const _name;
 
 		// private int for the grade
 		int _grade;
