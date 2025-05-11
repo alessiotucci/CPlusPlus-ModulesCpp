@@ -87,6 +87,7 @@ execute	PresidentialPardonForm.cpp	/^void PresidentialPardonForm::execute(Bureau
 execute	RobotomyRequestForm.cpp	/^void RobotomyRequestForm::execute(Bureaucrat const & executor) const$/;"	f	class:RobotomyRequestForm	typeref:typename:void
 execute	ShrubberyCreationForm.cpp	/^void ShrubberyCreationForm::execute(Bureaucrat const & executor) const$/;"	f	class:ShrubberyCreationForm	typeref:typename:void
 fclean	Makefile	/^fclean: clean$/;"	t
+formCode	Intern.cpp	/^static int formCode(const std::string &name)$/;"	f	typeref:typename:int	file:
 getGrade	Bureaucrat.cpp	/^int Bureaucrat::getGrade() const$/;"	f	class:Bureaucrat	typeref:typename:int
 getGradeToExec	AForm.cpp	/^int AForm::getGradeToExec() const$/;"	f	class:AForm	typeref:typename:int
 getGradeToSign	AForm.cpp	/^int AForm::getGradeToSign() const$/;"	f	class:AForm	typeref:typename:int
