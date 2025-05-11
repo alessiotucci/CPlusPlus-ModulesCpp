@@ -29,7 +29,8 @@ int main()
 	std::cout << YELLOW << "TEST 2.1: Bob execute ShrubberyCreationForm targeting 'Home' --> creating a ascii three" << RESET << std::endl;
 	try
 	{
-		Home.execute(Bob);
+		Bob.executeForm(Home);
+		//Home.execute(Bob);
 	}
 	catch (std::exception &e)
 	{
@@ -50,7 +51,8 @@ int main()
 	std::cout << YELLOW << "TEST 3.1: Bob attempts to exec RobotomyRequestForm targeting 'Office'" << RESET << std::endl;
 	try
 	{
-		Office.execute(Bob);
+		Bob.executeForm(Office);
+		//Office.execute(Bob);
 	}
 	catch (std::exception &e)
 	{
@@ -71,7 +73,8 @@ int main()
 	std::cout << YELLOW << "TEST 4.1: Bob attempts to exec PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	try
 	{
-		Prisoner.execute(Bob);
+		Bob.executeForm(Prisoner);
+		//Prisoner.execute(Bob);
 	}
 	catch (std::exception &e)
 	{
@@ -93,7 +96,8 @@ int main()
 	std::cout << YELLOW << "TEST 5.1: Alice executes PresidentialPardonForm targeting 'Prisoner'" << RESET << std::endl;
 	try
 	{
-		Prisoner.execute(Alice);
+		Alice.executeForm(Prisoner);
+		//Prisoner.execute(Alice);
 	}
 	catch (std::exception &e)
 	{
@@ -117,7 +121,8 @@ int main()
 	std::cout << YELLOW << "TEST 6.1: Charlie exec RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
 	try
 	{
-		Machine.execute(Charlie);
+		//Machine.execute(Charlie);
+		Charlie.executeForm(Machine);
 	}
 	catch (std::exception &e)
 	{
@@ -139,7 +144,8 @@ int main()
 	std::cout << YELLOW << "TEST 7.1: Dave executes RobotomyRequestForm targeting 'Machine'" << RESET << std::endl;
 	try
 	{
-		Machine.execute(Dave);
+		//Machine.execute(Dave);
+		Dave.executeForm(Machine);
 	}
 	catch (std::exception &e)
 	{
@@ -163,7 +169,8 @@ int main()
 	std::cout << YELLOW << "TEST 8.1: Eve exec ShrubberyCreationForm targeting 'Garden'" << RESET << std::endl;
 	try
 	{
-		Garden.execute(Eve);
+		//Garden.execute(Eve);
+		Eve.executeForm(Garden);
 	}
 	catch (std::exception &e)
 	{
@@ -187,7 +194,8 @@ int main()
 	std::cout << YELLOW << "TEST 9.1: Frank  exec PresidentialPardonForm targeting 'Politician'" << RESET << std::endl;
 	try
 	{
-		Politician.execute(Frank);
+		//Politician.execute(Frank);
+		Frank.executeForm(Politician);
 	}
 	catch (std::exception &e)
 	{

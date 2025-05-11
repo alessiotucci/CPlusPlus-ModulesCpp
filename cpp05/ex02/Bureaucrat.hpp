@@ -51,7 +51,7 @@ class Bureaucrat
 {
 	private:
 		// private string for name
-		std::string _name;
+		std::string const _name;
 
 		// private int for the grade
 		int _grade;
@@ -74,6 +74,9 @@ class Bureaucrat
 
 		//TODO: In Bureaucrat.hpp ?? what to do with pure virtual?
 		void signForm(AForm &form) const;
+
+		//TODO:
+		void executeForm(AForm const & form);
 
 	 // nested class for exception
 	public:
