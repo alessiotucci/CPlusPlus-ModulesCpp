@@ -20,7 +20,7 @@ BLUE	Bureaucrat.hpp	/^# define BLUE /;"	d
 BUREAUCRAT_HPP	Bureaucrat.hpp	/^#define BUREAUCRAT_HPP$/;"	d
 Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat() : _name("default"), _grade(150) \/\/ lowest grade$/;"	f	class:Bureaucrat
 Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName())$/;"	f	class:Bureaucrat
-Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade, std::string name)$/;"	f	class:Bureaucrat
+Bureaucrat	Bureaucrat.cpp	/^Bureaucrat::Bureaucrat(int grade, std::string name) : _name(name)$/;"	f	class:Bureaucrat
 Bureaucrat	Bureaucrat.hpp	/^class Bureaucrat$/;"	c
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Bureaucrat.hpp	/^# define CYAN /;"	d
@@ -54,7 +54,7 @@ _grade	Bureaucrat.hpp	/^		int _grade;$/;"	m	class:Bureaucrat	typeref:typename:in
 _gradeToExec	Form.hpp	/^	const int _gradeToExec;$/;"	m	class:Form	typeref:typename:const int
 _gradeToSign	Form.hpp	/^	const int _gradeToSign;$/;"	m	class:Form	typeref:typename:const int
 _isSigned	Form.hpp	/^	bool _isSigned;$/;"	m	class:Form	typeref:typename:bool
-_name	Bureaucrat.hpp	/^		std::string _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string
+_name	Bureaucrat.hpp	/^		std::string const _name;$/;"	m	class:Bureaucrat	typeref:typename:std::string const
 _name	Form.hpp	/^	const std::string _name;$/;"	m	class:Form	typeref:typename:const std::string
 all	Makefile	/^all: $(NAME)$/;"	t
 beSigned	Form.cpp	/^void Form::beSigned(const Bureaucrat &bureaucrat)$/;"	f	class:Form	typeref:typename:void
