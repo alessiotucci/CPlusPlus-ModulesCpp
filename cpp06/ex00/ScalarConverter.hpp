@@ -17,6 +17,19 @@
 # define BG_CYAN         "\033[46m"
 # define BG_YELLOW       "\033[43m"
 # define BG_RED          "\033[41m"
-/*********************************************/
 
+/********************************************/
+/* this class is going to be a static class:*/
+/********************************************/
+class ScalarConverter
+{
+	public:
+		static void convert(const std::string& param);
+	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter& src);
+		ScalarConverter& operator=( const ScalarConverter& src);
+		~ScalarConverter();
+
+};
 #endif

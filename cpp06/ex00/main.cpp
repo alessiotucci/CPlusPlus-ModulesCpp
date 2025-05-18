@@ -3,8 +3,7 @@ int main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		std::cout << "av[1]n";
-		std::cout << av[1];
+		ScalarConverter::convert(av[1]);
 		return (0);
 	}
 	std::cout << RED << "ERROR: KO!\n" << RESET;
