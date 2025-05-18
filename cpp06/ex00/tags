@@ -9,5 +9,35 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-$NAME	Makefile	/^$NAME = convert$/;"	m
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+BG_CYAN	ScalarConverter.hpp	/^# define BG_CYAN /;"	d
+BG_GREEN	ScalarConverter.hpp	/^# define BG_GREEN /;"	d
+BG_RED	ScalarConverter.hpp	/^# define BG_RED /;"	d
+BG_RESET	ScalarConverter.hpp	/^# define BG_RESET /;"	d
+BG_YELLOW	ScalarConverter.hpp	/^# define BG_YELLOW /;"	d
+BLUE	ScalarConverter.hpp	/^# define BLUE /;"	d
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	ScalarConverter.hpp	/^# define CYAN /;"	d
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GRAY	ScalarConverter.hpp	/^# define GRAY /;"	d
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	ScalarConverter.hpp	/^# define GREEN /;"	d
+HEADERS	Makefile	/^HEADERS = ScalarConverter.hpp \\$/;"	m
+NAME	Makefile	/^NAME = convert$/;"	m
+PURPLE	ScalarConverter.hpp	/^# define PURPLE /;"	d
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RED	ScalarConverter.hpp	/^# define RED /;"	d
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+RESET	ScalarConverter.hpp	/^# define RESET /;"	d
 SCALARCONVERTER_HPP	ScalarConverter.hpp	/^#define SCALARCONVERTER_HPP$/;"	d
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	ScalarConverter.hpp	/^# define YELLOW /;"	d
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+hidden	Makefile	/^hidden:$/;"	t
+main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
+re	Makefile	/^re: fclean all$/;"	t
