@@ -24,8 +24,19 @@ static void displayResult(char a, int b, float c, double d)
 	std::cout << "float: " << c << std::endl;
 	std::cout << "double: " << d << std::endl;
 }
-static bool looksLikeChar(const std::string string) { (void)string; return true; }
-static void handleChar(const std::string str) { (void)str; return; }
+
+//1) 
+static bool looksLikeChar(const std::string string)
+{
+	if (string.length() == 1 && isalnum(string[0]))
+		return (true);
+	return (false);
+}
+
+static char handleChar(const std::string str)
+{
+	return (str[0]);
+}
 
 static bool looksLikeInt(const std::string string) { (void)string; return true; }
 static void handleInt(const std::string str) { (void)str; return; }
@@ -38,8 +49,13 @@ static void handleDouble(const std::string str) { (void)str; return; }
 
 void ScalarConverter::convert(const std::string& param)
 {
+	char set_char = 'a';
+	int set_int = 0;
+	float set_float = 0.0f;
+	double set_double = 0.0;
+
 	if (looksLikeChar(param))
-		handleChar(param);
+		set_char = handleChar(param);
 	else if (looksLikeInt(param))
 		handleInt(param);
 	else if (looksLikeFloat(param))
@@ -48,7 +64,7 @@ void ScalarConverter::convert(const std::string& param)
 		handleDouble(param);
 /*	else if (isPseudoLiteral(param))
 		handlePseudo(param);*/
-	displayResult('a', 0, 0.0f, 0.0); // pass the conversion to this function
+	displayResult(set_char, set_int, set_float, set_double); // pass the conversion to this function
 }
 
 
