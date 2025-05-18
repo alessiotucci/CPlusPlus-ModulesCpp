@@ -46,4 +46,5 @@ hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 operator =	ScalarConverter.cpp	/^ScalarConverter& ScalarConverter::operator=( const ScalarConverter& src)$/;"	f	class:ScalarConverter	typeref:typename:ScalarConverter &
 re	Makefile	/^re: fclean all$/;"	t
+run_test	tester.pl	/^sub run_test$/;"	s
 ~ScalarConverter	ScalarConverter.cpp	/^ScalarConverter::~ScalarConverter() { }$/;"	f	class:ScalarConverter
