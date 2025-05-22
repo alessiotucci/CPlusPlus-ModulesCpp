@@ -38,14 +38,41 @@ static char handleChar(const std::string str)
 	return (str[0]);
 }
 
-static bool looksLikeInt(const std::string string) { (void)string; return true; }
-static void handleInt(const std::string str) { (void)str; return; }
+//---
+static bool looksLikeInt(const std::string string)
+{
+	(void)string;
+	return (true);
+}
+static void handleInt(const std::string str)
+{
+	(void)str;
+	return;
+}
 
-static bool looksLikeFloat(const std::string string) { (void)string; return true; }
-static void handleFloat(const std::string str) { (void)str; return; }
+//---
+static bool looksLikeFloat(const std::string string)
+{
+	(void)string;
+	return (true);
+}
+static void handleFloat(const std::string str)
+{
+	(void)str;
+	return;
+}
 
-static bool looksLikeDouble(const std::string string) { (void)string; return true; }
-static void handleDouble(const std::string str) { (void)str; return; }
+//---
+static bool looksLikeDouble(const std::string string)
+{
+	(void)string;
+	return (true);
+}
+static void handleDouble(const std::string str)
+{
+	(void)str;
+	return;
+}
 
 void ScalarConverter::convert(const std::string& param)
 {
