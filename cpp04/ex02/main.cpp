@@ -6,7 +6,7 @@
 /*   By: atucci <atucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:05:50 by atucci            #+#    #+#             */
-/*   Updated: 2024/04/18 17:57:52 by atucci           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:06:50 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ int main()
 	}
 
 	delete[] animals;  // Delete the array
-
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
 	return 0;
 }

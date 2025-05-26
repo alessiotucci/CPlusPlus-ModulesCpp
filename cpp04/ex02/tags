@@ -1,0 +1,63 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/nfs/homes/atucci/Desktop/CPlusPlus-ModulesCpp/cpp04/ex02/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+AAnimal	Animal.cpp	/^AAnimal::AAnimal() : type("")$/;"	f	class:AAnimal
+AAnimal	Animal.cpp	/^AAnimal::AAnimal(const AAnimal &obj)$/;"	f	class:AAnimal
+AAnimal	Animal.cpp	/^AAnimal::AAnimal(std::string param)$/;"	f	class:AAnimal
+AAnimal	Animal.hpp	/^class AAnimal$/;"	c
+ANIMAL_HPP	Animal.hpp	/^#define ANIMAL_HPP$/;"	d
+BRAIN_HPP	Brain.hpp	/^#define BRAIN_HPP$/;"	d
+Brain	Brain.cpp	/^Brain::Brain()$/;"	f	class:Brain
+Brain	Brain.cpp	/^Brain::Brain(const Brain &obj)$/;"	f	class:Brain
+Brain	Brain.hpp	/^class Brain$/;"	c
+CAT_HPP	Cat.hpp	/^#define CAT_HPP$/;"	d
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+Cat	Cat.cpp	/^Cat::Cat()$/;"	f	class:Cat
+Cat	Cat.cpp	/^Cat::Cat(const Cat &obj) : AAnimal(obj)$/;"	f	class:Cat
+Cat	Cat.cpp	/^Cat::Cat(std::string type) : AAnimal(type)$/;"	f	class:Cat
+Cat	Cat.hpp	/^class Cat : public AAnimal$/;"	c
+DOG_HPP	Dog.hpp	/^#define DOG_HPP$/;"	d
+Dog	Dog.cpp	/^Dog::Dog() : AAnimal()$/;"	f	class:Dog
+Dog	Dog.cpp	/^Dog::Dog(const Dog &obj) : AAnimal(obj)$/;"	f	class:Dog
+Dog	Dog.cpp	/^Dog::Dog(std::string type) : AAnimal(type)$/;"	f	class:Dog
+Dog	Dog.hpp	/^class Dog : public AAnimal$/;"	c
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+HEADERS	Makefile	/^HEADERS =$/;"	m
+NAME	Makefile	/^NAME = AbstractAnimal$/;"	m
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	Makefile	/^SOURCE =  main.cpp \\$/;"	m
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+all	Makefile	/^all: $(NAME)$/;"	t
+brain	Cat.hpp	/^		Brain *brain;$/;"	m	class:Cat	typeref:typename:Brain *
+brain	Dog.hpp	/^		Brain *brain;$/;"	m	class:Dog	typeref:typename:Brain *
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+getType	Animal.cpp	/^std::string AAnimal::getType() const$/;"	f	class:AAnimal	typeref:typename:std::string
+hidden	Makefile	/^hidden:$/;"	t
+ideas	Brain.hpp	/^		std::string ideas[100];$/;"	m	class:Brain	typeref:typename:std::string[100]
+main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+makeSound	Cat.cpp	/^void Cat::makeSound() const$/;"	f	class:Cat	typeref:typename:void
+makeSound	Dog.cpp	/^void Dog::makeSound() const$/;"	f	class:Dog	typeref:typename:void
+operator =	Animal.cpp	/^AAnimal& AAnimal::operator=(const AAnimal &obj)$/;"	f	class:AAnimal	typeref:typename:AAnimal &
+operator =	Brain.cpp	/^Brain& Brain::operator=(const Brain &obj)$/;"	f	class:Brain	typeref:typename:Brain &
+operator =	Cat.cpp	/^Cat& Cat::operator=(const Cat &obj)$/;"	f	class:Cat	typeref:typename:Cat &
+operator =	Dog.cpp	/^Dog& Dog::operator=(const Dog &obj)$/;"	f	class:Dog	typeref:typename:Dog &
+re	Makefile	/^re: fclean all$/;"	t
+type	Animal.hpp	/^		std::string type;$/;"	m	class:AAnimal	typeref:typename:std::string
+~AAnimal	Animal.cpp	/^AAnimal::~AAnimal() {}$/;"	f	class:AAnimal
+~Brain	Brain.cpp	/^Brain::~Brain()$/;"	f	class:Brain
+~Cat	Cat.cpp	/^Cat::~Cat()$/;"	f	class:Cat
+~Dog	Dog.cpp	/^Dog::~Dog()$/;"	f	class:Dog
