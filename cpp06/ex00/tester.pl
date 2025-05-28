@@ -38,8 +38,8 @@ print color('green'), "Testing valid cases...\n", color('reset');
 run_test($_) for @valid_cases;
 
 # Test additional cases
-print color('blue'), "Testing additional cases...\n", color('reset');
-run_test($_) for @additional_cases;
+ print color('blue'), "Testing additional cases...\n", color('reset');
+ run_test($_) for @additional_cases;
 
 # Cleanup
 print color('magenta'), "\nCleaning up...\n", color('reset');

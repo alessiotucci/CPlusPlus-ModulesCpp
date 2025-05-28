@@ -2,7 +2,7 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
-
+#include <cstdlib>
 /* DEFINING THE COLOR TO IMPROVE THE PRINTS*/
 # define BLUE    "\033[1;34m"
 # define PURPLE  "\033[1;35m"

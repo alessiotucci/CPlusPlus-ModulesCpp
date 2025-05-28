@@ -41,16 +41,16 @@ YELLOW	ScalarConverter.hpp	/^# define YELLOW /;"	d
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 convert	ScalarConverter.cpp	/^void ScalarConverter::convert(const std::string& param)$/;"	f	class:ScalarConverter	typeref:typename:void
-displayResult	ScalarConverter.cpp	/^static void displayResult(char a, int b, float c, double d)$/;"	f	typeref:typename:void	file:
+displayResult	ScalarConverter.cpp	/^static void displayResult(char c, int i, float f, double d)$/;"	f	typeref:typename:void	file:
 fclean	Makefile	/^fclean: clean$/;"	t
-handleChar	ScalarConverter.cpp	/^static char handleChar(const std::string str)$/;"	f	typeref:typename:char	file:
-handleDouble	ScalarConverter.cpp	/^static void handleDouble(const std::string str)$/;"	f	typeref:typename:void	file:
-handleFloat	ScalarConverter.cpp	/^static void handleFloat(const std::string str)$/;"	f	typeref:typename:void	file:
-handleInt	ScalarConverter.cpp	/^static void handleInt(const std::string str)$/;"	f	typeref:typename:void	file:
+handleChar	ScalarConverter.cpp	/^static void handleChar(const std::string& str, char& c, int& i, float& f, double& d)$/;"	f	typeref:typename:void	file:
+handleDouble	ScalarConverter.cpp	/^static void handleDouble(const std::string& str, char& c, int& i, float& f, double& d)$/;"	f	typeref:typename:void	file:
+handleFloat	ScalarConverter.cpp	/^static void handleFloat(const std::string& str, char& c, int& i, float& f, double& d)$/;"	f	typeref:typename:void	file:
+handleInt	ScalarConverter.cpp	/^static void handleInt(const std::string& str, char& c, int& i, float& f, double& d)$/;"	f	typeref:typename:void	file:
 hidden	Makefile	/^hidden:$/;"	t
-looksLikeChar	ScalarConverter.cpp	/^static bool looksLikeChar(const std::string string)$/;"	f	typeref:typename:bool	file:
-looksLikeDouble	ScalarConverter.cpp	/^static bool looksLikeDouble(const std::string string)$/;"	f	typeref:typename:bool	file:
-looksLikeFloat	ScalarConverter.cpp	/^static bool looksLikeFloat(const std::string string)$/;"	f	typeref:typename:bool	file:
+looksLikeChar	ScalarConverter.cpp	/^static bool looksLikeChar(const std::string& str)$/;"	f	typeref:typename:bool	file:
+looksLikeDouble	ScalarConverter.cpp	/^static bool looksLikeDouble(const std::string str)$/;"	f	typeref:typename:bool	file:
+looksLikeFloat	ScalarConverter.cpp	/^static bool looksLikeFloat(const std::string str)$/;"	f	typeref:typename:bool	file:
 looksLikeInt	ScalarConverter.cpp	/^static bool looksLikeInt(const std::string string)$/;"	f	typeref:typename:bool	file:
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 operator =	ScalarConverter.cpp	/^ScalarConverter& ScalarConverter::operator=( const ScalarConverter& src)$/;"	f	class:ScalarConverter	typeref:typename:ScalarConverter &
