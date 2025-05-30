@@ -14,6 +14,9 @@ $(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 DATASTRUCTURE_HPP	DataStructure.hpp	/^#define DATASTRUCTURE_HPP$/;"	d
+DataStructure	DataStructure.cpp	/^DataStructure::DataStructure(){ }$/;"	f	class:DataStructure
+DataStructure	DataStructure.cpp	/^DataStructure::DataStructure(const DataStructure& other)$/;"	f	class:DataStructure
+DataStructure	DataStructure.hpp	/^class DataStructure$/;"	c
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
 HEADERS	Makefile	/^HEADERS = DataStructure.hpp \\$/;"	m
@@ -22,10 +25,17 @@ RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
 SERIALIZER_HPP	Serializer.hpp	/^#define SERIALIZER_HPP$/;"	d
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+Serializer	Serializer.cpp	/^Serializer::Serializer(){ }$/;"	f	class:Serializer
+Serializer	Serializer.cpp	/^Serializer::Serializer(const Serializer& other)$/;"	f	class:Serializer
+Serializer	Serializer.hpp	/^class Serializer$/;"	c
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
+operator =	DataStructure.cpp	/^DataStructure& DataStructure::operator=(const DataStructure& other)$/;"	f	class:DataStructure	typeref:typename:DataStructure &
+operator =	Serializer.cpp	/^Serializer& Serializer::operator=(const Serializer& other)$/;"	f	class:Serializer	typeref:typename:Serializer &
 re	Makefile	/^re: fclean all$/;"	t
+~DataStructure	DataStructure.cpp	/^DataStructure::~DataStructure(){ }$/;"	f	class:DataStructure
+~Serializer	Serializer.cpp	/^Serializer::~Serializer(){ }$/;"	f	class:Serializer
