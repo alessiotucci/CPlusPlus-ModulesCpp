@@ -10,4 +10,5 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
 $NAME	Makefile	/^$NAME = Serialization$/;"	m
+DATASTRUCTURE_HPP	DataStructure.hpp	/^#define DATASTRUCTURE_HPP$/;"	d
 SERIALIZER_HPP	Serializer.hpp	/^#define SERIALIZER_HPP$/;"	d
