@@ -14,8 +14,9 @@ $(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 DATASTRUCTURE_HPP	DataStructure.hpp	/^#define DATASTRUCTURE_HPP$/;"	d
-DataStructure	DataStructure.cpp	/^DataStructure::DataStructure(){ }$/;"	f	class:DataStructure
+DataStructure	DataStructure.cpp	/^DataStructure::DataStructure(): prefix(0), suffix(0) { }$/;"	f	class:DataStructure
 DataStructure	DataStructure.cpp	/^DataStructure::DataStructure(const DataStructure& other)$/;"	f	class:DataStructure
+DataStructure	DataStructure.cpp	/^DataStructure::DataStructure(int prefix, int suffix): prefix(prefix), suffix(suffix) { }$/;"	f	class:DataStructure
 DataStructure	DataStructure.hpp	/^class DataStructure$/;"	c
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
@@ -34,8 +35,11 @@ clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
+operator <<	DataStructure.cpp	/^std::ostream& operator<<(std::ostream& output, const DataStructure param)$/;"	f	typeref:typename:std::ostream &
 operator =	DataStructure.cpp	/^DataStructure& DataStructure::operator=(const DataStructure& other)$/;"	f	class:DataStructure	typeref:typename:DataStructure &
 operator =	Serializer.cpp	/^Serializer& Serializer::operator=(const Serializer& other)$/;"	f	class:Serializer	typeref:typename:Serializer &
+prefix	DataStructure.hpp	/^	int prefix;$/;"	m	class:DataStructure	typeref:typename:int
 re	Makefile	/^re: fclean all$/;"	t
+suffix	DataStructure.hpp	/^	int suffix;$/;"	m	class:DataStructure	typeref:typename:int
 ~DataStructure	DataStructure.cpp	/^DataStructure::~DataStructure(){ }$/;"	f	class:DataStructure
 ~Serializer	Serializer.cpp	/^Serializer::~Serializer(){ }$/;"	f	class:Serializer
