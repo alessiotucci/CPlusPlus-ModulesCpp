@@ -32,6 +32,7 @@ Serializer	Serializer.hpp	/^class Serializer$/;"	c
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
+deserialize	Serializer.cpp	/^Data* Serializer::deserialize(uintptr_t raw)$/;"	f	class:Serializer	typeref:typename:Data *
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
@@ -40,6 +41,7 @@ operator =	Data.cpp	/^Data& Data::operator=(const Data& other)$/;"	f	class:Data	
 operator =	Serializer.cpp	/^Serializer& Serializer::operator=(const Serializer& other)$/;"	f	class:Serializer	typeref:typename:Serializer &
 prefix	Data.hpp	/^	int prefix;$/;"	m	class:Data	typeref:typename:int
 re	Makefile	/^re: fclean all$/;"	t
+serialize	Serializer.cpp	/^uintptr_t Serializer::serialize(Data* ptr)$/;"	f	class:Serializer	typeref:typename:uintptr_t
 suffix	Data.hpp	/^	int suffix;$/;"	m	class:Data	typeref:typename:int
 ~Data	Data.cpp	/^Data::~Data(){ }$/;"	f	class:Data
 ~Serializer	Serializer.cpp	/^Serializer::~Serializer(){ }$/;"	f	class:Serializer
