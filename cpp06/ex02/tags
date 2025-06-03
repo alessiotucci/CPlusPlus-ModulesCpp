@@ -9,7 +9,8 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-$NAME	Makefile	/^$NAME = 'Identify real type'$/;"	m
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
 A	A.hpp	/^class A : public Base$/;"	c
 A_HPP	A.hpp	/^#define A_HPP$/;"	d
 B	B.hpp	/^class B : public Base$/;"	c
@@ -17,5 +18,20 @@ BASE_HPP	Base.hpp	/^#define BASE_HPP$/;"	d
 B_HPP	B.hpp	/^#define B_HPP$/;"	d
 Base	Base.cpp	/^Base::Base() { }$/;"	f	class:Base
 Base	Base.hpp	/^class Base$/;"	c
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 C_HPP	C.hpp	/^#define C_HPP$/;"	d
-~Base	Base.cpp	/^virtual Base::~Base() { }$/;"	f	class:Base
+FLAG	Makefile	/^FLAG = -Wall -Werror -Wextra -std=c++98$/;"	m
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+NAME	Makefile	/^NAME = realtype$/;"	m
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+hidden	Makefile	/^hidden:$/;"	t
+main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+re	Makefile	/^re: fclean all$/;"	t
+~Base	Base.cpp	/^Base::~Base() { }$/;"	f	class:Base

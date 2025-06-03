@@ -2,5 +2,5 @@
 
 Base::Base() { }
 
-virtual Base::~Base() { }
+Base::~Base() { }
 
