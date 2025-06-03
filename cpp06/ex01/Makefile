@@ -3,7 +3,7 @@
 #    Host: e4r2p4.42roma.it                                           /_/      #
 #    File: Makefile                                                ( o.o )     #
 #    Created: 2025/05/30 15:29:21 | By: atucci <atucci@student.42  > ^ <       #
-#    Updated: 2025/05/30 15:30:18                                   /          #
+#    Updated: 2025/06/03 12:35:08                                   /          #
 #    OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)      #
 #                                                                              #
 # **************************************************************************** #
@@ -19,9 +19,9 @@ NAME = serializer
 # *************************************************
 SOURCE = main.cpp \
 		Serializer.cpp \
-		DataStructure.cpp \
+		Data.cpp \
 
-HEADERS = DataStructure.hpp \
+HEADERS = Data.hpp \
 		Serializer.hpp \
 
 # ***********************************************************
