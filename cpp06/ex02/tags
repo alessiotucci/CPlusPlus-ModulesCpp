@@ -10,7 +10,12 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
 $NAME	Makefile	/^$NAME = 'Identify real type'$/;"	m
+A	A.hpp	/^class A : public Base$/;"	c
 A_HPP	A.hpp	/^#define A_HPP$/;"	d
+B	B.hpp	/^class B : public Base$/;"	c
 BASE_HPP	Base.hpp	/^#define BASE_HPP$/;"	d
 B_HPP	B.hpp	/^#define B_HPP$/;"	d
+Base	Base.cpp	/^Base::Base() { }$/;"	f	class:Base
+Base	Base.hpp	/^class Base$/;"	c
 C_HPP	C.hpp	/^#define C_HPP$/;"	d
+~Base	Base.cpp	/^virtual Base::~Base() { }$/;"	f	class:Base
