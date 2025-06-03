@@ -35,7 +35,7 @@ clean	Makefile	/^clean:$/;"	t
 deserialize	Serializer.cpp	/^Data* Serializer::deserialize(uintptr_t raw)$/;"	f	class:Serializer	typeref:typename:Data *
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
-main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
+main	main.cpp	/^int	main() {$/;"	f	typeref:typename:int
 operator <<	Data.cpp	/^std::ostream& operator<<(std::ostream& output, const Data param)$/;"	f	typeref:typename:std::ostream &
 operator =	Data.cpp	/^Data& Data::operator=(const Data& other)$/;"	f	class:Data	typeref:typename:Data &
 operator =	Serializer.cpp	/^Serializer& Serializer::operator=(const Serializer& other)$/;"	f	class:Serializer	typeref:typename:Serializer &
