@@ -8,6 +8,5 @@ private:
 public:
 	Base();
 	virtual ~Base();
-
 };
 #endif

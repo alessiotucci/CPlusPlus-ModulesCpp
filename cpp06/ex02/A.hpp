@@ -4,8 +4,7 @@
 #include "Base.hpp"
 #include <string>
 
-class A : public Base
-{ };
+class A : public Base { };
 #endif
 
 
