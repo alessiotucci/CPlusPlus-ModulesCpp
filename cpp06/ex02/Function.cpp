@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Function.cpp                                            ( o.o )    */
 /*   Created: 2025/06/03 18:04:58 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/05 16:29:52                                   /         */
+/*   Updated: 2025/06/05 19:32:12                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -43,6 +43,7 @@ void identify(Base& p)
 	{
 		A& a = dynamic_cast<A&>(p);
 		std::cout << "A\n";
+		(void)a;
 		return;
 	}
 	catch (...) {}
@@ -51,6 +52,7 @@ void identify(Base& p)
 	{
 		B& b = dynamic_cast<B&>(p);
 		std::cout << "B\n";
+		(void)b;
 		return;
 	}
 	catch (...) {}
@@ -58,6 +60,7 @@ void identify(Base& p)
 	try
 	{
 		C& c = dynamic_cast<C&>(p);
+		(void)c;
 		std::cout << "C\n";
 		return;
 	}
