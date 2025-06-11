@@ -3,11 +3,10 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Function.cpp                                            ( o.o )    */
 /*   Created: 2025/06/03 18:04:58 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/05 19:32:12                                   /         */
+/*   Updated: 2025/06/11 13:17:53                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <iostream>
 #include <cstdlib>
@@ -29,12 +28,20 @@ Base* generate()
 
 void identify(Base* p)
 {
+	if (!p)
+	{
+		std::cout << "Null pointer\n";
+		return;
+	}
+	
 	if (dynamic_cast<A*>(p))
 		std::cout << "A\n";
 	else if (dynamic_cast<B*>(p))
 		std::cout << "B\n";
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C\n";
+	else
+		std::cout << "Unknown type\n";
 }
 
 void identify(Base& p)
@@ -44,26 +51,25 @@ void identify(Base& p)
 		A& a = dynamic_cast<A&>(p);
 		std::cout << "A\n";
 		(void)a;
-		return;
 	}
 	catch (...) {}
 
 	try
-	{
-		B& b = dynamic_cast<B&>(p);
-		std::cout << "B\n";
-		(void)b;
-		return;
-	}
+		{
+			B& b = dynamic_cast<B&>(p);
+			std::cout << "B\n";
+			(void)b;
+		}
 	catch (...) {}
 
 	try
 	{
 		C& c = dynamic_cast<C&>(p);
-		(void)c;
 		std::cout << "C\n";
-		return;
+		(void)c;
 	}
-	catch (...) {}
+	catch (...)
+	{
+		std::cout << "Unknown type\n";  // Safety net
+	}
 }
-
