@@ -162,8 +162,12 @@ void ScalarConverter::convert(const std::string& param)
 		handleFloat(param, set_char, set_int, set_float, set_double);
 	else if (looksLikeDouble(param))
 		handleDouble(param, set_char, set_int, set_float, set_double);
-/*	else if (isPseudoLiteral(param))
-		handlePseudo(param);*/
+	else
+	{
+		std::cout << RED << "ERROR: KO!\n" << RESET;
+		std::cout << "couldn´t convert to ...\n";
+		return ;
+	}
 	displayResult(set_char, set_int, set_float, set_double); // pass the conversion to this function
 }
 
