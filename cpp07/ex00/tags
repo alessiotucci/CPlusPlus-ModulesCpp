@@ -25,7 +25,7 @@ all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
-main	main.cpp	/^int main(void) {$/;"	f	typeref:typename:int
+main	main.cpp	/^int main(void)$/;"	f	typeref:typename:int
 max	whatever.hpp	/^T const &max(T const &a, T const &b)$/;"	f	typeref:typename:T const &
 min	whatever.hpp	/^T const &min(T const &a, T const &b)$/;"	f	typeref:typename:T const &
 re	Makefile	/^re: fclean all$/;"	t
