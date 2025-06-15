@@ -115,8 +115,8 @@ Those modules of C++ are designed to help you understand the specifities of the 
 # Cpp 07
 | Exercise | Title | About | video | 
 |----------|-------|-------|-------|
-| ex00     | Start with a few functions |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
-| ex01     | Iter |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
+| ex00     | Start with a few functions |...|[![video 1](https://ytcards.demolab.com/?id=mQqzP9EWu58 " ")](https://www.youtube.com/watch?v=mQqzP9EWu58&ab_channel=PortfolioCourses) |
+| ex01     | Iter |...|[![video 1](https://ytcards.demolab.com/?id=XgGEJylsWsQ " ")](https://www.youtube.com/watch?v=XgGEJylsWsQ)|
 | ex02     |  Array |...|[![video 1](https://ytcards.demolab.com/?id= " ")]() |
 
 # Cpp 08
