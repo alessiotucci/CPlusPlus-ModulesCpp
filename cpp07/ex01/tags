@@ -15,6 +15,7 @@ CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+ITER_HPP	iter.hpp	/^#define ITER_HPP$/;"	d
 NAME	Makefile	/^NAME = iter$/;"	m
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
@@ -24,5 +25,7 @@ all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
+iter	iter.hpp	/^void iter(const T *array, int lenght, void (*func)(U))$/;"	f	typeref:typename:void
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+printElement	main.cpp	/^void printElement(const T& element)$/;"	f	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
