@@ -3,13 +3,14 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: iter.hpp                                                ( o.o )    */
 /*   Created: 2025/06/17 14:47:26 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/17 15:30:03                                   /         */
+/*   Updated: 2025/06/18 12:13:29                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ITER_HPP
 #define ITER_HPP
 
+#include <cstddef>
 /*
  Implement a function template iter that takes 3 parameters and returns nothing
 • The first parameter is the address of an array.
@@ -17,6 +18,7 @@
 • The third one is a function that will be called on every element of the array
 */
 
+/*
 template <typename T, typename U>
 void iter(const T *array, int lenght, void (*func)(U))
 {
@@ -26,5 +28,24 @@ void iter(const T *array, int lenght, void (*func)(U))
 	{
 		func(array[i]);
 	}
+}
+*/
+template <typename T>
+void iter(T* array, int length, void (*func)(T&))
+{
+    if (!array || length <= 0 || !func)
+        return;
+    for (int i = 0; i < length; ++i)
+        func(array[i]);
+}
+
+// Overload for arrays of const T
+template <typename T>
+void iter(T const* array, int length, void (*func)(T const&))
+{
+    if (!array || length <= 0 || !func)
+        return;
+    for (int i = 0; i < length; ++i)
+        func(array[i]);
 }
 #endif

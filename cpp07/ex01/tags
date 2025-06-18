@@ -11,6 +11,8 @@
 !_TAG_PROGRAM_VERSION	5.9.0	//
 $(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
 %.o	Makefile	/^%.o: %.cpp$/;"	t
+Awesome	TESTex01.cpp	/^    Awesome( void ) : _n( 42 ) { return; }$/;"	f	class:Awesome	file:
+Awesome	TESTex01.cpp	/^class Awesome$/;"	c	file:
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
@@ -27,19 +29,25 @@ RESET	Makefile	/^RESET := \\033[0m$/;"	m
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 _age	Profile.hpp	/^	int _age;$/;"	m	class:Profile	typeref:typename:int
+_n	TESTex01.cpp	/^    int _n;$/;"	m	class:Awesome	typeref:typename:int	file:
 _name	Profile.hpp	/^	std::string _name;$/;"	m	class:Profile	typeref:typename:std::string
 _taken	Profile.hpp	/^	bool _taken;$/;"	m	class:Profile	typeref:typename:bool
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
+get	TESTex01.cpp	/^    int get( void ) const { return this->_n; }$/;"	f	class:Awesome	typeref:typename:int	file:
 getAge	Profile.cpp	/^int Profile::getAge() const$/;"	f	class:Profile	typeref:typename:int
 getName	Profile.cpp	/^std::string Profile::getName() const$/;"	f	class:Profile	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
 isTaken	Profile.cpp	/^bool Profile::isTaken() const$/;"	f	class:Profile	typeref:typename:bool
-iter	iter.hpp	/^void iter(const T *array, int lenght, void (*func)(U))$/;"	f	typeref:typename:void
+iter	iter.hpp	/^void iter(T const* array, int length, void (*func)(T const&))$/;"	f	typeref:typename:void
+iter	iter.hpp	/^void iter(T* array, int length, void (*func)(T&))$/;"	f	typeref:typename:void
+main	TESTex01.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 operator <<	Profile.cpp	/^std::ostream& operator<<(std::ostream& output, const Profile param)$/;"	f	typeref:typename:std::ostream &
+operator <<	TESTex01.cpp	/^std::ostream & operator<<( std::ostream & o, Awesome const & rhs )$/;"	f	typeref:typename:std::ostream &
 operator =	Profile.cpp	/^Profile& Profile::operator=(const Profile& other)$/;"	f	class:Profile	typeref:typename:Profile &
+print	TESTex01.cpp	/^void print( T& x )$/;"	f	typeref:typename:void
 printElement	main.cpp	/^void printElement(const T& element)$/;"	f	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
 ~Profile	Profile.cpp	/^Profile::~Profile()$/;"	f	class:Profile
