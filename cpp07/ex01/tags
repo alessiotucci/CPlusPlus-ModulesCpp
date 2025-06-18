@@ -40,8 +40,8 @@ getAge	Profile.cpp	/^int Profile::getAge() const$/;"	f	class:Profile	typeref:typ
 getName	Profile.cpp	/^std::string Profile::getName() const$/;"	f	class:Profile	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
 isTaken	Profile.cpp	/^bool Profile::isTaken() const$/;"	f	class:Profile	typeref:typename:bool
-iter	iter.hpp	/^void iter(T *array, int length, \/*void (*func)(T&)*\/ Func func)$/;"	f	typeref:typename:void
-iter	iter.hpp	/^void iter(const T *array, int length, \/*void (*func)(const T&)*\/ Func func)$/;"	f	typeref:typename:void
+iter	iter.hpp	/^void iter(T *array, int length, void (*func)(T&) \/*F func*\/)$/;"	f	typeref:typename:void
+iter	iter.hpp	/^void iter(const T *array, int length, void (*func)(const T&) \/*F func*\/)$/;"	f	typeref:typename:void
 main	TESTex01.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 operator <<	Profile.cpp	/^std::ostream& operator<<(std::ostream& output, const Profile param)$/;"	f	typeref:typename:std::ostream &
