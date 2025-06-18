@@ -3,7 +3,7 @@
 #    Host: e4r2p4.42roma.it                                           /_/      #
 #    File: Makefile                                                ( o.o )     #
 #    Created: 2025/06/13 13:23:57 | By: atucci <atucci@student.42  > ^ <       #
-#    Updated: 2025/06/15 19:27:58                                   /          #
+#    Updated: 2025/06/18 11:17:26                                   /          #
 #    OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)      #
 #                                                                              #
 # **************************************************************************** #
@@ -16,7 +16,8 @@ NAME = iter
 # *************************************************
 # setting up the variable that will be the source *
 # *************************************************
-SOURCE = main.cpp
+SOURCE = main.cpp \
+		 Profile.cpp \
 
 
 # ***********************************************************

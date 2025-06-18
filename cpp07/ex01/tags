@@ -17,15 +17,29 @@ FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
 ITER_HPP	iter.hpp	/^#define ITER_HPP$/;"	d
 NAME	Makefile	/^NAME = iter$/;"	m
+PROFILE_HPP	Profile.hpp	/^# define PROFILE_HPP$/;"	d
+Profile	Profile.cpp	/^Profile::Profile()$/;"	f	class:Profile
+Profile	Profile.cpp	/^Profile::Profile(const Profile& other)$/;"	f	class:Profile
+Profile	Profile.cpp	/^Profile::Profile(std::string name, int age, bool taken) : _name(name), _age(age), _taken(taken)$/;"	f	class:Profile
+Profile	Profile.hpp	/^class Profile$/;"	c
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
-SOURCE	Makefile	/^SOURCE = main.cpp$/;"	m
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_age	Profile.hpp	/^	int _age;$/;"	m	class:Profile	typeref:typename:int
+_name	Profile.hpp	/^	std::string _name;$/;"	m	class:Profile	typeref:typename:std::string
+_taken	Profile.hpp	/^	bool _taken;$/;"	m	class:Profile	typeref:typename:bool
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
+getAge	Profile.cpp	/^int Profile::getAge()$/;"	f	class:Profile	typeref:typename:int
+getName	Profile.cpp	/^std::string Profile::getName()$/;"	f	class:Profile	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
+isTaken	Profile.cpp	/^bool Profile::isTaken()$/;"	f	class:Profile	typeref:typename:bool
 iter	iter.hpp	/^void iter(const T *array, int lenght, void (*func)(U))$/;"	f	typeref:typename:void
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+operator <<	Profile.cpp	/^std::ostream& operator<<(std::ostream& output, const Profile param)$/;"	f	typeref:typename:std::ostream &
+operator =	Profile.cpp	/^Profile& Profile::operator=(const Profile& other)$/;"	f	class:Profile	typeref:typename:Profile &
 printElement	main.cpp	/^void printElement(const T& element)$/;"	f	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
+~Profile	Profile.cpp	/^Profile::~Profile()$/;"	f	class:Profile
