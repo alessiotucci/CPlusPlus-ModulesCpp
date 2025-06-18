@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/13 13:35:48 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/17 15:28:23                                   /         */
+/*   Updated: 2025/06/18 11:26:33                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include "iter.hpp"
+#include "Profile.hpp"
 
 // Template function to print any type
 template <typename T>
