@@ -18,7 +18,7 @@ GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
 ITER_HPP	iter.hpp	/^#define ITER_HPP$/;"	d
 NAME	Makefile	/^NAME = iter$/;"	m
 PROFILE_HPP	Profile.hpp	/^# define PROFILE_HPP$/;"	d
-Profile	Profile.cpp	/^Profile::Profile()$/;"	f	class:Profile
+Profile	Profile.cpp	/^Profile::Profile() : _name("empty"), _age(0), _taken(false)$/;"	f	class:Profile
 Profile	Profile.cpp	/^Profile::Profile(const Profile& other)$/;"	f	class:Profile
 Profile	Profile.cpp	/^Profile::Profile(std::string name, int age, bool taken) : _name(name), _age(age), _taken(taken)$/;"	f	class:Profile
 Profile	Profile.hpp	/^class Profile$/;"	c
@@ -32,10 +32,10 @@ _taken	Profile.hpp	/^	bool _taken;$/;"	m	class:Profile	typeref:typename:bool
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
-getAge	Profile.cpp	/^int Profile::getAge()$/;"	f	class:Profile	typeref:typename:int
-getName	Profile.cpp	/^std::string Profile::getName()$/;"	f	class:Profile	typeref:typename:std::string
+getAge	Profile.cpp	/^int Profile::getAge() const$/;"	f	class:Profile	typeref:typename:int
+getName	Profile.cpp	/^std::string Profile::getName() const$/;"	f	class:Profile	typeref:typename:std::string
 hidden	Makefile	/^hidden:$/;"	t
-isTaken	Profile.cpp	/^bool Profile::isTaken()$/;"	f	class:Profile	typeref:typename:bool
+isTaken	Profile.cpp	/^bool Profile::isTaken() const$/;"	f	class:Profile	typeref:typename:bool
 iter	iter.hpp	/^void iter(const T *array, int lenght, void (*func)(U))$/;"	f	typeref:typename:void
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 operator <<	Profile.cpp	/^std::ostream& operator<<(std::ostream& output, const Profile param)$/;"	f	typeref:typename:std::ostream &

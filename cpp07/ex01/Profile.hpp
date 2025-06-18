@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Profile.hpp                                             ( o.o )    */
 /*   Created: 2025/06/18 11:09:27 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/18 11:23:08                                   /         */
+/*   Updated: 2025/06/18 11:29:49                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -31,9 +31,9 @@ public:
 	Profile& operator=(const Profile& other);
 	// 4. Destructor
 	~Profile();
-	int getAge();
-	std::string getName();
-	bool isTaken();
+	int getAge() const;
+	std::string getName() const;
+	bool isTaken() const;
 };
 
 //overload to output

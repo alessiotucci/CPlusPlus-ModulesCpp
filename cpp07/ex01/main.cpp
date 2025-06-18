@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/13 13:35:48 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/18 11:26:33                                   /         */
+/*   Updated: 2025/06/18 11:40:18                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -61,6 +61,14 @@ int main()
 //	{
 //		std::cout << "array[" << i << "] " << arrayString[i] << std::endl;
 //	}
-
+	std::cout << "TEST6: Array of Profile\n";
+	Profile profiles[4] =
+	{
+		Profile("Robbie Williams", 63, false),
+		Profile("Kim Khardasian", 44, false),
+		Profile("Will Smith", 56, true),
+		Profile("Donald Knuth", 33, true)
+	};
+	iter(profiles, 4, printElement<Profile>);
 	return(0);
 }
