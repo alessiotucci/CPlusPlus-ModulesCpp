@@ -23,6 +23,8 @@ RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_array	Array.hpp	/^	T *_array;$/;"	m	class:Array	typeref:typename:T *
+_size	Array.hpp	/^	int _size;$/;"	m	class:Array	typeref:typename:int
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
