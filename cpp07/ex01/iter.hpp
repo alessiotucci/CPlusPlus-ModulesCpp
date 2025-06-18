@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: iter.hpp                                                ( o.o )    */
 /*   Created: 2025/06/17 14:47:26 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/18 14:55:47                                   /         */
+/*   Updated: 2025/06/18 15:00:33                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -18,8 +18,8 @@
 */
 
 
-template <typename T>
-void iter(T *array, int length, void (*func)(T&))
+template <typename T, typename Func>
+void iter(T *array, int length, /*void (*func)(T&)*/ Func func)
 {
 	if (!array || length <= 0 || !func)
 		return;
@@ -28,8 +28,8 @@ void iter(T *array, int length, void (*func)(T&))
 }
 
 // Overload for arrays of const T
-template <typename T>
-void iter(const T *array, int length, void (*func)(const T&))
+template <typename T, typename Func>
+void iter(const T *array, int length, /*void (*func)(const T&)*/ Func func)
 {
 	if (!array || length <= 0 || !func)
 		return;
