@@ -9,4 +9,9 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+DEFAULT_HPP	Span.hpp	/^# define DEFAULT_HPP$/;"	d
+Default	Span.hpp	/^class Default$/;"	c
+_age	Span.hpp	/^	int _age;$/;"	m	class:Default	typeref:typename:int
+_name	Span.hpp	/^	std::string _name;$/;"	m	class:Default	typeref:typename:std::string
+_taken	Span.hpp	/^	bool _taken;$/;"	m	class:Default	typeref:typename:bool
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
