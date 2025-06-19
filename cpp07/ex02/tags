@@ -19,20 +19,14 @@ CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 FLAG	Makefile	/^FLAG = -Wall -Werror -Wextra -std=c++98$/;"	m
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
 NAME	Makefile	/^NAME = array$/;"	m
-Point	main.cpp	/^    Point() : _x(0), _y(0) {}$/;"	f	class:Point	file:
-Point	main.cpp	/^    Point(int x, int y) : _x(x), _y(y) {}$/;"	f	class:Point	file:
-Point	main.cpp	/^class Point {$/;"	c	file:
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
 SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 _array	Array.hpp	/^	T *_array;$/;"	m	class:Array	typeref:typename:T *
 _size	Array.hpp	/^	unsigned int _size;$/;"	m	class:Array	typeref:typename:unsigned int
-_x	main.cpp	/^    int _x;$/;"	m	class:Point	typeref:typename:int	file:
-_y	main.cpp	/^    int _y;$/;"	m	class:Point	typeref:typename:int	file:
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
-main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
-operator <<	main.cpp	/^    friend std::ostream& operator<<(std::ostream& os, const Point& p) {$/;"	f	typeref:typename:std::ostream &	file:
+main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 re	Makefile	/^re: fclean all$/;"	t
