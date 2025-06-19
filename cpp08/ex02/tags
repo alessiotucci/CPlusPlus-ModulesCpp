@@ -9,4 +9,9 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+DEFAULT_HPP	MutantStack.hpp	/^# define DEFAULT_HPP$/;"	d
+Default	MutantStack.hpp	/^class Default$/;"	c
+_age	MutantStack.hpp	/^	int _age;$/;"	m	class:Default	typeref:typename:int
+_name	MutantStack.hpp	/^	std::string _name;$/;"	m	class:Default	typeref:typename:std::string
+_taken	MutantStack.hpp	/^	bool _taken;$/;"	m	class:Default	typeref:typename:bool
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
