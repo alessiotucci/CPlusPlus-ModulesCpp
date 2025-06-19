@@ -1,0 +1,103 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/nfs/homes/atucci/Desktop/CPlusPlus-ModulesCpp/cpp07/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	ex00/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	ex01/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	ex02/Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	ex00/Makefile	/^%.o: %.cpp$/;"	t
+%.o	ex01/Makefile	/^%.o: %.cpp$/;"	t
+%.o	ex02/Makefile	/^%.o: %.cpp$/;"	t
+ARRAY_HPP	ex02/Array.hpp	/^# define ARRAY_HPP$/;"	d
+Array	ex02/Array.hpp	/^class Array$/;"	c
+ArrayOutOfBoundException	ex02/Array.hpp	/^		class ArrayOutOfBoundException : public std::exception$/;"	c	class:Array
+Awesome	ex01/TESTex01.cpp	/^    Awesome( void ) : _n( 42 ) { return; }$/;"	f	class:Awesome	file:
+Awesome	ex01/TESTex01.cpp	/^class Awesome$/;"	c	file:
+CXX	ex00/Makefile	/^CXX = c++$/;"	m
+CXX	ex01/Makefile	/^CXX = c++$/;"	m
+CXX	ex02/Makefile	/^CXX = c++$/;"	m
+CYAN	ex00/Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	ex01/Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	ex02/Makefile	/^CYAN := \\033[1;36m$/;"	m
+FLAG	ex00/Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+FLAG	ex01/Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+FLAG	ex02/Makefile	/^FLAG = -Wall -Werror -Wextra -std=c++98$/;"	m
+GREEN	ex00/Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	ex01/Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	ex02/Makefile	/^GREEN := \\033[1;32m$/;"	m
+ITER_HPP	ex01/iter.hpp	/^#define ITER_HPP$/;"	d
+MAX_VAL	test_main.cpp	/^#define MAX_VAL /;"	d	file:
+NAME	ex00/Makefile	/^NAME = ex00$/;"	m
+NAME	ex01/Makefile	/^NAME = iter$/;"	m
+NAME	ex02/Makefile	/^NAME = array$/;"	m
+PROFILE_HPP	ex01/Profile.hpp	/^# define PROFILE_HPP$/;"	d
+Point	ex02/main.cpp	/^    Point() : _x(0), _y(0) {}$/;"	f	class:Point	file:
+Point	ex02/main.cpp	/^    Point(int x, int y) : _x(x), _y(y) {}$/;"	f	class:Point	file:
+Point	ex02/main.cpp	/^class Point {$/;"	c	file:
+Profile	ex01/Profile.cpp	/^Profile::Profile() : _name("empty"), _age(0), _taken(false)$/;"	f	class:Profile
+Profile	ex01/Profile.cpp	/^Profile::Profile(const Profile& other)$/;"	f	class:Profile
+Profile	ex01/Profile.cpp	/^Profile::Profile(std::string name, int age, bool taken) : _name(name), _age(age), _taken(taken)$/;"	f	class:Profile
+Profile	ex01/Profile.hpp	/^class Profile$/;"	c
+RED	ex00/Makefile	/^RED := \\033[1;31m$/;"	m
+RED	ex01/Makefile	/^RED := \\033[1;31m$/;"	m
+RED	ex02/Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	ex00/Makefile	/^RESET := \\033[0m$/;"	m
+RESET	ex01/Makefile	/^RESET := \\033[0m$/;"	m
+RESET	ex02/Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	ex00/Makefile	/^SOURCE = main.cpp$/;"	m
+SOURCE	ex01/Makefile	/^SOURCE = main.cpp \\$/;"	m
+SOURCE	ex02/Makefile	/^SOURCE = main.cpp \\$/;"	m
+WHATEVER_HPP	ex00/whatever.hpp	/^#define WHATEVER_HPP$/;"	d
+YELLOW	ex00/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	ex01/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	ex02/Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_age	ex01/Profile.hpp	/^	int _age;$/;"	m	class:Profile	typeref:typename:int
+_array	ex02/Array.hpp	/^	T *_array;$/;"	m	class:Array	typeref:typename:T *
+_n	ex01/TESTex01.cpp	/^    int _n;$/;"	m	class:Awesome	typeref:typename:int	file:
+_name	ex01/Profile.hpp	/^	std::string _name;$/;"	m	class:Profile	typeref:typename:std::string
+_size	ex02/Array.hpp	/^	unsigned int _size;$/;"	m	class:Array	typeref:typename:unsigned int
+_taken	ex01/Profile.hpp	/^	bool _taken;$/;"	m	class:Profile	typeref:typename:bool
+_x	ex02/main.cpp	/^    int _x;$/;"	m	class:Point	typeref:typename:int	file:
+_y	ex02/main.cpp	/^    int _y;$/;"	m	class:Point	typeref:typename:int	file:
+all	ex00/Makefile	/^all: $(NAME)$/;"	t
+all	ex01/Makefile	/^all: $(NAME)$/;"	t
+clean	ex00/Makefile	/^clean:$/;"	t
+clean	ex01/Makefile	/^clean:$/;"	t
+clean	ex02/Makefile	/^clean:$/;"	t
+fclean	ex00/Makefile	/^fclean: clean$/;"	t
+fclean	ex01/Makefile	/^fclean: clean$/;"	t
+fclean	ex02/Makefile	/^fclean: clean$/;"	t
+get	ex01/TESTex01.cpp	/^    int get( void ) const { return this->_n; }$/;"	f	class:Awesome	typeref:typename:int	file:
+getAge	ex01/Profile.cpp	/^int Profile::getAge() const$/;"	f	class:Profile	typeref:typename:int
+getName	ex01/Profile.cpp	/^std::string Profile::getName() const$/;"	f	class:Profile	typeref:typename:std::string
+hidden	ex00/Makefile	/^hidden:$/;"	t
+hidden	ex01/Makefile	/^hidden:$/;"	t
+hidden	ex02/Makefile	/^hidden:$/;"	t
+isTaken	ex01/Profile.cpp	/^bool Profile::isTaken() const$/;"	f	class:Profile	typeref:typename:bool
+iter	ex01/iter.hpp	/^void iter(T *array, int length, void (*func)(T&) \/*F func*\/)$/;"	f	typeref:typename:void
+iter	ex01/iter.hpp	/^void iter(const T *array, int length, void (*func)(const T&) \/*F func*\/)$/;"	f	typeref:typename:void
+main	ex00/main.cpp	/^int main(void)$/;"	f	typeref:typename:int
+main	ex01/TESTex01.cpp	/^int main()$/;"	f	typeref:typename:int
+main	ex01/main.cpp	/^int main()$/;"	f	typeref:typename:int
+main	ex02/main.cpp	/^int main() {$/;"	f	typeref:typename:int
+main	test_main.cpp	/^int main(int, char**)$/;"	f	typeref:typename:int
+max	ex00/whatever.hpp	/^T const &max(T const &a, T const &b)$/;"	f	typeref:typename:T const &
+min	ex00/whatever.hpp	/^T const &min(T const &a, T const &b)$/;"	f	typeref:typename:T const &
+operator <<	ex01/Profile.cpp	/^std::ostream& operator<<(std::ostream& output, const Profile param)$/;"	f	typeref:typename:std::ostream &
+operator <<	ex01/TESTex01.cpp	/^std::ostream & operator<<( std::ostream & o, Awesome const & rhs )$/;"	f	typeref:typename:std::ostream &
+operator <<	ex02/main.cpp	/^    friend std::ostream& operator<<(std::ostream& os, const Point& p) {$/;"	f	typeref:typename:std::ostream &	file:
+operator =	ex01/Profile.cpp	/^Profile& Profile::operator=(const Profile& other)$/;"	f	class:Profile	typeref:typename:Profile &
+print	ex01/TESTex01.cpp	/^void print( T& x )$/;"	f	typeref:typename:void
+printElement	ex01/main.cpp	/^void printElement(const T& element)$/;"	f	typeref:typename:void
+re	ex00/Makefile	/^re: fclean all$/;"	t
+re	ex01/Makefile	/^re: fclean all$/;"	t
+re	ex02/Makefile	/^re: fclean all$/;"	t
+swap	ex00/whatever.hpp	/^void swap(T &a, T &b)$/;"	f	typeref:typename:void
+~Profile	ex01/Profile.cpp	/^Profile::~Profile()$/;"	f	class:Profile
