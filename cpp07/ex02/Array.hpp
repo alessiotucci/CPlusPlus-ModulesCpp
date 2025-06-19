@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Array.hpp                                               ( o.o )    */
 /*   Created: 2025/06/18 15:05:45 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/18 16:55:42                                   /         */
+/*   Updated: 2025/06/19 12:57:16                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ class Array
 {
 
 private:
-	int _size;
+	unsigned int _size;
 	T *_array;
 
 public:
@@ -34,9 +34,11 @@ public:
 
 /*Elements can be accessed through the subscript operator: [ ].*/
 	// operator[]
+	const T& operator[](int index) const;
+	T& operator[](int index);
 /*A member function size() that returns the number of elements in the array. This
 member function takes no parameters and must not modify the current instance.*/
-	int size() const;
+	unsigned int size() const;
 
 /*When accessing an element with the [ ] operator, if its index is out of bounds, an
 std::exception is thrown*/
