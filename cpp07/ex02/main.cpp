@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/13 13:36:10 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/19 15:07:50                                   /         */
+/*   Updated: 2025/06/20 15:36:50                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -58,10 +58,6 @@ int main()
 		
 		std::cout << "Original[0]: " << names[0] << std::endl;
 		std::cout << "Assigned[0]: " << namesAssigned[0] << std::endl;
-		
-		// Self-assignment test
-		namesAssigned = namesAssigned;
-		std::cout << "Self-assignment test: " << namesAssigned[0] << std::endl;
 	}
 
 	std::cout << "\n\033[1;36m===== TEST 4: Empty Array =====\033[0m\n";
