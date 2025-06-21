@@ -1,15 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*   Host: e4r2p4.42roma.it                                           /_/     */
-/*   File: easyfind.tpp                                            ( o.o )    */
-/*   Created: 2025/06/19 15:42:41 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/19 16:42:49                                   /         */
-/*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
-/*                                                                            */
-/* ************************************************************************** */
-
 template <typename T>
-int easyfind::easyfind(T container, int find)
+//std::find() 1 param is begin, 2 param is end, 3 is to_find
+int easyfind(T c, int find)
 {
-
+	return (((std::find(c.begin(), c.end(), find) == c.end())) ? 0 : 1);
+	
 }
