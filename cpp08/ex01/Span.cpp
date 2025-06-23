@@ -3,15 +3,65 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Span.cpp                                                ( o.o )    */
 /*   Created: 2025/06/19 15:44:18 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/21 16:25:18                                   /         */
+/*   Updated: 2025/06/23 13:19:18                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-Span::Span(unsigned int N) : _maxSize(N) {}
+Span::Span(unsigned int N) : _nSize(N)
+{
+	std::cout << "the max to store is " << N << std::endl;
+}
+
+Span::Span(const Span& other)
+{
+	*this = other;
+}
+
+Span& Span::operator=(const Span& other)
+{
+	if (this != other)
+	{
+
+	}
+	return (*this);
+}
+
 Span::~Span() {}
-void Span::addNumber(int n) { }
+
+/*TODO:
+This class will have a member function called addNumber() to add a single number
+to the Span. It will be used in order to fill it.
+Any attempt to add a new element if there are already N elements stored should throw an exception.
+*/
+void Span::addNumber(int n)
+{
+
+}
+/*TODO:
+If there are no numbers stored, or only one, no span can be found. Thus, throw an exception.
+*/
 int Span::shortestSpan() const { }
 int Span::longestSpan() const { }
+
+const char	*Span::SpanIsFullException what() const throw()
+{
+	return("CUSTOM EXCEPTION: Span is full!!");
+}
+
+const char	*Span::SpanIsEmptyException what() const throw()
+{
+	return("CUSTOM EXCEPTION: Span is empty!!");
+}
+
+const char	*Span::SpanNotFoundException what() const throw()
+{
+	return("CUSTOM EXCEPTION: Span not found!!");
+}
+
+const char	*Span::SpanIsOnlyOneException what() const throw()
+{
+	return("CUSTOM EXCEPTION: there only one number!!!");
+}
 

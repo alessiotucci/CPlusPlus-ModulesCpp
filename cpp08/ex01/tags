@@ -9,9 +9,40 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-DEFAULT_HPP	Span.hpp	/^# define DEFAULT_HPP$/;"	d
-Default	Span.hpp	/^class Default$/;"	c
-_age	Span.hpp	/^	int _age;$/;"	m	class:Default	typeref:typename:int
-_name	Span.hpp	/^	std::string _name;$/;"	m	class:Default	typeref:typename:std::string
-_taken	Span.hpp	/^	bool _taken;$/;"	m	class:Default	typeref:typename:bool
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+NAME	Makefile	/^NAME = span$/;"	m
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+SPAN_HPP	Span.hpp	/^#define SPAN_HPP$/;"	d
+Span	Span.cpp	/^Span::Span(const Span& other)$/;"	f	class:Span
+Span	Span.cpp	/^Span::Span(unsigned int N) : _nSize(N)$/;"	f	class:Span
+Span	Span.hpp	/^class Span$/;"	c
+SpanIsEmptyException	Span.hpp	/^		class SpanIsEmptyException : public std::exception$/;"	c	class:Span
+SpanIsFullException	Span.hpp	/^		class SpanIsFullException : public std::exception$/;"	c	class:Span
+SpanIsOnlyOneException	Span.hpp	/^		class SpanIsOnlyOneException : public std::exception$/;"	c	class:Span
+SpanNotFoundException	Span.hpp	/^		class SpanNotFoundException : public std::exception$/;"	c	class:Span
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+_n	Span.hpp	/^	std::vector<int> _n;$/;"	m	class:Span	typeref:typename:std::vector<int>
+_nSize	Span.hpp	/^	unsigned int _nSize;$/;"	m	class:Span	typeref:typename:unsigned int
+addNumber	Span.cpp	/^void Span::addNumber(int n)$/;"	f	class:Span	typeref:typename:void
+addRange	Span.hpp	/^	void addRange(T begin, T end)$/;"	f	class:Span	typeref:typename:void
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+hidden	Makefile	/^hidden:$/;"	t
+longestSpan	Span.cpp	/^int Span::longestSpan() const { }$/;"	f	class:Span	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+operator =	Span.cpp	/^Span& Span::operator=(const Span& other)$/;"	f	class:Span	typeref:typename:Span &
+re	Makefile	/^re: fclean all$/;"	t
+shortestSpan	Span.cpp	/^int Span::shortestSpan() const { }$/;"	f	class:Span	typeref:typename:int
+what	Span.cpp	/^const char	*Span::SpanIsEmptyException what() const throw()$/;"	f	typeref:typename:const char * Span::SpanIsEmptyException
+what	Span.cpp	/^const char	*Span::SpanIsFullException what() const throw()$/;"	f	typeref:typename:const char * Span::SpanIsFullException
+what	Span.cpp	/^const char	*Span::SpanIsOnlyOneException what() const throw()$/;"	f	typeref:typename:const char * Span::SpanIsOnlyOneException
+what	Span.cpp	/^const char	*Span::SpanNotFoundException what() const throw()$/;"	f	typeref:typename:const char * Span::SpanNotFoundException
+~Span	Span.cpp	/^Span::~Span() {}$/;"	f	class:Span

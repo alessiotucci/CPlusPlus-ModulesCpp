@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/19 15:16:53 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/21 16:22:32                                   /         */
+/*   Updated: 2025/06/23 12:47:40                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -12,7 +12,8 @@
 #include "Span.hpp"
 #include <ctime>
 
-int main() {
+int main()
+{
     Span sp = Span(5);
     sp.addNumber(6);
     sp.addNumber(3);
@@ -26,7 +27,8 @@ int main() {
     // Test con 10000 numeri
     Span bigSpan(10000);
     std::srand(std::time(0));
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < 10000; ++i)
+	{
         bigSpan.addNumber(std::rand());
     }
 
