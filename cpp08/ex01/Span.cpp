@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Span.cpp                                                ( o.o )    */
 /*   Created: 2025/06/19 15:44:18 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/23 13:55:21                                   /         */
+/*   Updated: 2025/06/23 15:33:23                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -38,15 +38,36 @@ Any attempt to add a new element if there are already N elements stored should t
 */
 void Span::addNumber(int n)
 {
-//	if ()
-//	throw()
-	(void)n;
+	if (_n.size() >= _nSize)
+		throw SpanIsFullException();
+	_n.push_back(n);
 }
 /*TODO:
 If there are no numbers stored, or only one, no span can be found. Thus, throw an exception.
 */
-int Span::shortestSpan() const { return (0);}
-int Span::longestSpan() const { return (0);}
+int Span::shortestSpan() const
+{
+	//throw SpanIsEmptyException();
+	//throw SpanIsOnlyOneException();
+	//throw SpanNotFoundException();
+	return (0);
+}
+int Span::longestSpan() const
+{
+//throw SpanIsEmptyException();
+	//throw SpanIsOnlyOneException();
+	//throw SpanNotFoundException();
+	return (0);
+}
+unsigned int Span::getSize() const
+{
+	return (_nSize);
+}
+
+std::vector<int> Span::getVector() const
+{
+	return (_n);
+}
 
 const char	*Span::SpanIsFullException::what() const throw()
 {
@@ -67,4 +88,19 @@ const char	*Span::SpanIsOnlyOneException::what() const throw()
 {
 	return("CUSTOM EXCEPTION: there only one number!!!");
 }
+
+std::ostream& operator<<(std::ostream &out_file, const Span &obj)
+{
+	out_file << "Span size: " << obj.getSize() << std::endl;
+	unsigned int i = 0;
+	std::vector<int> t = obj.getVector();
+	while (i < obj.getSize())
+	{
+		out_file << "Span[" << i << "]" << t[i] << std::endl;
+		i++;
+	}
+
+	return (out_file);
+}
+
 

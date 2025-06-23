@@ -48,13 +48,16 @@ addRange	Span.hpp	/^	void addRange(T begin, T end)$/;"	f	class:Span	typeref:type
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
+getSize	Span.cpp	/^unsigned int Span::getSize() const$/;"	f	class:Span	typeref:typename:unsigned int
+getVector	Span.cpp	/^std::vector<int> Span::getVector() const$/;"	f	class:Span	typeref:typename:std::vector<int>
 hidden	Makefile	/^hidden:$/;"	t
-longestSpan	Span.cpp	/^int Span::longestSpan() const { return (0);}$/;"	f	class:Span	typeref:typename:int
+longestSpan	Span.cpp	/^int Span::longestSpan() const$/;"	f	class:Span	typeref:typename:int
 main	SubjectMain.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+operator <<	Span.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Span &obj)$/;"	f	typeref:typename:std::ostream &
 operator =	Span.cpp	/^Span& Span::operator=(const Span &other)$/;"	f	class:Span	typeref:typename:Span &
 re	Makefile	/^re: fclean all$/;"	t
-shortestSpan	Span.cpp	/^int Span::shortestSpan() const { return (0);}$/;"	f	class:Span	typeref:typename:int
+shortestSpan	Span.cpp	/^int Span::shortestSpan() const$/;"	f	class:Span	typeref:typename:int
 what	Span.cpp	/^const char	*Span::SpanIsEmptyException::what() const throw()$/;"	f	class:Span::SpanIsEmptyException	typeref:typename:const char *
 what	Span.cpp	/^const char	*Span::SpanIsFullException::what() const throw()$/;"	f	class:Span::SpanIsFullException	typeref:typename:const char *
 what	Span.cpp	/^const char	*Span::SpanIsOnlyOneException::what() const throw()$/;"	f	class:Span::SpanIsOnlyOneException	typeref:typename:const char *
