@@ -50,6 +50,7 @@ clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
 longestSpan	Span.cpp	/^int Span::longestSpan() const { return (0);}$/;"	f	class:Span	typeref:typename:int
+main	SubjectMain.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 operator =	Span.cpp	/^Span& Span::operator=(const Span &other)$/;"	f	class:Span	typeref:typename:Span &
 re	Makefile	/^re: fclean all$/;"	t
