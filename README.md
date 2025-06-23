@@ -122,7 +122,7 @@ Those modules of C++ are designed to help you understand the specifities of the 
 # Cpp 08
 | Exercise | Title | About | video | 
 |----------|-------|-------|-------|
-| ex00     | Easy find |...|[![video 1](https://ytcards.demolab.com/?id=9uy1tBnAAhU " ")](https://youtu.be/9uy1tBnAAhU)]() |
+| ex00     | Easy find |...| [![video 1](https://ytcards.demolab.com/?id=9uy1tBnAAhU " ")](https://youtu.be/9uy1tBnAAhU) |
 | ex01     | Span |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
 | ex02     |  Mutated abomination |...| [![video 1](https://ytcards.demolab.com/?id= " ")]() |
 
