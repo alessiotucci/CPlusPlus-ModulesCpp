@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Span.cpp                                                ( o.o )    */
 /*   Created: 2025/06/19 15:44:18 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/23 15:45:45                                   /         */
+/*   Updated: 2025/06/23 15:57:42                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -47,17 +47,37 @@ If there are no numbers stored, or only one, no span can be found. Thus, throw a
 */
 int Span::shortestSpan() const
 {
-	//throw SpanIsEmptyException();
-	//throw SpanIsOnlyOneException();
+	if (_n.size() == 0)
+		throw SpanIsEmptyException();
+	if (_n.size() < 2)
+		throw SpanIsOnlyOneException();
 	//throw SpanNotFoundException();
-	return (0);
+
+	std::vector<int> sorted = _n;
+	// creating a sorted vector
+	std::sort(sorted.begin(), sorted.end());
+
+	int minSpan = sorted[1] - sorted[0];
+	// checking starting from the difference between the first two elements
+	for (size_t i = 2; i < sorted.size(); ++i)
+	{
+		int diff = sorted[i] - sorted[i - 1];
+		if (diff < minSpan)
+			minSpan = diff;
+	}
+	return minSpan;
 }
+
 int Span::longestSpan() const
 {
-//throw SpanIsEmptyException();
-	//throw SpanIsOnlyOneException();
+	if (_n.size() == 0)
+		throw SpanIsEmptyException();
+	if (_n.size() < 2)
+		throw SpanIsOnlyOneException();
 	//throw SpanNotFoundException();
-	return (0);
+	int minVal = *std::min_element(_n.begin(), _n.end());
+	int maxVal = *std::max_element(_n.begin(), _n.end());
+	return (maxVal - minVal);
 }
 unsigned int Span::getSize() const
 {
