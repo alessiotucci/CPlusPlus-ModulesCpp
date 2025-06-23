@@ -9,9 +9,40 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-DEFAULT_HPP	MutantStack.hpp	/^# define DEFAULT_HPP$/;"	d
-Default	MutantStack.hpp	/^class Default$/;"	c
-_age	MutantStack.hpp	/^	int _age;$/;"	m	class:Default	typeref:typename:int
-_name	MutantStack.hpp	/^	std::string _name;$/;"	m	class:Default	typeref:typename:std::string
-_taken	MutantStack.hpp	/^	bool _taken;$/;"	m	class:Default	typeref:typename:bool
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+BG_CYAN	MutantStack.hpp	/^# define BG_CYAN /;"	d
+BG_GREEN	MutantStack.hpp	/^# define BG_GREEN /;"	d
+BG_RED	MutantStack.hpp	/^# define BG_RED /;"	d
+BG_RESET	MutantStack.hpp	/^# define BG_RESET /;"	d
+BG_YELLOW	MutantStack.hpp	/^# define BG_YELLOW /;"	d
+BLUE	MutantStack.hpp	/^# define BLUE /;"	d
+CXX	Makefile	/^CXX = c++$/;"	m
+CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	MutantStack.hpp	/^# define CYAN /;"	d
+FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GRAY	MutantStack.hpp	/^# define GRAY /;"	d
+GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	MutantStack.hpp	/^# define GREEN /;"	d
+MUTANTSTACK_HPP	MutantStack.hpp	/^#define MUTANTSTACK_HPP$/;"	d
+MutantStack	MutantStack.hpp	/^	MutantStack() : std::stack<T, CT>() {};$/;"	f	class:MutantStack
+MutantStack	MutantStack.hpp	/^	MutantStack(const MutantStack<T, CT> &obj): std::stack<T, CT>(obj) { *this = obj; }$/;"	f	class:MutantStack
+MutantStack	MutantStack.hpp	/^class MutantStack : public std::stack<T, CT>$/;"	c
+NAME	Makefile	/^NAME = MutantStack$/;"	m
+PURPLE	MutantStack.hpp	/^# define PURPLE /;"	d
+RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RED	MutantStack.hpp	/^# define RED /;"	d
+RESET	Makefile	/^RESET := \\033[0m$/;"	m
+RESET	MutantStack.hpp	/^# define RESET /;"	d
+SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
+YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	MutantStack.hpp	/^# define YELLOW /;"	d
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+hidden	Makefile	/^hidden:$/;"	t
+main	SubjectMain.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
+operator =	MutantStack.hpp	/^	MutantStack& operator=(const MutantStack &obj)$/;"	f	class:MutantStack	typeref:typename:MutantStack &
+re	Makefile	/^re: fclean all$/;"	t
+~MutantStack	MutantStack.hpp	/^	~MutantStack() {};$/;"	f	class:MutantStack
