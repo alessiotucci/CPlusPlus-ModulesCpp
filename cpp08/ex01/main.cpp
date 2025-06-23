@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/19 15:16:53 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/23 16:14:42                                   /         */
+/*   Updated: 2025/06/23 16:16:26                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -117,6 +117,7 @@ int main()
 		Span s6(10000);
 		for (int i = 0; i < 10000; ++i)
 			s6.addNumber(i);
+	//	TODO:std::cout << s6;
 		std::cout << "Shortest span: " << s6.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << s6.longestSpan() << std::endl;
 	} catch (const std::exception &e) {
