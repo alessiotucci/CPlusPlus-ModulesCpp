@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: Span.cpp                                                ( o.o )    */
 /*   Created: 2025/06/19 15:44:18 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/23 15:33:23                                   /         */
+/*   Updated: 2025/06/23 15:45:45                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -89,16 +89,19 @@ const char	*Span::SpanIsOnlyOneException::what() const throw()
 	return("CUSTOM EXCEPTION: there only one number!!!");
 }
 
-std::ostream& operator<<(std::ostream &out_file, const Span &obj)
+
+std::ostream& operator<<(std::ostream& out_file, const Span &param)
 {
-	out_file << "Span size: " << obj.getSize() << std::endl;
+	out_file << "Span size: " << param.getSize() << std::endl;
 	unsigned int i = 0;
-	std::vector<int> t = obj.getVector();
-	while (i < obj.getSize())
+	std::vector<int> t = param.getVector();
+	out_file << "Span vector:\n";
+	while (i < param.getSize())
 	{
-		out_file << "Span[" << i << "]" << t[i] << std::endl;
+		out_file << "[" << i << "]" << t[i] << std::endl;
 		i++;
 	}
+	out_file << "*\n\n";
 
 	return (out_file);
 }

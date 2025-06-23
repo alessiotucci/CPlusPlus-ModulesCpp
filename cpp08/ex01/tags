@@ -54,7 +54,7 @@ hidden	Makefile	/^hidden:$/;"	t
 longestSpan	Span.cpp	/^int Span::longestSpan() const$/;"	f	class:Span	typeref:typename:int
 main	SubjectMain.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
-operator <<	Span.cpp	/^std::ostream& operator<<(std::ostream &out_file, const Span &obj)$/;"	f	typeref:typename:std::ostream &
+operator <<	Span.cpp	/^std::ostream& operator<<(std::ostream& out_file, const Span &param)$/;"	f	typeref:typename:std::ostream &
 operator =	Span.cpp	/^Span& Span::operator=(const Span &other)$/;"	f	class:Span	typeref:typename:Span &
 re	Makefile	/^re: fclean all$/;"	t
 shortestSpan	Span.cpp	/^int Span::shortestSpan() const$/;"	f	class:Span	typeref:typename:int
