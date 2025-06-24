@@ -38,9 +38,12 @@ SOURCE	Makefile	/^SOURCE = main.cpp \\$/;"	m
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 YELLOW	MutantStack.hpp	/^# define YELLOW /;"	d
 all	Makefile	/^all: $(NAME)$/;"	t
+begin	MutantStack.hpp	/^    iterator begin() { return this->c.begin(); }$/;"	f	class:MutantStack	typeref:typename:iterator
 clean	Makefile	/^clean:$/;"	t
+end	MutantStack.hpp	/^    iterator end()   { return this->c.end(); }$/;"	f	class:MutantStack	typeref:typename:iterator
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
+iterator	MutantStack.hpp	/^    typedef typename std::stack<T>::container_type::iterator iterator;$/;"	t	class:MutantStack	typeref:typename:std::stack<T>::container_type::iterator
 main	SubjectMain.cpp	/^int main()$/;"	f	typeref:typename:int
 main	main.cpp	/^int main()$/;"	f	typeref:typename:int
 operator =	MutantStack.hpp	/^	MutantStack& operator=(const MutantStack &obj)$/;"	f	class:MutantStack	typeref:typename:MutantStack &

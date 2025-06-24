@@ -3,7 +3,7 @@
 /*   Host: e4r2p4.42roma.it                                           /_/     */
 /*   File: MutantStack.hpp                                         ( o.o )    */
 /*   Created: 2025/06/19 15:45:38 | By: atucci <atucci@student.42  > ^ <      */
-/*   Updated: 2025/06/23 16:46:11                                   /         */
+/*   Updated: 2025/06/24 11:45:24                                   /         */
 /*   OS: Linux 6.5.0-44-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -50,5 +50,9 @@ public:
 	~MutantStack() {};
 
 	//TODO: Implementation of the iterators
+    typedef typename std::stack<T>::container_type::iterator iterator;
+
+    iterator begin() { return this->c.begin(); }
+    iterator end()   { return this->c.end(); }
 };
 #endif
