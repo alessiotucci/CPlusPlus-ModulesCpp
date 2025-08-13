@@ -3,12 +3,25 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 13:58:48 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/06/21 13:59:03                                   /         */
+/*   Updated: 2025/08/13 17:24:57                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
+#include "BitcoinExchange.hpp"
+
+/*
+You have to create a program which outputs the value of a certain amount of bitcoin on a certain date.
+This program must use a database in csv format which will represent bitcoin price over time.
+This database is provided with this subject.
+The program will take as input a second database, storing the different prices/dates to evaluate.
+*/
+int main(int ac, char **av)
 {
-	return 0;
+	(void)av;
+	if (ac != 2)
+		std::cout << "btc program must take a file as an argument." << std::endl;
+	else
+		std::cout << "database: " << av[1]  << std::endl;
+	return (0);
 }
