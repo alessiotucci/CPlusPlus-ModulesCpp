@@ -12,6 +12,9 @@
 $(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
 %.o	Makefile	/^%.o: %.cpp$/;"	t
 BITCOINEXCHANGE_HPP	BitcoinExchange.hpp	/^#define BITCOINEXCHANGE_HPP$/;"	d
+Btc	BitcoinExchange.cpp	/^Btc::Btc()$/;"	f	class:Btc
+Btc	BitcoinExchange.cpp	/^Btc::Btc(const Btc &other)$/;"	f	class:Btc
+Btc	BitcoinExchange.hpp	/^class Btc$/;"	c
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
@@ -27,4 +30,6 @@ clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
+operator =	BitcoinExchange.cpp	/^Btc& Btc::operator=(const Btc &other)$/;"	f	class:Btc	typeref:typename:Btc &
 re	Makefile	/^re: fclean all$/;"	t
+~Btc	BitcoinExchange.cpp	/^Btc::~Btc()$/;"	f	class:Btc
