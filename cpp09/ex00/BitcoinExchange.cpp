@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/14 17:50:29                                   /         */
+/*   Updated: 2025/09/14 17:59:57                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -155,10 +155,11 @@ bool Btc::loadDatabase(const std::string &dbfile)
 
 bool Btc::processInputFile(const std::string &inputfile)
 {
+	std::cout << YELLOW << "DEBUG LOG: " << RESET << inputfile << std::endl;
 	std::ifstream infile(inputfile.c_str());
 	if (!infile.is_open())
 	{
-		std::cout << "Error: could not open file." << std::endl;
+		std::cout << RED << "Error: " << RESET << "could not open file." << std::endl;
 		return false;
 	}
 	std::string line;
@@ -184,18 +185,18 @@ bool Btc::processInputFile(const std::string &inputfile)
 		bool ok = parseInputLine(tline, date, value);
 		if (!ok)
 		{
-			std::cout << "Error: bad input => " << tline << std::endl;
+			std::cout<< RED << "Error: " << RESET << "bad input => " << tline << std::endl;
 			continue;
 		}
 		// Now check range constraints: must be 0 <= value <= 1000 (subject)
 		if (value < 0.0)
 		{
-			std::cout << "Error: not a positive number." << std::endl;
+			std::cout << RED << "Error: " << RESET << "not a positive number.\n=> " << tline << std::endl;
 			continue;
 		}
 		if (value > 1000.0)
 		{
-			std::cout << "Error: too large a number." << std::endl;
+			std::cout << RED << "Error: " << RESET << "too large a number.\n=> " << tline << std::endl;
 			continue;
 		}
 		// If everything ok, store input line for later processing
