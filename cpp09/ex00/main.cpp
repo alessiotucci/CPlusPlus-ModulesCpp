@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 13:58:48 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/05 17:19:30                                   /         */
+/*   Updated: 2025/09/14 17:51:45                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -20,7 +20,10 @@ The program will take as input a second database, storing the different prices/d
 int main(int ac, char **av)
 {
 	if (ac != 2)
+	{
 		std::cout << "btc program must take a file as an argument." << std::endl;
+		return (-1);
+	}
 	else
 		std::cout << "database: " << av[1]  << std::endl;
 
@@ -32,13 +35,6 @@ int main(int ac, char **av)
 
 	if (!btc.processInputFile(av[1]))
 		return (1);
-
-	//TODO: delete this later on For now we just show parsed inputs (this is debug-friendly)
-	const std::vector< std::pair<std::string, double> > &inputs = btc.getInputs();
-	for (std::size_t i = 0; i < inputs.size(); ++i)
-	{
-		std::cout << inputs[i].first << " => " << inputs[i].second << std::endl;
-	}
 	return (0);
 }
 

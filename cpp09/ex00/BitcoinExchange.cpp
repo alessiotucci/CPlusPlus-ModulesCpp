@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/14 16:12:41                                   /         */
+/*   Updated: 2025/09/14 17:50:29                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -108,17 +108,99 @@ static bool isValidDate(const std::string &date)
 // On invalid format/date returns false (caller prints appropriate message).
 static bool parseInputLine(const std::string &line, std::string &out_date, double &out_value)
 {
+	std::string::size_type bar = line.find('|');
+	if (bar == std::string::npos)
+		return false;
 
+	std::string left = trim(line.substr(0, bar));
+	std::string right = trim(line.substr(bar + 1));
+
+	if (left.empty() || right.empty())
+		return false;
+
+	if (!isValidDate(left))
+		return false;
+
+	// parse numeric value using stringstream (robust for floats/ints)
+	std::stringstream ss(right);
+	double val;
+	if (!(ss >> val))
+		return false;
+
+	// ensure there isn't trailing non-space garbage
+	std::string rest;
+	if (ss >> rest)
+		return false;
+
+	out_date = left;
+	out_value = val;
+	return true;
 }
 
 // ----- Public API -----
 bool Btc::loadDatabase(const std::string &dbfile)
 {
-
+	// Placeholder: For now, just check file can be opened.
+	std::ifstream ifs(dbfile.c_str());
+	if (!ifs.is_open())
+	{
+		std::cout << "Error: could not open database file." << std::endl;
+		return false;
+	}
+	// Real parsing into _db will be implemented later.
+	// Close and return true for now.
+	ifs.close();
+	return true;
 }
 
 bool Btc::processInputFile(const std::string &inputfile)
 {
-
+	std::ifstream infile(inputfile.c_str());
+	if (!infile.is_open())
+	{
+		std::cout << "Error: could not open file." << std::endl;
+		return false;
+	}
+	std::string line;
+	bool first = true;
+	while (std::getline(infile, line))
+	{
+		// Trim line and skip empty lines
+		std::string tline = trim(line);
+		if (tline.empty())
+			continue;
+		// Skip the header if present (exact header from subject: "date | value")
+		if (first)
+		{
+			first = false;
+			std::string low = tline;
+			// naive check of header
+			if (low == "date | value" || low == "date|value")
+				continue;
+			// else fall through: treat as a data line
+		}
+		std::string date;
+		double value;
+		bool ok = parseInputLine(tline, date, value);
+		if (!ok)
+		{
+			std::cout << "Error: bad input => " << tline << std::endl;
+			continue;
+		}
+		// Now check range constraints: must be 0 <= value <= 1000 (subject)
+		if (value < 0.0)
+		{
+			std::cout << "Error: not a positive number." << std::endl;
+			continue;
+		}
+		if (value > 1000.0)
+		{
+			std::cout << "Error: too large a number." << std::endl;
+			continue;
+		}
+		// If everything ok, store input line for later processing
+	}
+	infile.close();
+	return true;
 }
 
