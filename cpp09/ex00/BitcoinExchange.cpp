@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/05 17:36:49                                   /         */
+/*   Updated: 2025/09/14 16:04:15                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -46,6 +46,12 @@ static std::string trim(const std::string &s)
 // Helpers
 static bool isDigits(const std::string &s)
 {
+	if (s.empty())
+		return (false);
+	for (std::size_t i = 0; i < s.size(); ++i)
+		if (!std::isdigit(static_cast<unsigned char>(s[i])))
+			return (false);
+	return (true);
 
 }
 
