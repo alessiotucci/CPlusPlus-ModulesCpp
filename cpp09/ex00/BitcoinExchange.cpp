@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/14 17:59:57                                   /         */
+/*   Updated: 2025/09/15 11:16:32                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -91,14 +91,23 @@ static bool isValidDate(const std::string &date)
 	int month = std::atoi(m.c_str());
 	int day = std::atoi(d.c_str());
 	if (month < 1 || month > 12)
+	{
+		std::cout << RED << "Invalid: " << RESET << "wrong month: " << month << std::endl;
 		return (false);
+	}
 	if (day < 1 || day > 31)
+	{
+		std::cout << RED << "Invalid: " << RESET << "wrong day: " << day << std::endl;
 		return (false);
+	}
 
 	// Basic sanity: year should be non-zero (you can relax/change this if needed)
 	int year = std::atoi(y.c_str());
 	if (year < 0)
+	{
+		std::cout << RED << "Invalid: " << RESET << "wrong year: " << year << std::endl;
 		return (false);
+	}
 
 	return (true);
 }
@@ -188,15 +197,15 @@ bool Btc::processInputFile(const std::string &inputfile)
 			std::cout<< RED << "Error: " << RESET << "bad input => " << tline << std::endl;
 			continue;
 		}
-		// Now check range constraints: must be 0 <= value <= 1000 (subject)
+		// Now check range constraints: must be 0 <= value <= 10000 (subject)
 		if (value < 0.0)
 		{
 			std::cout << RED << "Error: " << RESET << "not a positive number.\n=> " << tline << std::endl;
 			continue;
 		}
-		if (value > 1000.0)
+		if (value > 10000.0)
 		{
-			std::cout << RED << "Error: " << RESET << "too large a number.\n=> " << tline << std::endl;
+			std::cout << RED << "Error: " << RESET << "too large a number.\n=> " << value << std::endl;
 			continue;
 		}
 		// If everything ok, store input line for later processing
