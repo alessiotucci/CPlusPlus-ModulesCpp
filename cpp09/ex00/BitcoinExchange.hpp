@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.hpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:20 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/14 17:55:15                                   /         */
+/*   Updated: 2025/09/15 11:05:30                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -41,6 +41,9 @@ class Btc
 
 private:
 	std::map<std::string, double> _db; // later: database (date -> price)
+
+	// helper to find the rate (or closest lower date). returns rate and sets ok.
+	double getRateForDate(const std::string &date, bool &ok) const;
 
 public:
 
