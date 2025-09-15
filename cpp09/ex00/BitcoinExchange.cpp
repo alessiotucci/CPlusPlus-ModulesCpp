@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/15 11:16:32                                   /         */
+/*   Updated: 2025/09/15 11:28:12                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -146,21 +146,86 @@ static bool parseInputLine(const std::string &line, std::string &out_date, doubl
 	return true;
 }
 
-// ----- Public API -----
+// parse CSV DB lines of form "YYYY-MM-DD,rate"
+static bool parseDBLine(const std::string &line, std::string &out_date, double &out_rate)
+{
+	std::string t = trim(line);
+	if (t.empty())
+			return false;
+	// find comma
+	std::string::size_type comma = t.find(',');
+	if (comma == std::string::npos)
+			return false;
+
+	std::string date = trim(t.substr(0, comma));
+	std::string rate_str = trim(t.substr(comma + 1));
+
+	if (date.empty() || rate_str.empty())
+			return false;
+	if (!isValidDate(date))
+			return false;
+
+	std::stringstream ss(rate_str);
+	double rate;
+	if (!(ss >> rate))
+			return false;
+	// reject garbage after number
+	std::string rest;
+	if (ss >> rest)
+			return false;
+
+	out_date = date;
+	out_rate = rate;
+	return true;
+}
+
+// --------------------- Btc methods ---------------------
 bool Btc::loadDatabase(const std::string &dbfile)
 {
-	// Placeholder: For now, just check file can be opened.
 	std::ifstream ifs(dbfile.c_str());
 	if (!ifs.is_open())
 	{
-		std::cout << "Error: could not open database file." << std::endl;
+		std::cout << "Error: I copy code from gpt without understanding." << std::endl;
 		return false;
 	}
-	// Real parsing into _db will be implemented later.
-	// Close and return true for now.
-	ifs.close();
-	return true;
+
+	std::string line;
+	bool first = true;
+	while (std::getline(ifs, line))
+	{
+		std::string tline = trim(line);
+		if (tline.empty()) continue;
+
+		// skip header (common header: "date,exchange_rate" or "date,rate")
+		if (first)
+		{
+			first = false;
+			std::string low = tline;
+			// crude header check
+			if (low.find("date") != std::string::npos && (low.find(",") != std::string::npos))
+				continue;
+		}
+
+        std::string date;
+        double rate;
+        if (!parseDBLine(tline, date, rate)) // implemented
+        {
+            // skip malformed DB lines but you may also choose to print or exit
+            continue;
+        }
+        // If duplicates exist, overwrite previous (reasonable choice)
+        _db[date] = rate;
+    }
+
+    ifs.close();
+    if (_db.empty())
+    {
+        std::cout << "Error: empty or invalid database." << std::endl;
+        return false;
+    }
+    return true;
 }
+
 
 bool Btc::processInputFile(const std::string &inputfile)
 {
@@ -214,3 +279,27 @@ bool Btc::processInputFile(const std::string &inputfile)
 	return true;
 }
 
+double Btc::getRateForDate(const std::string &date, bool &ok) const
+{
+    ok = false;
+    if (_db.empty()) return 0.0;
+
+    std::map<std::string, double>::const_iterator it = _db.lower_bound(date);
+    if (it != _db.end() && it->first == date)
+    {
+        ok = true;
+        return it->second;
+    }
+
+    // if lower_bound returned begin() and not equal, there is no lower date
+    if (it == _db.begin())
+    {
+        ok = false;
+        return 0.0;
+    }
+
+    // if it == end() or it->first > date, the previous element is the closest lower date
+    --it;
+    ok = true;
+    return it->second;
+}

@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 13:58:48 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/14 17:51:45                                   /         */
+/*   Updated: 2025/09/15 11:27:20                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -28,7 +28,13 @@ int main(int ac, char **av)
 		std::cout << "database: " << av[1]  << std::endl;
 
 	Btc btc;
-
+    // load the provided DB file (commonly the subject provides "data.csv" in the repo)
+    // change the path/name if your DB file is named differently
+    if (!btc.loadDatabase("data.csv"))
+    {
+        // If you don't have a local data.csv, create one or change the name above.
+        return 1;
+    }
 	// (Optional) Try to load the official DB (if you have a file name).
 	// If your DB filename is "data.csv" in the project folder you can do:
 	// btc.loadDatabase("data.csv");
@@ -43,3 +49,4 @@ Your program will use the value in your input file.
 Your program should display on the standard output the result of the value multiplied
 by the exchange rate according to the date indicated in your database.
 */
+
