@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/16 16:59:29                                   /         */
+/*   Updated: 2025/09/16 17:10:09                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -153,35 +153,65 @@ static bool parseInputLine(const std::string &line, std::string &out_date, doubl
 // parse CSV DB lines of form "YYYY-MM-DD,rate"
 static bool parseDBLine(const std::string &line, std::string &out_date, double &out_rate)
 {
-	std::string t = trim(line);
-	if (t.empty())
-			return false;
-	// find comma
-	std::string::size_type comma = t.find(',');
-	if (comma == std::string::npos)
-			return false;
+    std::string t = trim(line);
+    if (t.empty())
+	{
+        std::cout << RED << "error: " << RESET << "Line is empty or contains only whitespace" << std::endl;
+        return false;
+    }
+    
+    // Find pipe |
+    std::string::size_type comma = t.find('|');
+    if (comma == std::string::npos)
+	{
+        std::cout << RED << "error: " << RESET << "No pipe | found in line: " << line << std::endl;
+        return false;
+    }
 
-	std::string date = trim(t.substr(0, comma));
-	std::string rate_str = trim(t.substr(comma + 1));
+    std::string date = trim(t.substr(0, comma));
+    std::string rate_str = trim(t.substr(comma + 1));
 
-	if (date.empty() || rate_str.empty())
-			return false;
-	if (!isValidDate(date))
-			return false;
+    // Split the OR condition into separate checks
+    if (date.empty())
+	{
+        std::cout << RED << "error: " << RESET << "Date portion is empty after trimming" << std::endl;
+        return false;
+    }
+    
+    if (rate_str.empty())
+	{
+        std::cout << RED << "error: " << RESET << "Rate portion is empty after trimming" << std::endl;
+        return false;
+    }
 
-	std::stringstream ss(rate_str);
-	double rate;
-	if (!(ss >> rate))
-			return false;
-	// reject garbage after number
-	std::string rest;
-	if (ss >> rest)
-			return false;
+    if (!isValidDate(date))
+	{
+        std::cout << RED << "error: " << RESET << "Invalid date format: " << date 
+                  << " (expected YYYY-MM-DD)" << std::endl;
+        return false;
+    }
 
-	out_date = date;
-	out_rate = rate;
-	return true;
+    std::stringstream ss(rate_str);
+    double rate;
+    if (!(ss >> rate))
+	{
+        std::cout << RED << "error: " << RESET << "Rate is not a valid number: " << rate_str << std::endl;
+        return false;
+    }
+    
+    // Check for trailing garbage
+    std::string rest;
+    if (ss >> rest)
+	{
+        std::cout << RED << "error: " << RESET << "Extra characters after rate: " << rest << std::endl;
+        return false;
+    }
+
+    out_date = date;
+    out_rate = rate;
+    return true;
 }
+
 
 // --------------------- Btc methods ---------------------
 bool Btc::loadDatabase(const std::string &dbfile)
