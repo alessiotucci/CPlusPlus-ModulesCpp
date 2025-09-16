@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.hpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:20 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/15 11:05:30                                   /         */
+/*   Updated: 2025/09/16 16:56:27                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -12,6 +12,7 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <iostream>
+#include <iomanip>   // setw, setprecision, fixed
 #include <string>
 #include <map>
 
@@ -58,6 +59,10 @@ public:
 	bool loadDatabase(const std::string &dbfile);
 	// Process the user-supplied input file (the method we focus on now)
 	bool processInputFile(const std::string &inputfile);
-
+	// Public accessor so we can read the DB
+	const std::map<std::string, double> & getDb() const;
 };
+
+std::ostream & operator<<(std::ostream &os, const Btc &btc);
+
 #endif

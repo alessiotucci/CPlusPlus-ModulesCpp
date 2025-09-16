@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/15 11:28:12                                   /         */
+/*   Updated: 2025/09/16 16:59:29                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -34,6 +34,10 @@ Btc::~Btc()
 
 }
 
+const std::map<std::string, double> & Btc::getDb() const
+{
+	return _db;
+}
 
 // Helpers
 static std::string trim(const std::string &s)
@@ -182,45 +186,47 @@ static bool parseDBLine(const std::string &line, std::string &out_date, double &
 // --------------------- Btc methods ---------------------
 bool Btc::loadDatabase(const std::string &dbfile)
 {
-	std::ifstream ifs(dbfile.c_str());
-	if (!ifs.is_open())
-	{
-		std::cout << "Error: I copy code from gpt without understanding." << std::endl;
-		return false;
-	}
+    std::ifstream ifs(dbfile.c_str());
+    if (!ifs.is_open())
+    {
+        std::cout << RED << "Error: " << RESET << "could not open database file: " << dbfile << std::endl;
+        return false;
+    }
 
-	std::string line;
-	bool first = true;
-	while (std::getline(ifs, line))
-	{
-		std::string tline = trim(line);
-		if (tline.empty()) continue;
+    std::string line;
+    bool first = true;
+    while (std::getline(ifs, line))
+    {
+        std::string tline = trim(line);
+        if (tline.empty()) continue;
 
-		// skip header (common header: "date,exchange_rate" or "date,rate")
-		if (first)
-		{
-			first = false;
-			std::string low = tline;
-			// crude header check
-			if (low.find("date") != std::string::npos && (low.find(",") != std::string::npos))
-				continue;
-		}
+        if (first)
+        {
+            first = false;
+            // skip header if it contains "date" and a comma
+            if (tline.find("date") != std::string::npos && tline.find(",") != std::string::npos)
+                continue;
+        }
 
         std::string date;
         double rate;
-        if (!parseDBLine(tline, date, rate)) // implemented
+        if (!parseDBLine(tline, date, rate))
         {
-            // skip malformed DB lines but you may also choose to print or exit
+            // debug: show skipped db line
+            std::cout << YELLOW << "Skipping DB line (malformed): " << RESET << tline << std::endl;
             continue;
         }
-        // If duplicates exist, overwrite previous (reasonable choice)
         _db[date] = rate;
     }
 
     ifs.close();
+
+    // print DB using the overloaded operator<<
+    std::cout << *this;
+
     if (_db.empty())
     {
-        std::cout << "Error: empty or invalid database." << std::endl;
+        std::cout << RED << "Error: loadDb " << RESET << "Database failed or is empty." << std::endl;
         return false;
     }
     return true;
@@ -229,7 +235,7 @@ bool Btc::loadDatabase(const std::string &dbfile)
 
 bool Btc::processInputFile(const std::string &inputfile)
 {
-	std::cout << YELLOW << "DEBUG LOG: " << RESET << inputfile << std::endl;
+//	std::cout << YELLOW << "DEBUG LOG: " << RESET << inputfile << std::endl;
 	std::ifstream infile(inputfile.c_str());
 	if (!infile.is_open())
 	{
@@ -276,6 +282,7 @@ bool Btc::processInputFile(const std::string &inputfile)
 		// If everything ok, store input line for later processing
 	}
 	infile.close();
+	loadDatabase(inputfile);
 	return true;
 }
 
@@ -302,4 +309,48 @@ double Btc::getRateForDate(const std::string &date, bool &ok) const
     --it;
     ok = true;
     return it->second;
+}
+
+// ------------------ stream operator ------------------
+
+std::ostream & operator<<(std::ostream &os, const Btc &btc)
+{
+    // save original formatting state
+    std::ios::fmtflags oldFlags = os.flags();
+    std::streamsize  oldPrec  = os.precision();
+
+    const std::map<std::string, double> &db = btc.getDb();
+
+    os << CYAN << "Database contents (" << db.size() << " entries):" << RESET << '\n';
+
+    if (db.empty())
+    {
+        os << YELLOW << "  (empty)" << RESET << '\n';
+        os.flags(oldFlags);
+        os.precision(oldPrec);
+        return os;
+    }
+
+    // header
+    os << "  " << std::left << std::setw(12) << "Date"
+       << "  |  "
+       << std::right << std::setw(12) << "Rate" << '\n';
+
+    os << "  " << std::string(12, '-') << "  +  " << std::string(12, '-') << '\n';
+
+    // iterate and print rows
+    for (std::map<std::string, double>::const_iterator it = db.begin(); it != db.end(); ++it)
+    {
+        os << "  "
+           << std::left << std::setw(12) << it->first
+           << "  |  "
+           << std::right
+           << std::fixed << std::setprecision(6) << std::setw(12) << it->second
+           << RESET << '\n';
+    }
+
+    // restore state
+    os.flags(oldFlags);
+    os.precision(oldPrec);
+    return os;
 }

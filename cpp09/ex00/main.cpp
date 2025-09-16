@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 13:58:48 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/15 11:27:20                                   /         */
+/*   Updated: 2025/09/16 16:35:42                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -25,12 +25,12 @@ int main(int ac, char **av)
 		return (-1);
 	}
 	else
-		std::cout << "database: " << av[1]  << std::endl;
+		std::cout << "using the database: " << av[1]  << std::endl;
 
 	Btc btc;
     // load the provided DB file (commonly the subject provides "data.csv" in the repo)
     // change the path/name if your DB file is named differently
-    if (!btc.loadDatabase("data.csv"))
+    if (!btc.loadDatabase("sheet.csv"))
     {
         // If you don't have a local data.csv, create one or change the name above.
         return 1;
