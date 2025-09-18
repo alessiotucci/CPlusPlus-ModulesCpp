@@ -42,6 +42,7 @@ _db	BitcoinExchange.hpp	/^	std::map<std::string, double> _db; \/\/ later: databa
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
+getAmountInDollars	BitcoinExchange.cpp	/^double Btc::getAmountInDollars(const std::string &date, double amount, bool &ok) const$/;"	f	class:Btc	typeref:typename:double
 getDb	BitcoinExchange.cpp	/^const std::map<std::string, double> & Btc::getDb() const$/;"	f	class:Btc	typeref:typename:const std::map<std::string,double> &
 getRateForDate	BitcoinExchange.cpp	/^double Btc::getRateForDate(const std::string &date, bool &ok) const$/;"	f	class:Btc	typeref:typename:double
 hidden	Makefile	/^hidden:$/;"	t

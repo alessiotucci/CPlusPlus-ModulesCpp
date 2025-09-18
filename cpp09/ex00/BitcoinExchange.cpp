@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/16 17:29:49                                   /         */
+/*   Updated: 2025/09/18 17:15:05                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -150,7 +150,7 @@ static bool parseInputLine(const std::string &line, std::string &out_date, doubl
 	return true;
 }
 
-// parse CSV DB lines of form "YYYY-MM-DD,rate"
+//TODO: the database us the commas, instead of the pipe
 static bool parseDBLine(const std::string &line, std::string &out_date, double &out_rate)
 {
     std::string t = trim(line);
@@ -160,8 +160,8 @@ static bool parseDBLine(const std::string &line, std::string &out_date, double &
         return false;
     }
     
-    // Find pipe |
-    std::string::size_type comma = t.find('|');
+    // Find pipe ,
+    std::string::size_type comma = t.find(',');
     if (comma == std::string::npos)
 	{
         std::cout << RED << "error: " << RESET << "No pipe | found in line: " << line << std::endl;
@@ -246,8 +246,8 @@ bool Btc::loadDatabase(const std::string &dbfile)
             std::cout << YELLOW << "Skipping DB line (malformed): " << RESET << tline << std::endl;
             continue;
         }
-        _db[date] = rate;
-    }
+        _db[date] = rate; // this is the key part
+    }					  // where we store the rate for each date
     ifs.close();
     if (_db.empty())
     {
@@ -307,7 +307,9 @@ bool Btc::processInputFile(const std::string &inputfile)
 		// If everything ok, store input line for later processing
 	}
 	infile.close();
-	loadDatabase(inputfile);
+	//TODO: ARE YOU DUMB? this is supposed to take the database instead of the
+	//input file
+//	loadDatabase(inputfile);
 	return true;
 }
 
@@ -338,6 +340,23 @@ double Btc::getRateForDate(const std::string &date, bool &ok) const
 
 
 // GET VALUE IN DOLLARS to do!
+double Btc::getAmountInDollars(const std::string &date, double amount, bool &ok) const
+{
+    ok = false;
+    // Basic validation: negative amounts are not accepted
+    if (amount < 0.0)
+        return 0.0;
+
+    // Use existing helper to fetch the rate (exact date or closest lower date)
+    double rate = getRateForDate(date, ok);
+    if (!ok)
+        return 0.0;
+
+    // Multiply and return
+    // No special overflow checks needed here because both are doubles,
+    // but you can choose to check if the result is finite if desired.
+    return rate * amount;
+}
 
 // ------------------ stream operator ------------------
 
@@ -358,29 +377,39 @@ std::ostream & operator<<(std::ostream &os, const Btc &btc)
         os.precision(oldPrec);
         return os;
     }
-
     // header
     os << "  " << std::left << std::setw(12) << "Date"
        << "  |  "
        << std::right << std::setw(12) << "Rate"
        << "  |  "
        << std::right << std::setw(12) << "Value in USD $" << '\n';
-
     os << "  " << std::string(12, '-') << "  +  " << std::string(12, '-') << "  +  " << std::string(12, '-') << '\n';
-
-    // iterate and print rows
+// iterate and print rows
     for (std::map<std::string, double>::const_iterator it = db.begin(); it != db.end(); ++it)
     {
+        // compute value for 1 BTC (adjust 'displayAmount' if you prefer another sample)
+        double displayAmount = 1.0;
+        bool okRate = false;
+        double valueUsd = btc.getAmountInDollars(it->first, displayAmount, okRate);
+		// Clearly missing the point of the whole exercise, where the database
+		// has the rate for each date, and the input has the quantity of bitcoin
         os << "  "
            << std::left << std::setw(12) << it->first
            << "  |  "
            << std::right
            << std::fixed << std::setprecision(6) << std::setw(12) << it->second
-           << RESET << '\n';
+           << "  |  ";
+        if (okRate)
+        {
+            // Print the USD value for displayAmount (use 6 decimals to match rate column)
+            os << std::fixed << std::setprecision(6) << std::setw(12) << valueUsd;
+        }
+        else
+        {
+            // No rate available (shouldn't happen while iterating DB keys), print placeholder
+            os << std::right << std::setw(12) << "N/A";
+        }
+        os << RESET << '\n';
     }
-
-    // restore state
-    os.flags(oldFlags);
-    os.precision(oldPrec);
-    return os;
+	return (os);
 }
