@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/16 17:10:09                                   /         */
+/*   Updated: 2025/09/16 17:29:49                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -248,12 +248,7 @@ bool Btc::loadDatabase(const std::string &dbfile)
         }
         _db[date] = rate;
     }
-
     ifs.close();
-
-    // print DB using the overloaded operator<<
-    std::cout << *this;
-
     if (_db.empty())
     {
         std::cout << RED << "Error: loadDb " << RESET << "Database failed or is empty." << std::endl;
@@ -341,6 +336,9 @@ double Btc::getRateForDate(const std::string &date, bool &ok) const
     return it->second;
 }
 
+
+// GET VALUE IN DOLLARS to do!
+
 // ------------------ stream operator ------------------
 
 std::ostream & operator<<(std::ostream &os, const Btc &btc)
@@ -364,9 +362,11 @@ std::ostream & operator<<(std::ostream &os, const Btc &btc)
     // header
     os << "  " << std::left << std::setw(12) << "Date"
        << "  |  "
-       << std::right << std::setw(12) << "Rate" << '\n';
+       << std::right << std::setw(12) << "Rate"
+       << "  |  "
+       << std::right << std::setw(12) << "Value in USD $" << '\n';
 
-    os << "  " << std::string(12, '-') << "  +  " << std::string(12, '-') << '\n';
+    os << "  " << std::string(12, '-') << "  +  " << std::string(12, '-') << "  +  " << std::string(12, '-') << '\n';
 
     // iterate and print rows
     for (std::map<std::string, double>::const_iterator it = db.begin(); it != db.end(); ++it)
