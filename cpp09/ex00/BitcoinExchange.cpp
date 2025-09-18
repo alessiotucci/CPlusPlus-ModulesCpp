@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/18 17:15:05                                   /         */
+/*   Updated: 2025/09/18 18:07:14                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -257,6 +257,21 @@ bool Btc::loadDatabase(const std::string &dbfile)
     return true;
 }
 
+void Btc::evaluateLine(const std::string &date, double amount) const
+{
+    // Get the exchange rate for the given date (or closest earlier date)
+    double rate = getRateForDate(date);
+
+    // Compute USD value
+    double usdValue = rate * amount;
+
+    // Print in required format: "YYYY-MM-DD => amount = usdValue"
+    // Match your example output's precision
+    std::cout << date << " => " << amount << " = "
+              << std::fixed << std::setprecision(1) << usdValue
+              << std::endl;
+}
+
 
 bool Btc::processInputFile(const std::string &inputfile)
 {
@@ -299,66 +314,59 @@ bool Btc::processInputFile(const std::string &inputfile)
 			std::cout << RED << "Error: " << RESET << "not a positive number.\n=> " << tline << std::endl;
 			continue;
 		}
-		if (value > 10000.0)
+		if (value > 1000.0)
 		{
 			std::cout << RED << "Error: " << RESET << "too large a number.\n=> " << value << std::endl;
 			continue;
 		}
 		// If everything ok, store input line for later processing
+	evaluateLine(date, value);
 	}
 	infile.close();
-	//TODO: ARE YOU DUMB? this is supposed to take the database instead of the
-	//input file
-//	loadDatabase(inputfile);
+
+	//TODO:
+	//1) use the line to create evaluate Function
+	//2) the evaluate Function will call the print line function
 	return true;
 }
 
-double Btc::getRateForDate(const std::string &date, bool &ok) const
+double Btc::getRateForDate(const std::string &date) const
 {
-    ok = false;
-    if (_db.empty()) return 0.0;
-
+    if (_db.empty())
+	{
+		std::cout << RED << "error in function getRateForDate: " << RESET << "database empty" << std::endl;
+		return 0.0;
+	}
     std::map<std::string, double>::const_iterator it = _db.lower_bound(date);
     if (it != _db.end() && it->first == date)
-    {
-        ok = true;
         return it->second;
-    }
-
     // if lower_bound returned begin() and not equal, there is no lower date
     if (it == _db.begin())
     {
-        ok = false;
+		std::cout << RED << "error in function getRateForDate: " << RESET << "there is no lower date" << std::endl;
         return 0.0;
     }
-
     // if it == end() or it->first > date, the previous element is the closest lower date
     --it;
-    ok = true;
     return it->second;
 }
 
 
-// GET VALUE IN DOLLARS to do!
-double Btc::getAmountInDollars(const std::string &date, double amount, bool &ok) const
+// GET VALUE IN DOLLARS
+double Btc::getAmountInDollars(const std::string &date, double amount) const
 {
-    ok = false;
     // Basic validation: negative amounts are not accepted
     if (amount < 0.0)
         return 0.0;
-
     // Use existing helper to fetch the rate (exact date or closest lower date)
-    double rate = getRateForDate(date, ok);
-    if (!ok)
-        return 0.0;
-
+    double rate = getRateForDate(date);
     // Multiply and return
     // No special overflow checks needed here because both are doubles,
     // but you can choose to check if the result is finite if desired.
     return rate * amount;
 }
 
-// ------------------ stream operator ------------------
+/* ------------------ stream operator ------------------
 
 std::ostream & operator<<(std::ostream &os, const Btc &btc)
 {
@@ -389,8 +397,7 @@ std::ostream & operator<<(std::ostream &os, const Btc &btc)
     {
         // compute value for 1 BTC (adjust 'displayAmount' if you prefer another sample)
         double displayAmount = 1.0;
-        bool okRate = false;
-        double valueUsd = btc.getAmountInDollars(it->first, displayAmount, okRate);
+        double valueUsd = btc.getAmountInDollars(it->first, displayAmount);
 		// Clearly missing the point of the whole exercise, where the database
 		// has the rate for each date, and the input has the quantity of bitcoin
         os << "  "
@@ -399,17 +406,9 @@ std::ostream & operator<<(std::ostream &os, const Btc &btc)
            << std::right
            << std::fixed << std::setprecision(6) << std::setw(12) << it->second
            << "  |  ";
-        if (okRate)
-        {
-            // Print the USD value for displayAmount (use 6 decimals to match rate column)
-            os << std::fixed << std::setprecision(6) << std::setw(12) << valueUsd;
-        }
-        else
-        {
-            // No rate available (shouldn't happen while iterating DB keys), print placeholder
-            os << std::right << std::setw(12) << "N/A";
-        }
+        os << std::right << std::setw(12) << "N/A";
         os << RESET << '\n';
     }
 	return (os);
 }
+*/

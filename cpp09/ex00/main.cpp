@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 13:58:48 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/18 17:11:48                                   /         */
+/*   Updated: 2025/09/18 17:32:04                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -44,7 +44,8 @@ int main(int ac, char **av)
 	if (!btc.processInputFile(av[1]))
 		return (1);
 
-	std::cout << btc << std::endl;
+//	std::cout << btc << std::endl;
+	std::cout << "date => exchange value = value in usd $\t amout of btc is in the database" << std::endl;
 	return (0);
 }
 

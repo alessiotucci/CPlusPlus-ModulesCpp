@@ -41,16 +41,16 @@ YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
 _db	BitcoinExchange.hpp	/^	std::map<std::string, double> _db; \/\/ later: database (date -> price)$/;"	m	class:Btc	typeref:typename:std::map<std::string,double>
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
+evaluateLine	BitcoinExchange.cpp	/^void Btc::evaluateLine(const std::string &date, double amount) const$/;"	f	class:Btc	typeref:typename:void
 fclean	Makefile	/^fclean: clean$/;"	t
-getAmountInDollars	BitcoinExchange.cpp	/^double Btc::getAmountInDollars(const std::string &date, double amount, bool &ok) const$/;"	f	class:Btc	typeref:typename:double
+getAmountInDollars	BitcoinExchange.cpp	/^double Btc::getAmountInDollars(const std::string &date, double amount) const$/;"	f	class:Btc	typeref:typename:double
 getDb	BitcoinExchange.cpp	/^const std::map<std::string, double> & Btc::getDb() const$/;"	f	class:Btc	typeref:typename:const std::map<std::string,double> &
-getRateForDate	BitcoinExchange.cpp	/^double Btc::getRateForDate(const std::string &date, bool &ok) const$/;"	f	class:Btc	typeref:typename:double
+getRateForDate	BitcoinExchange.cpp	/^double Btc::getRateForDate(const std::string &date) const$/;"	f	class:Btc	typeref:typename:double
 hidden	Makefile	/^hidden:$/;"	t
 isDigits	BitcoinExchange.cpp	/^static bool isDigits(const std::string &s)$/;"	f	typeref:typename:bool	file:
 isValidDate	BitcoinExchange.cpp	/^static bool isValidDate(const std::string &date)$/;"	f	typeref:typename:bool	file:
 loadDatabase	BitcoinExchange.cpp	/^bool Btc::loadDatabase(const std::string &dbfile)$/;"	f	class:Btc	typeref:typename:bool
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
-operator <<	BitcoinExchange.cpp	/^std::ostream & operator<<(std::ostream &os, const Btc &btc)$/;"	f	typeref:typename:std::ostream &
 operator =	BitcoinExchange.cpp	/^Btc& Btc::operator=(const Btc &other)$/;"	f	class:Btc	typeref:typename:Btc &
 parseDBLine	BitcoinExchange.cpp	/^static bool parseDBLine(const std::string &line, std::string &out_date, double &out_rate)$/;"	f	typeref:typename:bool	file:
 parseInputLine	BitcoinExchange.cpp	/^static bool parseInputLine(const std::string &line, std::string &out_date, double &out_value)$/;"	f	typeref:typename:bool	file:
