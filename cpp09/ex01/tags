@@ -41,10 +41,15 @@ YELLOW	RPN.hpp	/^# define YELLOW /;"	d
 _Stack	RPN.hpp	/^	std::stack<int> _Stack;$/;"	m	class:Rpn	typeref:typename:std::stack<int>
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
+evaluateToken	RPN.cpp	/^int Rpn::evaluateToken(const std::string &tok)$/;"	f	class:Rpn	typeref:typename:int
+evaluate_token	temp.cpp	/^int evaluate_token(string tok)$/;"	f	typeref:typename:int
 fclean	Makefile	/^fclean: clean$/;"	t
 getStack	RPN.cpp	/^std::stack<int> Rpn::getStack() const$/;"	f	class:Rpn	typeref:typename:std::stack<int>
 hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
+main	temp.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 operator =	RPN.cpp	/^Rpn& Rpn::operator=(const Rpn& other)$/;"	f	class:Rpn	typeref:typename:Rpn &
 re	Makefile	/^re: fclean all$/;"	t
+splitInput	RPN.cpp	/^int Rpn::splitInput(const std::string &phrase)$/;"	f	class:Rpn	typeref:typename:int
+split_input	temp.cpp	/^int split_input(string& phrase)$/;"	f	typeref:typename:int
 ~Rpn	RPN.cpp	/^Rpn::~Rpn()$/;"	f	class:Rpn
