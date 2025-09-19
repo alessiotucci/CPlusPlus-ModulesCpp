@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: RPN.hpp                                                 ( o.o )    */
 /*   Created: 2025/06/21 14:03:41 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/19 17:47:37                                   /         */
+/*   Updated: 2025/09/19 18:21:50                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -43,8 +43,9 @@ public:
 	std::stack<int> getStack() const;
 	int evaluateToken(const std::string &tok);
 	int splitInput(const std::string &phrase);
-
+	int performOperation(const std::string &op);
+	int pushNumberToken(const std::string &tok);
 };
 #endif
 
-
+std::ostream& operator<<(std::ostream& os, const Rpn& rpn);
