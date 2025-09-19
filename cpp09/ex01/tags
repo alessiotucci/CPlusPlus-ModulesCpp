@@ -11,23 +11,38 @@
 !_TAG_PROGRAM_VERSION	5.9.0	//
 $(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
 %.o	Makefile	/^%.o: %.cpp$/;"	t
+BG_CYAN	RPN.hpp	/^# define BG_CYAN /;"	d
+BG_GREEN	RPN.hpp	/^# define BG_GREEN /;"	d
+BG_RED	RPN.hpp	/^# define BG_RED /;"	d
+BG_RESET	RPN.hpp	/^# define BG_RESET /;"	d
+BG_YELLOW	RPN.hpp	/^# define BG_YELLOW /;"	d
+BLUE	RPN.hpp	/^# define BLUE /;"	d
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
+CYAN	RPN.hpp	/^# define CYAN /;"	d
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
+GRAY	RPN.hpp	/^# define GRAY /;"	d
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
+GREEN	RPN.hpp	/^# define GREEN /;"	d
 HEADERS	Makefile	/^HEADERS = RPN.hpp \\$/;"	m
 NAME	Makefile	/^NAME = RNP$/;"	m
+PURPLE	RPN.hpp	/^# define PURPLE /;"	d
 RED	Makefile	/^RED := \\033[1;31m$/;"	m
+RED	RPN.hpp	/^# define RED /;"	d
 RESET	Makefile	/^RESET := \\033[0m$/;"	m
+RESET	RPN.hpp	/^# define RESET /;"	d
 RNP_HPP	RPN.hpp	/^# define RNP_HPP$/;"	d
 Rpn	RPN.cpp	/^Rpn::Rpn()$/;"	f	class:Rpn
 Rpn	RPN.cpp	/^Rpn::Rpn(const Rpn& other)$/;"	f	class:Rpn
 Rpn	RPN.hpp	/^class Rpn$/;"	c
 SOURCE	Makefile	/^SOURCE = RPN.cpp \\$/;"	m
 YELLOW	Makefile	/^YELLOW := \\033[1;33m$/;"	m
+YELLOW	RPN.hpp	/^# define YELLOW /;"	d
+_Stack	RPN.hpp	/^	std::stack<int> _Stack;$/;"	m	class:Rpn	typeref:typename:std::stack<int>
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
+getStack	RPN.cpp	/^std::stack<int> Rpn::getStack() const$/;"	f	class:Rpn	typeref:typename:std::stack<int>
 hidden	Makefile	/^hidden:$/;"	t
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 operator =	RPN.cpp	/^Rpn& Rpn::operator=(const Rpn& other)$/;"	f	class:Rpn	typeref:typename:Rpn &
