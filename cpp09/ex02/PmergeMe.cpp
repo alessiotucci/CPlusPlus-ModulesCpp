@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 15:47:26                                   /         */
+/*   Updated: 2025/09/21 16:08:55                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -31,6 +31,48 @@ Pmergeme& Pmergeme::operator=(const Pmergeme& other)
 
 const std::vector<int>& Pmergeme::getVector() const { return _vector; }
 const std::deque<int>&  Pmergeme::getDeque()  const { return _deque; }
+
+//Helper to print
+void Pmergeme::printVector() const
+{
+	const std::vector<int> &v = _vector;
+	std::cout << "[";
+	if (v.empty())
+	{
+		std::cout << " ]" << std::endl;
+		return;
+	}
+
+	std::cout << " ";
+	for (std::size_t i = 0; i < v.size(); ++i)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << v[i];
+	}
+	std::cout << " ]" << std::endl;
+}
+
+//Helper to print
+void Pmergeme::printDeque() const
+{
+	const std::deque<int> &d = _deque;
+	std::cout << "[";
+	if (d.empty())
+	{
+		std::cout << " ]" << std::endl;
+		return;
+	}
+
+	std::cout << " ";
+	for (std::size_t i = 0; i < d.size(); ++i)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << d[i];
+	}
+	std::cout << " ]" << std::endl;
+}
 
 
 bool Pmergeme::isValidNumber(const std::string &tok, int &outValue) const

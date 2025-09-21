@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 14:00:15 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 15:47:50                                   /         */
+/*   Updated: 2025/09/21 16:10:10                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -31,6 +31,8 @@ int main(int ac, char **av)
 	}
 	// success: you can report counts or proceed to sorting stage
 	std::cout << "Vector " << pm.getVector().size() << " numbers." << std::endl;
+	pm.printVector();
 	std::cout << "Deque " << pm.getDeque().size() << " numbers." << std::endl;
+	pm.printDeque();
 }
 

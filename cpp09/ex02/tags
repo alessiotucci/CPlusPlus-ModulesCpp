@@ -41,5 +41,7 @@ main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 operator =	PmergeMe.cpp	/^Pmergeme& Pmergeme::operator=(const Pmergeme& other)$/;"	f	class:Pmergeme	typeref:typename:Pmergeme &
 parseArgs	PmergeMe.cpp	/^int Pmergeme::parseArgs(int ac, char **av)$/;"	f	class:Pmergeme	typeref:typename:int
 parseInput	PmergeMe.cpp	/^int Pmergeme::parseInput(const std::string &s)$/;"	f	class:Pmergeme	typeref:typename:int
+printDeque	PmergeMe.cpp	/^void Pmergeme::printDeque() const$/;"	f	class:Pmergeme	typeref:typename:void
+printVector	PmergeMe.cpp	/^void Pmergeme::printVector() const$/;"	f	class:Pmergeme	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
 ~Pmergeme	PmergeMe.cpp	/^Pmergeme::~Pmergeme() { }$/;"	f	class:Pmergeme
