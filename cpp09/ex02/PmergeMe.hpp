@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.hpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:34 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 19:27:18                                   /         */
+/*   Updated: 2025/09/21 19:57:00                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -74,30 +74,10 @@ int makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bool &hasLef
 /*****************************************************************************/
 // recursively build and print pairs from the provided VECTOR until 
 void recursePairs(const std::vector<int> &elements) const;
-/*****************************************************************************/
-
-
-/*****************************************************************************/
-// build winners and losers from an already-created list of pairs
-int makeWinnersAndLosersFromPairs(const std::vector< std::pair<int,int> > &pairs, std::vector<int> &winners, std::vector<int> &losers) const;
-// reduce winners by repeatedly pairing adjacent winners until one couple remains
-// prints the final couple using std::cout when available.
-// Returns 0 on success, -1 on error (e.g., not enough elements).
-int reduceWinnersUntilOneCouple(std::vector<int> winners) const;
-/*****************************************************************************/
-
-/*****************************************************************************/
-// sort a 2-element pair and print the sorting operation
-void sortPairWithLog(std::pair<int,int> &p) const;
-// insert 'partner' into sorted vector using binary search and log the process.
-// pairedWith is the value this partner was originally paired with (for informative logging).
-void insertPartnerBinary(std::vector<int> &sorted, int partner, int pairedWith) const;
-
-/*****************************************************************************/
 
 // print pairs produced by the functions above. If hasLeftover is true,
 // the leftover value is printed as a single "[x]".
-void printPairs(const std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const;
+void swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const;
 
 };
 #endif

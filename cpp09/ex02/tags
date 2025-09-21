@@ -49,21 +49,16 @@ fillVector	PmergeMe.cpp	/^void Pmergeme::fillVector(const std::vector<int> &valu
 getDeque	PmergeMe.cpp	/^const std::deque<int>&  Pmergeme::getDeque()  const { return _deque; }$/;"	f	class:Pmergeme	typeref:typename:const std::deque<int> &
 getVector	PmergeMe.cpp	/^const std::vector<int>& Pmergeme::getVector() const { return _vector; }$/;"	f	class:Pmergeme	typeref:typename:const std::vector<int> &
 hidden	Makefile	/^hidden:$/;"	t
-insertPartnerBinary	PmergeMe.cpp	/^void Pmergeme::insertPartnerBinary(std::vector<int> &sorted, int partner, int pairedWith) const$/;"	f	class:Pmergeme	typeref:typename:void
 isValidNumber	PmergeMe.cpp	/^bool Pmergeme::isValidNumber(const std::string &tok, int &outValue) const$/;"	f	class:Pmergeme	typeref:typename:bool
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 makePairsFromDeque	PmergeMe.cpp	/^int Pmergeme::makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover,/;"	f	class:Pmergeme	typeref:typename:int
 makePairsFromVector	PmergeMe.cpp	/^int Pmergeme::makePairsFromVector(std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover/;"	f	class:Pmergeme	typeref:typename:int
-makeWinnersAndLosersFromPairs	PmergeMe.cpp	/^int Pmergeme::makeWinnersAndLosersFromPairs(const std::vector< std::pair<int,int> > &pairs, std:/;"	f	class:Pmergeme	typeref:typename:int
 operator =	PmergeMe.cpp	/^Pmergeme& Pmergeme::operator=(const Pmergeme& other)$/;"	f	class:Pmergeme	typeref:typename:Pmergeme &
 parseArgs	PmergeMe.cpp	/^int Pmergeme::parseArgs(int ac, char **av)$/;"	f	class:Pmergeme	typeref:typename:int
 parseInput	PmergeMe.cpp	/^int Pmergeme::parseInput(const std::string &s)$/;"	f	class:Pmergeme	typeref:typename:int
 printDeque	PmergeMe.cpp	/^void Pmergeme::printDeque() const$/;"	f	class:Pmergeme	typeref:typename:void
-printPairs	PmergeMe.cpp	/^void Pmergeme::printPairs(const std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int /;"	f	class:Pmergeme	typeref:typename:void
 printVector	PmergeMe.cpp	/^void Pmergeme::printVector() const$/;"	f	class:Pmergeme	typeref:typename:void
-printyPairs	PmergeMe.cpp	/^static void printyPairs(const std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int le/;"	f	typeref:typename:void	file:
 re	Makefile	/^re: fclean all$/;"	t
 recursePairs	PmergeMe.cpp	/^void Pmergeme::recursePairs(const std::vector<int> &elements) const$/;"	f	class:Pmergeme	typeref:typename:void
-reduceWinnersUntilOneCouple	PmergeMe.cpp	/^int Pmergeme::reduceWinnersUntilOneCouple(std::vector<int> winners) const$/;"	f	class:Pmergeme	typeref:typename:int
-sortPairWithLog	PmergeMe.cpp	/^void Pmergeme::sortPairWithLog(std::pair<int,int> &p) const$/;"	f	class:Pmergeme	typeref:typename:void
+swapPairs	PmergeMe.cpp	/^void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftove/;"	f	class:Pmergeme	typeref:typename:void
 ~Pmergeme	PmergeMe.cpp	/^Pmergeme::~Pmergeme() { }$/;"	f	class:Pmergeme
