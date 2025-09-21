@@ -49,6 +49,7 @@ fillVector	PmergeMe.cpp	/^void Pmergeme::fillVector(const std::vector<int> &valu
 getDeque	PmergeMe.cpp	/^const std::deque<int>&  Pmergeme::getDeque()  const { return _deque; }$/;"	f	class:Pmergeme	typeref:typename:const std::deque<int> &
 getVector	PmergeMe.cpp	/^const std::vector<int>& Pmergeme::getVector() const { return _vector; }$/;"	f	class:Pmergeme	typeref:typename:const std::vector<int> &
 hidden	Makefile	/^hidden:$/;"	t
+insertBeforePartner	PmergeMe.cpp	/^static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)$/;"	f	typeref:typename:void	file:
 isValidNumber	PmergeMe.cpp	/^bool Pmergeme::isValidNumber(const std::string &tok, int &outValue) const$/;"	f	class:Pmergeme	typeref:typename:bool
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 makePairsFromDeque	PmergeMe.cpp	/^int Pmergeme::makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover,/;"	f	class:Pmergeme	typeref:typename:int
@@ -60,5 +61,6 @@ printDeque	PmergeMe.cpp	/^void Pmergeme::printDeque() const$/;"	f	class:Pmergeme
 printVector	PmergeMe.cpp	/^void Pmergeme::printVector() const$/;"	f	class:Pmergeme	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
 recursePairs	PmergeMe.cpp	/^void Pmergeme::recursePairs(const std::vector<int> &elements) const$/;"	f	class:Pmergeme	typeref:typename:void
+recursePairsImpl	PmergeMe.cpp	/^std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, int level) const$/;"	f	class:Pmergeme	typeref:typename:std::vector<int>
 swapPairs	PmergeMe.cpp	/^void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftove/;"	f	class:Pmergeme	typeref:typename:void
 ~Pmergeme	PmergeMe.cpp	/^Pmergeme::~Pmergeme() { }$/;"	f	class:Pmergeme

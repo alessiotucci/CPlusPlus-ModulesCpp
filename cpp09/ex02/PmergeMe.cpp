@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 19:57:38                                   /         */
+/*   Updated: 2025/09/21 21:18:39                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -248,6 +248,7 @@ int Pmergeme::makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bo
 	return 0;
 }
 
+//void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover, int level) const
 void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const
 {
 	// Normalize pairs so that .first is always the winner (larger)
@@ -274,6 +275,7 @@ void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLefto
 	std::cout << std::endl;
 }
 
+/*
 void Pmergeme::recursePairs(const std::vector<int> &elements) const
 {
     // base empty-check
@@ -302,9 +304,227 @@ void Pmergeme::recursePairs(const std::vector<int> &elements) const
     // print this level's pairs using the existing helper
     swapPairs(pairs, hasLeftover, leftover);
 	//TODO: we have to start the logic from here!
-	/* This function need to be recursinve, and we need to keep track of the old
-	 * pairs, of the lever before 
-	 */
+	// This function need to be recursinve, and we need to keep track of the old
+	// pairs, of the lever before 
+	 //
 //    recursePairs(winners);
 }
+*/
 
+// Public entry that your main calls
+void Pmergeme::recursePairs(const std::vector<int> &elements) const
+{
+	//TODO: the return here is discarded
+	recursePairsImpl(elements, 0);
+}
+
+// Internal recursive implementation with level tracking.
+/* Keep it const to match your previous design.
+void Pmergeme::recursePairsImpl(const std::vector<int> &elements, int level) const
+{
+    // Base: no elements
+    if (elements.empty())
+    {
+        for (int s = 0; s < level; ++s) std::cout << "  ";
+//        std::cout << "(level " << level << ") No elements to process." << std::endl;
+        return;
+    }
+
+    // Print heading for this level
+    for (int s = 0; s < level; ++s) std::cout << "  ";
+//    std::cout << "(level " << level << ") Building pairs from " << elements.size() << " elements." << std::endl;
+
+    // Build adjacent pairs
+    std::vector< std::pair<int,int> > pairs;
+    bool hasLeftover = false;
+    int leftover = 0;
+
+    std::size_t i = 0;
+    for ( ; i + 1 < elements.size(); i += 2 )
+    {
+        pairs.push_back(std::make_pair(elements[i], elements[i+1]));
+    }
+    if ( i < elements.size() )
+    {
+        hasLeftover = true;
+        leftover = elements[i];
+    }
+
+    // Print normalized pairs for this level
+    swapPairs(pairs, hasLeftover, leftover, level);
+
+    // Build winners vector (the second element of each pair)
+    std::vector<int> winners;
+    winners.reserve(pairs.size());
+    for (std::size_t k = 0; k < pairs.size(); ++k)
+        winners.push_back(pairs[k].second);
+
+    // If there are winners, recurse on them (they form the next level)
+    if (!winners.empty())
+    {
+        for (int s = 0; s < level; ++s) std::cout << "  ";
+        std::cout << "(level " << level << ") Recursing on winners (" << winners.size() << "):";
+        // quick inline print (no colors) for readability
+        std::cout << " [";
+        for (std::size_t k = 0; k < winners.size(); ++k)
+        {
+            std::cout << winners[k] << (k + 1 < winners.size() ? ", " : "");
+        }
+        std::cout << "]" << std::endl;
+
+        // recursive call: next level is level+1
+        recursePairsImpl(winners, level + 1);
+
+        // When we return here, we are "level above" the recursive level.
+        for (int s = 0; s < level; ++s) std::cout << "  ";
+//        std::cout << "(level " << level << ") Returned from recursion (level " << (level + 1) << "). Now we are at the parent level." << std::endl;
+    }
+    else
+    {
+        for (int s = 0; s < level; ++s) std::cout << "  ";
+        std::cout << "(level " << level << ") No winners to recurse on." << std::endl;
+    }
+
+    // TODO: Here is the place to implement the "insert the losers (a's)" logic,
+    // using the Jacobsthal order. At this point you have:
+    //   - 'pairs' (vector of (loser, winner) pairs) for THIS level
+    //   - 'hasLeftover' and 'leftover' if an odd item existed
+    //   - the fact that recursion for winners has been fully processed
+    //
+    // You can now:
+    //   - compute the insertion order for the losers using the t_k/Jacobsthal pattern
+    //   - perform the binary insertions restricted to left-of-each-winner
+    //   - finally insert 'leftover' if present (at the end of this level)
+    //
+    // For debugging the recursion pattern we left the TODO here
+    // so you can plug the insertion step cleanly.
+}
+*/
+// helper: insert 'loser' into sorted 'chain' so that it appears before 'partner'.
+// Tries the immediate predecessor first (cheap) then falls back to lower_bound.
+static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
+{
+    // find partner index
+    std::size_t pIdx = 0;
+    for (; pIdx < chain.size(); ++pIdx) {
+        if (chain[pIdx] == partner) break;
+    }
+    // if not found (shouldn't happen), insert by global lower_bound as fallback
+    if (pIdx == chain.size()) {
+        std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.end(), loser);
+        chain.insert(it, loser);
+        return;
+    }
+
+    // partner is at pIdx; we must insert somewhere in [0 .. pIdx] (before partner)
+    if (pIdx == 0) {
+        chain.insert(chain.begin(), loser);
+        return;
+    }
+
+    // try immediate predecessor first (this uses only one comparison)
+    int pred = chain[pIdx - 1];
+    if (loser >= pred) {
+        // fits between pred and partner
+        chain.insert(chain.begin() + pIdx, loser);
+        return;
+    }
+
+    // otherwise binary search on [0 .. pIdx-1)
+    std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.begin() + pIdx, loser);
+    chain.insert(it, loser);
+}
+
+// recursive implementation that returns the sorted chain for this subtree.
+// Public wrapper (recursePairs) will just call this and ignore the return or print final result.
+std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, int level) const
+{
+    // 1) build pairs from elements (adjacent)
+    std::vector< std::pair<int,int> > pairs;
+    bool hasLeftover = false;
+    int leftover = 0;
+
+    std::size_t i = 0;
+    for ( ; i + 1 < elements.size(); i += 2 )
+	{
+        pairs.push_back(std::make_pair(elements[i], elements[i+1]));
+    }
+    if (i < elements.size())
+	{
+		hasLeftover = true;
+		leftover = elements[i];
+	}
+
+    // 2) normalize & print (your swapPairs normalizes in-place)
+    // Keep your existing swapPairs call (it will ensure pair.first <= pair.second).
+    swapPairs(pairs, hasLeftover, leftover);
+
+    // 3) collect winners (second of each pair)
+    std::vector<int> winners;
+    winners.reserve(pairs.size());
+    for (std::size_t k = 0; k < pairs.size(); ++k)
+        winners.push_back(pairs[k].second);
+
+/******************************************************************************/
+// 4) STOP condition: when winners.size() <= 2 we build a base chain and insert this level's losers
+    if (winners.size() < 2)
+	{
+        std::vector<int> chain;
+        if (winners.size() == 2)
+		{
+            // sort the two winners into ascending order
+            int a = winners[0], b = winners[1];
+            if (a <= b)
+			{
+				chain.push_back(a);
+				chain.push_back(b);
+			}
+            else
+			{
+				chain.push_back(b);
+				chain.push_back(a);
+			}
+        }
+		else if (winners.size() == 1)
+		{
+            chain.push_back(winners[0]);
+        } // else winners empty -> chain stays empty
+
+        // insert current-level losers (pair.first) before their partners using minimal comparisons
+        for (std::size_t k = 0; k < pairs.size(); ++k)
+		{
+            int loser = pairs[k].first;
+            int partner = pairs[k].second;
+            insertBeforePartner(chain, loser, partner);
+        }
+
+        // if leftover exists at this level, insert it into chain (full-range lower_bound)
+        if (hasLeftover)
+		{
+            std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.end(), leftover);
+            chain.insert(it, leftover);
+        }
+        return chain;
+    }
+/******************************************************************************/
+
+    // 5) otherwise recurse on winners
+    std::vector<int> sorted_winners = recursePairsImpl(winners, level + 1);
+
+    // 6) after recursion returns, insert current-level losers into sorted_winners
+    for (std::size_t k = 0; k < pairs.size(); ++k)
+	{
+        int loser = pairs[k].first;
+        int partner = pairs[k].second;
+        insertBeforePartner(sorted_winners, loser, partner);
+    }
+
+    // 7) insert leftover if any
+    if (hasLeftover)
+	{
+        std::vector<int>::iterator it = std::lower_bound(sorted_winners.begin(), sorted_winners.end(), leftover);
+        sorted_winners.insert(it, leftover);
+    }
+
+    return sorted_winners;
+}

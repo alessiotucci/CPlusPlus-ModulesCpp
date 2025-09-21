@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: main.cpp                                                ( o.o )    */
 /*   Created: 2025/06/21 14:00:15 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 19:27:37                                   /         */
+/*   Updated: 2025/09/21 21:14:02                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -37,7 +37,6 @@ int main(int ac, char **av)
 //
 	std::cout << "\nStarting making pairs alright!\n";
 	pm.recursePairs(pm.getVector());
-
 	
 	// For deque-based pairs
 	//pm.makePairsFromDeque(pairs, hasLeftover, leftover);

@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.hpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:34 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 19:57:00                                   /         */
+/*   Updated: 2025/09/21 21:10:54                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -47,6 +47,13 @@ class Pmergeme
 private:
 	std::deque<int> _deque;
 	std::vector<int> _vector;
+
+//	void recursePairsImpl(const std::vector<int> &elements, int level) const;
+
+// add inside class Pmergeme (private section)
+	std::vector<int> recursePairsImpl(const std::vector<int> &elements, int level) const;
+
+
 public:
 	Pmergeme();
 	Pmergeme(const Pmergeme& other);
@@ -77,6 +84,9 @@ void recursePairs(const std::vector<int> &elements) const;
 
 // print pairs produced by the functions above. If hasLeftover is true,
 // the leftover value is printed as a single "[x]".
+
+//void swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover, int level) const;
+
 void swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const;
 
 };
