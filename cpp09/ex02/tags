@@ -51,14 +51,19 @@ getDeque	PmergeMe.cpp	/^const std::deque<int>&  Pmergeme::getDeque()  const { re
 getVector	PmergeMe.cpp	/^const std::vector<int>& Pmergeme::getVector() const { return _vector; }$/;"	f	class:Pmergeme	typeref:typename:const std::vector<int> &
 hidden	Makefile	/^hidden:$/;"	t
 insertBeforePartner	PmergeMe.cpp	/^static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)$/;"	f	typeref:typename:void	file:
+insertLosersByJacobsthal	PmergeMe.cpp	/^\/*static*\/ void insertLosersByJacobsthal(std::vector<int> &chain, const std::vector< std::pair/;"	f	typeref:typename:void
 isValidNumber	PmergeMe.cpp	/^bool Pmergeme::isValidNumber(const std::string &tok, int &outValue) const$/;"	f	class:Pmergeme	typeref:typename:bool
+jacobsthal_indices	PmergeMe.cpp	/^std::vector<std::size_t> jacobsthal_indices(std::size_t limit)$/;"	f	typeref:typename:std::vector<std::size_t>
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
 makePairsFromDeque	PmergeMe.cpp	/^int Pmergeme::makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover,/;"	f	class:Pmergeme	typeref:typename:int
 makePairsFromVector	PmergeMe.cpp	/^int Pmergeme::makePairsFromVector(std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover/;"	f	class:Pmergeme	typeref:typename:int
 operator =	PmergeMe.cpp	/^Pmergeme& Pmergeme::operator=(const Pmergeme& other)$/;"	f	class:Pmergeme	typeref:typename:Pmergeme &
 parseArgs	PmergeMe.cpp	/^int Pmergeme::parseArgs(int ac, char **av)$/;"	f	class:Pmergeme	typeref:typename:int
 parseInput	PmergeMe.cpp	/^int Pmergeme::parseInput(const std::string &s)$/;"	f	class:Pmergeme	typeref:typename:int
+power_of_two	PmergeMe.cpp	/^static std::size_t power_of_two(std::size_t exp)$/;"	f	typeref:typename:std::size_t	file:
 printDeque	PmergeMe.cpp	/^void Pmergeme::printDeque() const$/;"	f	class:Pmergeme	typeref:typename:void
+printPairs	PmergeMe.cpp	/^void printPairs(const std::vector< std::pair<int, int> > &pairs, size_t index)$/;"	f	typeref:typename:void
+printSizetVector	PmergeMe.cpp	/^\/*static*\/ void printSizetVector(const std::vector<size_t> &v)$/;"	f	typeref:typename:void
 printVector	PmergeMe.cpp	/^void Pmergeme::printVector() const$/;"	f	class:Pmergeme	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
 recursePairs	PmergeMe.cpp	/^void Pmergeme::recursePairs(const std::vector<int> &elements) const$/;"	f	class:Pmergeme	typeref:typename:void

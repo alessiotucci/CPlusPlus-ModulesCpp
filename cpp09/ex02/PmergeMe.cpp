@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/25 13:49:45                                   /         */
+/*   Updated: 2025/09/25 18:34:26                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -32,7 +32,7 @@ Pmergeme& Pmergeme::operator=(const Pmergeme& other)
 const std::vector<int>& Pmergeme::getVector() const { return _vector; }
 const std::deque<int>&  Pmergeme::getDeque()  const { return _deque; }
 
-static void printSizetVector(const std::vector<size_t> &v)
+/*static*/ void printSizetVector(const std::vector<size_t> &v)
 {
 	std::cout << "[";
 	if (v.empty())
@@ -271,6 +271,20 @@ int Pmergeme::makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bo
 	return 0;
 }
 
+void printPairs(const std::vector< std::pair<int, int> > &pairs, size_t index)
+{
+	// Now print them with colors
+	std::cout << std::endl;
+	for (std::size_t i = 0; i < pairs.size(); ++i)
+	{
+		if (index != i)
+			std::cout << " [" << pairs[i].first << ", " << pairs[i].second << "] ";
+		else
+			std::cout << " [" << YELLOW << pairs[i].first << ", " << pairs[i].second << RESET << "] ";
+	}
+	std::cout << std::endl;
+}
+
 //void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover, int level) const
 void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const
 {
@@ -298,15 +312,12 @@ void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLefto
 	std::cout << std::endl;
 }
 
-// Public entry that your main calls
 void Pmergeme::recursePairs(const std::vector<int> &elements) const
 {
 	//TODO: the return here is discarded
 	recursePairsImpl(elements, 0);
 }
 
-
-// Helper: compute 2^exp safely as std::size_t
 static std::size_t power_of_two(std::size_t exp)
 {
 	std::size_t result = 1;
@@ -320,7 +331,6 @@ static std::size_t power_of_two(std::size_t exp)
 // Generate Jacobsthal-like indices up to limit
 std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
 {
-	std::cout << "DEBUG: JACOBSTHAL, limit: " << limit << std::endl;
 	std::vector<std::size_t> indices;
 	if (limit == 0)
 		return indices;
@@ -358,7 +368,6 @@ std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
 		if (lower < lowest_lower)
 			lowest_lower = lower;
 			
-		std::cout << "Lower: " << lower << ", "<< "Upper: " << upper << std::endl;
 		for (std::size_t j = upper; j >= lower; --j)
 		{
 			indices.push_back(j);
@@ -388,8 +397,6 @@ std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
 		}
 	}
 	
-	std::cout << "Jacobsthal\n ";
-	printSizetVector(indices);
 	return indices;
 }
 
@@ -400,7 +407,6 @@ std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
 static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
 {
 	std::cout << "\ninsert loser [" << loser << "]" << " before partner [" << partner << "]" << std::endl;
-//	VectorPrint(chain);
 	
     // find partner index
     std::size_t pIdx = 0;
@@ -415,6 +421,9 @@ static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
 	{
         std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.end(), loser);
         chain.insert(it, loser);
+	VectorPrint(chain);
+	std::cout << "if not found (shouldn't happen), insert by global lower_bound as fallback " << std::endl;
+	std::cout << std::endl;
         return;
     }
 
@@ -422,6 +431,9 @@ static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
     if (pIdx == 0)
 	{
         chain.insert(chain.begin(), loser);
+	VectorPrint(chain);
+	std::cout << "partner is at pIdx; we must insert somewhere in [0 .. pIdx] (before partner) " << std::endl;
+	std::cout << std::endl;
         return;
     }
 
@@ -431,119 +443,133 @@ static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
 	{
         // fits between pred and partner
         chain.insert(chain.begin() + pIdx, loser);
+	VectorPrint(chain);
+	std::cout << "try immediate predecessor first (this uses only one comparison) " << std::endl;
+	std::cout << std::endl;
         return;
     }
 
     // otherwise binary search on [0 .. pIdx-1)
     std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.begin() + pIdx, loser);
     chain.insert(it, loser);
+
 	VectorPrint(chain);
+	std::cout << std::endl;
+}
+
+/*static*/ void insertLosersByJacobsthal(std::vector<int> &chain, const std::vector< std::pair<int,int> > &pairs)
+{
+	if (pairs.empty())
+		return;
+	// compute Knuth/Jacobsthal index order (1-based indices)
+	std::vector<std::size_t> order = jacobsthal_indices(pairs.size());
+	for (std::size_t i = 0; i < order.size(); ++i)
+	{
+		std::cout << "order[i]" << order[i] << std::endl;
+		std::size_t idx = order[i];
+
+		if (idx == 0 || idx > pairs.size())
+			continue; // safety
+
+		int loser   = pairs[idx - 1].first;
+		int partner = pairs[idx - 1].second;
+
+		printPairs(pairs, idx);
+		/*
+		std::cout << "accessing pairs at index: " << idx - 1 << std::endl;
+		std::cout  <<"int loser   =  " << pairs[idx - 1].first << std::endl;
+		std::cout  <<"int partner =  " << pairs[idx - 1].second << std::endl;
+		*/
+
+		// skip if loser already in chain (defensive)
+		bool present = false;
+		for (std::size_t z = 0; z < chain.size(); ++z)
+		{
+			if (chain[z] == loser)
+			{
+			present = true;
+			break;
+			}
+		}
+		if (present)
+			continue;
+		insertBeforePartner(chain, loser, partner);
+	}
 }
 
 // recursive implementation that returns the sorted chain for this subtree.
 // Public wrapper (recursePairs) will just call this and ignore the return or print final result.
 std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, int level) const
 {
-    // 1) build pairs from elements (adjacent)
-    std::vector< std::pair<int,int> > pairs;
-    bool hasLeftover = false;
-    int leftover = 0;
+	// 1) build pairs from elements (adjacent)
+	std::vector< std::pair<int,int> > pairs;
+	bool hasLeftover = false;
+	int leftover = 0;
 
-    std::size_t i = 0;
-    for ( ; i + 1 < elements.size(); i += 2 )
+	std::size_t i = 0;
+	for ( ; i + 1 < elements.size(); i += 2 )
 	{
-        pairs.push_back(std::make_pair(elements[i], elements[i+1]));
-    }
-    if (i < elements.size())
+		pairs.push_back(std::make_pair(elements[i], elements[i+1]));
+	}
+	if (i < elements.size())
 	{
 		hasLeftover = true;
 		leftover = elements[i];
 	}
-
-    // 2) normalize & print (your swapPairs normalizes in-place)
-    // Keep your existing swapPairs call (it will ensure pair.first <= pair.second).
+// 2) normalize & print (your swapPairs normalizes in-place)
     swapPairs(pairs, hasLeftover, leftover);
 
-    // 3) collect winners (second of each pair)
+// 3) collect winners (second of each pair)
     std::vector<int> winners;
     winners.reserve(pairs.size());
     for (std::size_t k = 0; k < pairs.size(); ++k)
-        winners.push_back(pairs[k].second);
+	{
+        winners.push_back(pairs[k].second); // here we are creating a winner vector !
+	}
+
+	std::cout << "Winners: ";
+	VectorPrint(winners);
 
 /******************************************************************************/
 // 4) STOP condition: when winners.size() <= 2 we build a base chain and insert this level's losers
-    if (winners.size() <= 2)
+//    if (winners.size() < 2)
+   if (winners.size() <= 2)
 	{
-        std::vector<int> chain;
-        if (winners.size() == 2)
+		std::vector<int> chain;
+		if (winners.size() == 2)
 		{
-            // sort the two winners into ascending order
-            int a = winners[0], b = winners[1];
-            if (a <= b)
+			// sort the two winners into ascending order
+			int a = winners[0], b = winners[1];
+			if (a <= b)
 			{
 				chain.push_back(a);
 				chain.push_back(b);
 			}
-            else
+			else
 			{
 				chain.push_back(b);
 				chain.push_back(a);
 			}
-        }
+		}
 		else if (winners.size() == 1)
 		{
-            chain.push_back(winners[0]);
-        } // else winners empty -> chain stays empty
-
-		/**********************************************************************/
-		/**********************************************************************/
-		// use Jacobsthal order for insertion TODO: double check when
-		std::vector<std::size_t> order = jacobsthal_indices(pairs.size());
-		for (std::size_t oi = 0; oi < order.size(); ++oi)
-		{
-		    std::size_t idx = order[oi];
-		    if (idx == 0 || idx > pairs.size())
-				continue; // safety
-		
-		    int loser   = pairs[idx - 1].first;
-		    int partner = pairs[idx - 1].second;
-		
-		// Defensive: if loser already present in chain we skip it (prevents re-inserting winners)
-		    bool already = false;
-		    for (std::size_t x = 0; x < chain.size(); ++x)
-			{
-		        if (chain[x] == loser)
-				{
-					already = true;
-					break;
-				}
-		    }
-		    if (already)
-				continue;
-		
-		    insertBeforePartner(chain, loser, partner);
+			chain.push_back(winners[0]);
 		}
 
-        // if leftover exists at this level, insert it into chain (full-range lower_bound)
-        if (hasLeftover)
+		// instead of manual order loop, call:
+		insertLosersByJacobsthal(chain, pairs);
+
+		if (hasLeftover)
 		{
-            std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.end(), leftover);
-            chain.insert(it, leftover);
-        }
+			std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.end(), leftover);
+			chain.insert(it, leftover);
+		}
         return chain;
     }
 /******************************************************************************/
-
-    // 5) otherwise recurse on winners
+// 5) otherwise recurse on winners
     std::vector<int> sorted_winners = recursePairsImpl(winners, level + 1);
-
-    // 6) after recursion returns, insert current-level losers into sorted_winners
-    for (std::size_t k = 0; k < pairs.size(); ++k)
-	{
-        int loser = pairs[k].first;
-        int partner = pairs[k].second;
-        insertBeforePartner(sorted_winners, loser, partner);
-    }
+	insertLosersByJacobsthal(sorted_winners, pairs);
 
     // 7) insert leftover if any
     if (hasLeftover)
@@ -551,6 +577,5 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
         std::vector<int>::iterator it = std::lower_bound(sorted_winners.begin(), sorted_winners.end(), leftover);
         sorted_winners.insert(it, leftover);
     }
-
     return sorted_winners;
 }
