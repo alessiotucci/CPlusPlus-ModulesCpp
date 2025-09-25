@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/25 13:00:28                                   /         */
+/*   Updated: 2025/09/25 13:49:45                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -31,6 +31,25 @@ Pmergeme& Pmergeme::operator=(const Pmergeme& other)
 
 const std::vector<int>& Pmergeme::getVector() const { return _vector; }
 const std::deque<int>&  Pmergeme::getDeque()  const { return _deque; }
+
+static void printSizetVector(const std::vector<size_t> &v)
+{
+	std::cout << "[";
+	if (v.empty())
+	{
+		std::cout << " ]" << std::endl;
+		return;
+	}
+
+	std::cout << " ";
+	for (std::size_t i = 0; i < v.size(); ++i)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << v[i];
+	}
+	std::cout << " ]" << std::endl;
+}
 
 static void VectorPrint(const std::vector<int> &v)
 {
@@ -119,7 +138,6 @@ bool Pmergeme::containsDuplicate(const std::vector<int> &vec, int value) const
 void Pmergeme::fillVector(const std::vector<int> &values)
 {
 	_vector.clear();
-	// reserve if you know approximate size (safe in C++98)
 	_vector.reserve(values.size());
 	for (std::size_t i = 0; i < values.size(); ++i)
 		_vector.push_back(values[i]);
@@ -302,6 +320,7 @@ static std::size_t power_of_two(std::size_t exp)
 // Generate Jacobsthal-like indices up to limit
 std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
 {
+	std::cout << "DEBUG: JACOBSTHAL, limit: " << limit << std::endl;
 	std::vector<std::size_t> indices;
 	if (limit == 0)
 		return indices;
@@ -370,6 +389,7 @@ std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
 	}
 	
 	std::cout << "Jacobsthal\n ";
+	printSizetVector(indices);
 	return indices;
 }
 
@@ -452,7 +472,7 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
 
 /******************************************************************************/
 // 4) STOP condition: when winners.size() <= 2 we build a base chain and insert this level's losers
-    if (winners.size() < 2)
+    if (winners.size() <= 2)
 	{
         std::vector<int> chain;
         if (winners.size() == 2)
@@ -476,18 +496,8 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
         } // else winners empty -> chain stays empty
 
 		/**********************************************************************/
-		// insert current-level losers (pair.first) before their partners using minimal comparisons
-		/*
-		for (std::size_t k = 0; k < pairs.size(); ++k)
-		{
-			int loser = pairs[k].first;
-			int partner = pairs[k].second;
-			insertBeforePartner(chain, loser, partner);
-		}
-		*/
 		/**********************************************************************/
-
-		// use Jacobsthal order for insertion
+		// use Jacobsthal order for insertion TODO: double check when
 		std::vector<std::size_t> order = jacobsthal_indices(pairs.size());
 		for (std::size_t oi = 0; oi < order.size(); ++oi)
 		{
@@ -498,7 +508,7 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
 		    int loser   = pairs[idx - 1].first;
 		    int partner = pairs[idx - 1].second;
 		
-		    // Defensive: if loser already present in chain we skip it (prevents re-inserting winners)
+		// Defensive: if loser already present in chain we skip it (prevents re-inserting winners)
 		    bool already = false;
 		    for (std::size_t x = 0; x < chain.size(); ++x)
 			{
