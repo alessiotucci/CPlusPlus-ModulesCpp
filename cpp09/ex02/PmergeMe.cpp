@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 21:30:20                                   /         */
+/*   Updated: 2025/09/25 13:00:28                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -287,12 +287,100 @@ void Pmergeme::recursePairs(const std::vector<int> &elements) const
 	recursePairsImpl(elements, 0);
 }
 
+
+// Helper: compute 2^exp safely as std::size_t
+static std::size_t power_of_two(std::size_t exp)
+{
+	std::size_t result = 1;
+	for (std::size_t i = 0; i < exp; ++i)
+	{
+		result *= 2u;
+	}
+	return result;
+}
+
+// Generate Jacobsthal-like indices up to limit
+std::vector<std::size_t> jacobsthal_indices(std::size_t limit)
+{
+	std::vector<std::size_t> indices;
+	if (limit == 0)
+		return indices;
+	
+	// Base cases: t0 = 1, t1 = 1
+	std::vector<std::size_t> sequence;
+	sequence.push_back(1); 
+	sequence.push_back(1); 
+	
+	// Build sequence until >= limit
+	std::size_t k = 1;
+	while (sequence[k] < limit)
+	{
+		++k;
+		std::size_t next_value = power_of_two(k) - sequence[k - 1];
+		sequence.push_back(next_value);
+	}
+	
+	// Track the smallest lower bound we reach
+	std::size_t lowest_lower = limit + 1; // Initialize to a value larger than any possible lower
+	
+	// Generate blocks of indices
+	for (std::size_t idx = 2; idx < sequence.size(); ++idx)
+	{
+		std::size_t upper;
+		if (sequence[idx] <= limit)
+			upper = sequence[idx];
+		else
+			upper = limit;
+		std::size_t lower = sequence[idx - 1] + 1;
+		if (lower > upper)
+		 	continue;
+		
+		// Track the smallest lower we encounter
+		if (lower < lowest_lower)
+			lowest_lower = lower;
+			
+		std::cout << "Lower: " << lower << ", "<< "Upper: " << upper << std::endl;
+		for (std::size_t j = upper; j >= lower; --j)
+		{
+			indices.push_back(j);
+			if (j == lower) break; // prevent unsigned underflow
+		}
+	}
+	
+	// Now add the remainder: everything below lowest_lower, starting from 1 (not 2!)
+	std::size_t start_remainder = 1;
+	if (lowest_lower <= limit + 1)
+	{
+		for (std::size_t j = lowest_lower - 1; j >= start_remainder; --j)
+		{
+			indices.push_back(j);
+			if (j == start_remainder)
+				break; // prevent unsigned underflow
+		}
+	}
+	else
+	{
+		// No blocks were generated, add all from limit down to start_remainder
+		for (std::size_t j = limit; j >= start_remainder; --j)
+		{
+			indices.push_back(j);
+			if (j == start_remainder)
+				break; // prevent unsigned underflow
+		}
+	}
+	
+	std::cout << "Jacobsthal\n ";
+	return indices;
+}
+
+
+
 // helper: insert 'loser' into sorted 'chain' so that it appears before 'partner'.
 // Tries the immediate predecessor first (cheap) then falls back to lower_bound.
 static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
 {
-	std::cout << "insertBeforePartner: loser = " << loser << " partner = " << partner << std::endl;
-	VectorPrint(chain);
+	std::cout << "\ninsert loser [" << loser << "]" << " before partner [" << partner << "]" << std::endl;
+//	VectorPrint(chain);
 	
     // find partner index
     std::size_t pIdx = 0;
@@ -329,6 +417,7 @@ static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
     // otherwise binary search on [0 .. pIdx-1)
     std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.begin() + pIdx, loser);
     chain.insert(it, loser);
+	VectorPrint(chain);
 }
 
 // recursive implementation that returns the sorted chain for this subtree.
@@ -386,13 +475,44 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
             chain.push_back(winners[0]);
         } // else winners empty -> chain stays empty
 
-        // insert current-level losers (pair.first) before their partners using minimal comparisons
-        for (std::size_t k = 0; k < pairs.size(); ++k)
+		/**********************************************************************/
+		// insert current-level losers (pair.first) before their partners using minimal comparisons
+		/*
+		for (std::size_t k = 0; k < pairs.size(); ++k)
 		{
-            int loser = pairs[k].first;
-            int partner = pairs[k].second;
-            insertBeforePartner(chain, loser, partner);
-        }
+			int loser = pairs[k].first;
+			int partner = pairs[k].second;
+			insertBeforePartner(chain, loser, partner);
+		}
+		*/
+		/**********************************************************************/
+
+		// use Jacobsthal order for insertion
+		std::vector<std::size_t> order = jacobsthal_indices(pairs.size());
+		for (std::size_t oi = 0; oi < order.size(); ++oi)
+		{
+		    std::size_t idx = order[oi];
+		    if (idx == 0 || idx > pairs.size())
+				continue; // safety
+		
+		    int loser   = pairs[idx - 1].first;
+		    int partner = pairs[idx - 1].second;
+		
+		    // Defensive: if loser already present in chain we skip it (prevents re-inserting winners)
+		    bool already = false;
+		    for (std::size_t x = 0; x < chain.size(); ++x)
+			{
+		        if (chain[x] == loser)
+				{
+					already = true;
+					break;
+				}
+		    }
+		    if (already)
+				continue;
+		
+		    insertBeforePartner(chain, loser, partner);
+		}
 
         // if leftover exists at this level, insert it into chain (full-range lower_bound)
         if (hasLeftover)
