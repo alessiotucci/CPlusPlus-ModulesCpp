@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.hpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:34 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/21 21:10:54                                   /         */
+/*   Updated: 2025/09/28 20:29:39                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -48,10 +48,13 @@ private:
 	std::deque<int> _deque;
 	std::vector<int> _vector;
 
-//	void recursePairsImpl(const std::vector<int> &elements, int level) const;
 
-// add inside class Pmergeme (private section)
-	std::vector<int> recursePairsImpl(const std::vector<int> &elements, int level) const;
+// helpers used by recursePairsImpl
+void buildPairsFromVector(const std::vector<int> &elements, std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover,int &leftover) const;
+void buildPairsFromDeque(const std::deque<int> &elements, std::deque< std::pair<int,int> > &outPairs, bool &hasLeftover, int &leftover) const;
+
+void collectWinnersFromPairs(const std::vector< std::pair<int,int> > &pairs, std::vector<int> &winners) const;
+void collectWinnersFromPairsDeque(const std::deque< std::pair<int,int> > &pairs, std::deque<int> &winners) const;
 
 
 public:
@@ -81,13 +84,18 @@ int makePairsFromDeque(std::vector< std::pair<int,int> > &outPairs, bool &hasLef
 /*****************************************************************************/
 // recursively build and print pairs from the provided VECTOR until 
 void recursePairs(const std::vector<int> &elements) const;
+std::vector<int> recursePairsImpl(const std::vector<int> &elements, int level) const;
 
-// print pairs produced by the functions above. If hasLeftover is true,
-// the leftover value is printed as a single "[x]".
+void collectWinnersFromPairs(const std::vector< std::pair<int,int> > &pairs, std::vector<int> &winners);
 
-//void swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover, int level) const;
+/*****************************************************************************/
+void recursePairsDeque(const std::deque<int> &elements) const;
+std::deque<int> recursePairsImplDeque(const std::deque<int> &elements, int level) const;
 
-void swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const;
+void buildPairsFromVector(const std::vector<int> &elements, std::vector< std::pair<int,int> > &outPairs, bool &hasLeftover, int &leftover);
+
+void swapPairsVector(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const;
+void swapPairsDeque(std::deque< std::pair<int,int> > &pairs, bool hasLeftover, int leftover) const;
 
 };
 #endif

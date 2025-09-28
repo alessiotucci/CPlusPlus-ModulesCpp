@@ -20,6 +20,7 @@ BLUE	PmergeMe.hpp	/^# define BLUE /;"	d
 CXX	Makefile	/^CXX = c++$/;"	m
 CYAN	Makefile	/^CYAN := \\033[1;36m$/;"	m
 CYAN	PmergeMe.hpp	/^# define CYAN /;"	d
+DequePrint	PmergeMe.cpp	/^static void DequePrint(const std::deque<int> &d)$/;"	f	typeref:typename:void	file:
 FLAG	Makefile	/^FLAG = -Wall -Wextra -Werror -std=c++98$/;"	m
 GRAY	PmergeMe.hpp	/^# define GRAY /;"	d
 GREEN	Makefile	/^GREEN := \\033[1;32m$/;"	m
@@ -42,7 +43,13 @@ YELLOW	PmergeMe.hpp	/^# define YELLOW /;"	d
 _deque	PmergeMe.hpp	/^	std::deque<int> _deque;$/;"	m	class:Pmergeme	typeref:typename:std::deque<int>
 _vector	PmergeMe.hpp	/^	std::vector<int> _vector;$/;"	m	class:Pmergeme	typeref:typename:std::vector<int>
 all	Makefile	/^all: $(NAME)$/;"	t
+buildBaseChainFromWinners	PmergeMe.cpp	/^static std::vector<int> buildBaseChainFromWinners(const std::vector<int> &winners)$/;"	f	typeref:typename:std::vector<int>	file:
+buildBaseChainFromWinnersDeque	PmergeMe.cpp	/^static std::deque<int> buildBaseChainFromWinnersDeque(const std::deque<int> &winners)$/;"	f	typeref:typename:std::deque<int>	file:
+buildPairsFromDeque	PmergeMe.cpp	/^void Pmergeme::buildPairsFromDeque(const std::deque<int> &elements, std::deque< std::pair<int,in/;"	f	class:Pmergeme	typeref:typename:void
+buildPairsFromVector	PmergeMe.cpp	/^void Pmergeme::buildPairsFromVector(const std::vector<int> &elements, std::vector< std::pair<int/;"	f	class:Pmergeme	typeref:typename:void
 clean	Makefile	/^clean:$/;"	t
+collectWinnersFromPairs	PmergeMe.cpp	/^void Pmergeme::collectWinnersFromPairs(const std::vector< std::pair<int,int> > &pairs, std::vect/;"	f	class:Pmergeme	typeref:typename:void
+collectWinnersFromPairsDeque	PmergeMe.cpp	/^void Pmergeme::collectWinnersFromPairsDeque(const std::deque< std::pair<int,int> > &pairs, std::/;"	f	class:Pmergeme	typeref:typename:void
 containsDuplicate	PmergeMe.cpp	/^bool Pmergeme::containsDuplicate(const std::vector<int> &vec, int value) const$/;"	f	class:Pmergeme	typeref:typename:bool
 fclean	Makefile	/^fclean: clean$/;"	t
 fillDeque	PmergeMe.cpp	/^void Pmergeme::fillDeque(const std::vector<int> &values)$/;"	f	class:Pmergeme	typeref:typename:void
@@ -51,7 +58,11 @@ getDeque	PmergeMe.cpp	/^const std::deque<int>&  Pmergeme::getDeque()  const { re
 getVector	PmergeMe.cpp	/^const std::vector<int>& Pmergeme::getVector() const { return _vector; }$/;"	f	class:Pmergeme	typeref:typename:const std::vector<int> &
 hidden	Makefile	/^hidden:$/;"	t
 insertBeforePartner	PmergeMe.cpp	/^static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)$/;"	f	typeref:typename:void	file:
-insertLosersByJacobsthal	PmergeMe.cpp	/^\/*static*\/ void insertLosersByJacobsthal(std::vector<int> &chain, const std::vector< std::pair/;"	f	typeref:typename:void
+insertBeforePartnerDeque	PmergeMe.cpp	/^static void insertBeforePartnerDeque(std::deque<int> &chain, int loser, int partner)$/;"	f	typeref:typename:void	file:
+insertLeftoverIntoChain	PmergeMe.cpp	/^static void insertLeftoverIntoChain(std::vector<int> &chain, bool hasLeftover, int leftover)$/;"	f	typeref:typename:void	file:
+insertLeftoverIntoChainDeque	PmergeMe.cpp	/^static void insertLeftoverIntoChainDeque(std::deque<int> &chain, bool hasLeftover, int leftover)$/;"	f	typeref:typename:void	file:
+insertLosersByJacobsthal	PmergeMe.cpp	/^static void insertLosersByJacobsthal(std::vector<int> &chain, const std::vector< std::pair<int,i/;"	f	typeref:typename:void	file:
+insertLosersByJacobsthalDeque	PmergeMe.cpp	/^static void insertLosersByJacobsthalDeque(std::deque<int> &chain, const std::deque< std::pair<in/;"	f	typeref:typename:void	file:
 isValidNumber	PmergeMe.cpp	/^bool Pmergeme::isValidNumber(const std::string &tok, int &outValue) const$/;"	f	class:Pmergeme	typeref:typename:bool
 jacobsthal_indices	PmergeMe.cpp	/^std::vector<std::size_t> jacobsthal_indices(std::size_t limit)$/;"	f	typeref:typename:std::vector<std::size_t>
 main	main.cpp	/^int main(int ac, char **av)$/;"	f	typeref:typename:int
@@ -63,10 +74,12 @@ parseInput	PmergeMe.cpp	/^int Pmergeme::parseInput(const std::string &s)$/;"	f	c
 power_of_two	PmergeMe.cpp	/^static std::size_t power_of_two(std::size_t exp)$/;"	f	typeref:typename:std::size_t	file:
 printDeque	PmergeMe.cpp	/^void Pmergeme::printDeque() const$/;"	f	class:Pmergeme	typeref:typename:void
 printPairs	PmergeMe.cpp	/^void printPairs(const std::vector< std::pair<int, int> > &pairs, size_t index)$/;"	f	typeref:typename:void
-printSizetVector	PmergeMe.cpp	/^\/*static*\/ void printSizetVector(const std::vector<size_t> &v)$/;"	f	typeref:typename:void
 printVector	PmergeMe.cpp	/^void Pmergeme::printVector() const$/;"	f	class:Pmergeme	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
 recursePairs	PmergeMe.cpp	/^void Pmergeme::recursePairs(const std::vector<int> &elements) const$/;"	f	class:Pmergeme	typeref:typename:void
+recursePairsDeque	PmergeMe.cpp	/^void Pmergeme::recursePairsDeque(const std::deque<int> &elements) const$/;"	f	class:Pmergeme	typeref:typename:void
 recursePairsImpl	PmergeMe.cpp	/^std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, int level) const$/;"	f	class:Pmergeme	typeref:typename:std::vector<int>
-swapPairs	PmergeMe.cpp	/^void Pmergeme::swapPairs(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int leftove/;"	f	class:Pmergeme	typeref:typename:void
+recursePairsImplDeque	PmergeMe.cpp	/^std::deque<int> Pmergeme::recursePairsImplDeque(const std::deque<int> &elements, int level) cons/;"	f	class:Pmergeme	typeref:typename:std::deque<int>
+swapPairsDeque	PmergeMe.cpp	/^void Pmergeme::swapPairsDeque(std::deque< std::pair<int,int> > &pairs, bool hasLeftover, int lef/;"	f	class:Pmergeme	typeref:typename:void
+swapPairsVector	PmergeMe.cpp	/^void Pmergeme::swapPairsVector(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int l/;"	f	class:Pmergeme	typeref:typename:void
 ~Pmergeme	PmergeMe.cpp	/^Pmergeme::~Pmergeme() { }$/;"	f	class:Pmergeme
