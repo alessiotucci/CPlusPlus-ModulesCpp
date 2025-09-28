@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/25 18:34:26                                   /         */
+/*   Updated: 2025/09/28 17:20:14                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -501,7 +501,9 @@ static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
 // Public wrapper (recursePairs) will just call this and ignore the return or print final result.
 std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, int level) const
 {
+	//TODO: create an helper function to do so
 	// 1) build pairs from elements (adjacent)
+	// 2) normalize & print (your swapPairs normalizes in-place)
 	std::vector< std::pair<int,int> > pairs;
 	bool hasLeftover = false;
 	int leftover = 0;
@@ -516,9 +518,11 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
 		hasLeftover = true;
 		leftover = elements[i];
 	}
-// 2) normalize & print (your swapPairs normalizes in-place)
-    swapPairs(pairs, hasLeftover, leftover);
+	swapPairs(pairs, hasLeftover, leftover);
 
+
+
+//TODO: create an helper function to do so
 // 3) collect winners (second of each pair)
     std::vector<int> winners;
     winners.reserve(pairs.size());
@@ -527,7 +531,7 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
         winners.push_back(pairs[k].second); // here we are creating a winner vector !
 	}
 
-	std::cout << "Winners: ";
+	std::cout << "Winners vector:\n";
 	VectorPrint(winners);
 
 /******************************************************************************/
@@ -539,7 +543,8 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
 		if (winners.size() == 2)
 		{
 			// sort the two winners into ascending order
-			int a = winners[0], b = winners[1];
+			int a = winners[0];
+			int b = winners[1];
 			if (a <= b)
 			{
 				chain.push_back(a);
@@ -564,7 +569,8 @@ std::vector<int> Pmergeme::recursePairsImpl(const std::vector<int> &elements, in
 			std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.end(), leftover);
 			chain.insert(it, leftover);
 		}
-        return chain;
+	exit(-1);
+        return chain; // TODO: chain is what we return
     }
 /******************************************************************************/
 // 5) otherwise recurse on winners
