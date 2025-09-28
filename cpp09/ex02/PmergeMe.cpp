@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/28 20:30:05                                   /         */
+/*   Updated: 2025/09/28 20:43:29                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -302,19 +302,35 @@ void Pmergeme::swapPairsVector(std::vector< std::pair<int,int> > &pairs, bool ha
 	*/
 }
 
+
 void Pmergeme::recursePairsDeque(const std::deque<int> &elements) const
 {
-	//TODO: start timer
-	std::cout << "After, using a deque: ";
-	DequePrint(recursePairsImplDeque(elements, 0));
-	// end timer
+	std::cout << "Before: ";
+	DequePrint(elements);
+	clock_t start = clock();
+	std::deque<int> result = recursePairsImplDeque(elements, 0);
+	clock_t end = clock();
+	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0; // convert to microseconds
+	std::cout << "After: ";
+	DequePrint(result);
+	std::cout << "Time to process a range of " << elements.size() 
+			  << " elements with std::deque : " 
+			  << std::fixed << std::setprecision(5) << duration << " us" << std::endl;
 }
+
 void Pmergeme::recursePairs(const std::vector<int> &elements) const
 {
-	//TODO: start timer
-	std::cout << "After, using a vector: ";
-	VectorPrint(recursePairsImpl(elements, 0));
-	// end timer
+	std::cout << "Before: ";
+	VectorPrint(elements);
+	clock_t start = clock();
+	std::vector<int> result = recursePairsImpl(elements, 0);
+	clock_t end = clock();
+	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0; // convert to microseconds
+	std::cout << "After: ";
+	VectorPrint(result);
+	std::cout << "Time to process a range of " << elements.size() 
+			  << " elements with std::vector : " 
+			  << std::fixed << std::setprecision(5) << duration << " us" << std::endl;
 }
 
 static std::size_t power_of_two(std::size_t exp)
@@ -453,13 +469,9 @@ static void insertBeforePartner(std::vector<int> &chain, int loser, int partner)
 */
         return;
     }
-
     // otherwise binary search on [0 .. pIdx-1)
     std::vector<int>::iterator it = std::lower_bound(chain.begin(), chain.begin() + pIdx, loser);
     chain.insert(it, loser);
-
-	//VectorPrint(chain);
-	std::cout << std::endl;
 }
 
 static void insertLosersByJacobsthal(std::vector<int> &chain, const std::vector< std::pair<int,int> > &pairs)
@@ -746,10 +758,8 @@ static void insertBeforePartnerDeque(std::deque<int> &chain, int loser, int part
     // otherwise binary search on [0 .. pIdx-1)
     std::deque<int>::iterator it = std::lower_bound(chain.begin(), chain.begin() + pIdx, loser);
     chain.insert(it, loser);
-
-    //DequePrint(chain);
-    std::cout << std::endl;
 }
+
 static void insertLosersByJacobsthalDeque(std::deque<int> &chain, const std::deque< std::pair<int,int> > &pairs)
 {
     if (pairs.empty())
