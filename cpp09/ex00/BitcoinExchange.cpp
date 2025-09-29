@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/29 09:55:28                                   /         */
+/*   Updated: 2025/09/29 10:04:00                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -268,7 +268,7 @@ void Btc::evaluateLine(const std::string &date, double amount) const
     // Print in required format: "YYYY-MM-DD => amount = usdValue"
     // Match your example output's precision
     std::cout << date << " => " << amount << " = "
-              << std::fixed << std::setprecision(1) << usdValue
+              << std::fixed << std::setprecision(3) << usdValue
               << std::endl;
 }
 
@@ -363,7 +363,7 @@ double Btc::getAmountInDollars(const std::string &date, double amount) const
     // Multiply and return
     // No special overflow checks needed here because both are doubles,
     // but you can choose to check if the result is finite if desired.
-    return rate * amount;
+    return (rate * amount);
 }
 
 /* ------------------ stream operator ------------------
