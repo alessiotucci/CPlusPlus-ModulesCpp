@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/28 20:43:29                                   /         */
+/*   Updated: 2025/09/29 10:39:44                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -165,6 +165,7 @@ int Pmergeme::parseInput(const std::string &s)
 		std::cerr << "Error: no numbers provided" << std::endl;
 		return (-1);
 	}
+	//TODO: Before filling check if it is already sorted!
 	fillVector(values);
 	fillDeque(values);
 	return (0);
