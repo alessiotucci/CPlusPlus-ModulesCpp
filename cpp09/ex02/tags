@@ -82,4 +82,5 @@ recursePairsImpl	PmergeMe.cpp	/^std::vector<int> Pmergeme::recursePairsImpl(cons
 recursePairsImplDeque	PmergeMe.cpp	/^std::deque<int> Pmergeme::recursePairsImplDeque(const std::deque<int> &elements, int level) cons/;"	f	class:Pmergeme	typeref:typename:std::deque<int>
 swapPairsDeque	PmergeMe.cpp	/^void Pmergeme::swapPairsDeque(std::deque< std::pair<int,int> > &pairs, bool hasLeftover, int lef/;"	f	class:Pmergeme	typeref:typename:void
 swapPairsVector	PmergeMe.cpp	/^void Pmergeme::swapPairsVector(std::vector< std::pair<int,int> > &pairs, bool hasLeftover, int l/;"	f	class:Pmergeme	typeref:typename:void
+validate_and_normalize_input	PmergeMe.cpp	/^static bool validate_and_normalize_input(std::vector<int> &values)$/;"	f	typeref:typename:bool	file:
 ~Pmergeme	PmergeMe.cpp	/^Pmergeme::~Pmergeme() { }$/;"	f	class:Pmergeme

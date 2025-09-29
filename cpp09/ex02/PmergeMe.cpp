@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/29 10:39:44                                   /         */
+/*   Updated: 2025/09/29 15:55:28                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -137,6 +137,30 @@ void Pmergeme::fillDeque(const std::vector<int> &values)
 		_deque.push_back(values[i]);
 }
 
+static bool validate_and_normalize_input(std::vector<int> &values)
+{
+	if (values.empty())
+	{
+		std::cout << "Error: values are emtpy!" << std::endl;
+		return false;
+	}
+	if (values.size() == 1)
+	{
+		std::cout << "Error: only one value!" << std::endl;
+		return false;
+	}
+	for (std::size_t i = 1; i < values.size(); ++i)
+	{
+		if (values[i-1] < values[i])
+		{
+			std::cout << "Error: already sorted!" << std::endl;
+			return (false);
+		}
+	}
+	return true;
+}
+
+
 int Pmergeme::parseInput(const std::string &s)
 {
 	std::vector<int> values;
@@ -165,7 +189,8 @@ int Pmergeme::parseInput(const std::string &s)
 		std::cerr << "Error: no numbers provided" << std::endl;
 		return (-1);
 	}
-	//TODO: Before filling check if it is already sorted!
+	if (validate_and_normalize_input(values) == false)
+		return (-1);
 	fillVector(values);
 	fillDeque(values);
 	return (0);
@@ -204,7 +229,8 @@ int Pmergeme::parseArgs(int ac, char **av)
 		std::cerr << "Error: no numbers provided" << std::endl;
 		return -1;
 	}
-
+	if (validate_and_normalize_input(values) == false)
+		return (-1);
 	fillVector(values);
 	fillDeque(values);
 	return 0;
