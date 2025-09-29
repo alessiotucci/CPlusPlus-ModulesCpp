@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: RPN.cpp                                                 ( o.o )    */
 /*   Created: 2025/06/21 14:03:45 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/19 18:58:06                                   /         */
+/*   Updated: 2025/09/29 10:36:46                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -218,24 +218,25 @@ std::ostream& operator<<(std::ostream& os, const Rpn& rpn)
         temp.pop();
     }
 
+	/*
     os << CYAN << "Stack State:\n" << RESET;
     os << YELLOW << "Size: " << maxSize << RESET << "\n";
     os << GREEN << "Empty: " << (maxSize == 0 ? "Yes" : "No") << RESET << "\n";
+	*/
 
     if (maxSize > 0)
 	{
+		/*
         os << RED << "Top: " << buffer[maxSize - 1] << RESET << "\n";
         os << PURPLE << "Contents:\n" << RESET;
+		*/
 
         // Print from bottom to top
         for (std::size_t i = 0; i < maxSize; ++i)
 		{
-            os << "| " << YELLOW << " " << RESET << buffer[i] << " |\n";
+            //os << "| " << YELLOW << " " << RESET << buffer[i];
+            os << buffer[i];
         }
-    }
-	else
-	{
-        os << YELLOW << "|  | (empty)\n" << RESET;
     }
 
     delete[] buffer; // Clean up

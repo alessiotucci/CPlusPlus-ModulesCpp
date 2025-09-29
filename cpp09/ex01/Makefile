@@ -3,7 +3,7 @@
 #    Host: atucci-Surface-Laptop-3                                    /_/      #
 #    File: Makefile                                                ( o.o )     #
 #    Created: 2025/06/21 13:57:48 | By: atucci <marvin@42.fr>      > ^ <       #
-#    Updated: 2025/08/13 17:49:51                                   /          #
+#    Updated: 2025/09/29 10:35:02                                   /          #
 #    OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)      #
 #                                                                              #
 # **************************************************************************** #
@@ -11,7 +11,7 @@
 # *********************************
 # setting up the name of the exec *
 # *********************************
-NAME = RNP
+NAME = RPN
 
 # *************************************************
 # setting up the variable that will be the source *
