@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: BitcoinExchange.cpp                                     ( o.o )    */
 /*   Created: 2025/06/21 14:02:23 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/18 18:07:14                                   /         */
+/*   Updated: 2025/09/29 09:55:28                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -311,12 +311,12 @@ bool Btc::processInputFile(const std::string &inputfile)
 		// Now check range constraints: must be 0 <= value <= 10000 (subject)
 		if (value < 0.0)
 		{
-			std::cout << RED << "Error: " << RESET << "not a positive number.\n=> " << tline << std::endl;
+			std::cout << RED << "Error: " << RESET << "not a positive number.=> " << tline << std::endl;
 			continue;
 		}
 		if (value > 1000.0)
 		{
-			std::cout << RED << "Error: " << RESET << "too large a number.\n=> " << value << std::endl;
+			std::cout << RED << "Error: " << RESET << "too large a number.=> " << value << std::endl;
 			continue;
 		}
 		// If everything ok, store input line for later processing
