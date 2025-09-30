@@ -3,7 +3,7 @@
 /*   Host: atucci-Surface-Laptop-3                                    /_/     */
 /*   File: PmergeMe.cpp                                            ( o.o )    */
 /*   Created: 2025/06/21 14:06:38 | By: atucci <marvin@42.fr>      > ^ <      */
-/*   Updated: 2025/09/29 15:55:28                                   /         */
+/*   Updated: 2025/09/30 09:37:46                                   /         */
 /*   OS: Linux 6.8.0-59-generic x86_64 | CPU: Intel(R) Core(TM) i (|_|)_)     */
 /*                                                                            */
 /* ************************************************************************** */
@@ -149,15 +149,16 @@ static bool validate_and_normalize_input(std::vector<int> &values)
 		std::cout << "Error: only one value!" << std::endl;
 		return false;
 	}
-	for (std::size_t i = 1; i < values.size(); ++i)
+	for (std::size_t i = 0; i < values.size() -1; ++i)
 	{
-		if (values[i-1] < values[i])
+		if (values[i] > values[i + 1])
 		{
-			std::cout << "Error: already sorted!" << std::endl;
-			return (false);
+			return (true);
 		}
 	}
-	return true;
+	std::cout << "Error: already sorted!" << std::endl;
+	return (false);
+
 }
 
 
